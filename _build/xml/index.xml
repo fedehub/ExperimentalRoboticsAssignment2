@@ -8,6 +8,7 @@
     <member refid="namespaceconf_1ae475e080536acb271a0a0efe56c3ba42" kind="variable"><name>extensions</name></member>
     <member refid="namespaceconf_1ae850ae634911b713e036b43894fdd525" kind="variable"><name>templates_path</name></member>
     <member refid="namespaceconf_1a7ad48fb6f3e9b129c02346ea0d3527c1" kind="variable"><name>exclude_patterns</name></member>
+    <member refid="namespaceconf_1a94c3a9e097903ba149e86d3037ca3b7a" kind="variable"><name>autodoc_mock_imports</name></member>
     <member refid="namespaceconf_1a6c3bfcc1a44546c1c75ce20f55bd0fd6" kind="variable"><name>html_theme</name></member>
     <member refid="namespaceconf_1af4fb5d8851ccaade135c2668dd3ced41" kind="variable"><name>html_static_path</name></member>
     <member refid="namespaceconf_1a6fcd7e5236f355b1e1a55f9d95988810" kind="variable"><name>master_doc</name></member>
@@ -19,15 +20,72 @@
     <member refid="namespaceconf_1a54585428ce84441199d9dfd7087e2243" kind="variable"><name>breathe_default_members</name></member>
     <member refid="namespaceconf_1a05f7acd354f09362b4fa8f2abdfa1b54" kind="variable"><name>myst_enable_extensions</name></member>
   </compound>
+  <compound refid="namespacego__to__point" kind="namespace"><name>go_to_point</name>
+    <member refid="namespacego__to__point_1a066c7e6058980504669f48713eacff1a" kind="variable"><name>active_</name></member>
+    <member refid="namespacego__to__point_1a500520cbcd448f46bf7447a431f61d53" kind="variable"><name>position_</name></member>
+    <member refid="namespacego__to__point_1ae444f19eb2019982432760ace036ce03" kind="variable"><name>yaw_</name></member>
+    <member refid="namespacego__to__point_1aa2d0ef255bcf5d5faf9ca2764730fb17" kind="variable"><name>state_</name></member>
+    <member refid="namespacego__to__point_1a03b48b610dbd224a38eb226c1b2ba23d" kind="variable"><name>desired_position_</name></member>
+    <member refid="namespacego__to__point_1a328c9a3bb9322f150f2e67371cd73306" kind="variable"><name>x</name></member>
+    <member refid="namespacego__to__point_1ac372e1a492f9aa66d29f365cc1c57d8c" kind="variable"><name>y</name></member>
+    <member refid="namespacego__to__point_1a2fd68a76b8583598a4bceccdeae5d73b" kind="variable"><name>z</name></member>
+    <member refid="namespacego__to__point_1a67f95834f0959feb3facd17bc7fa2b38" kind="variable"><name>yaw_precision_</name></member>
+    <member refid="namespacego__to__point_1af74ccf49164d0478ca8343e2031d5813" kind="variable"><name>yaw_precision_2_</name></member>
+    <member refid="namespacego__to__point_1a6a1e4eb20ebd4fce0fc56b0ebfd7a8d5" kind="variable"><name>dist_precision_</name></member>
+    <member refid="namespacego__to__point_1a524106fc7667a0927951dfd89d52d6a7" kind="variable"><name>kp_a</name></member>
+    <member refid="namespacego__to__point_1a7bc498652ca66932e704e738b50c297b" kind="variable"><name>kp_d</name></member>
+    <member refid="namespacego__to__point_1acb4e14986fafe5cb73bb8ad0c178869d" kind="variable"><name>ub_a</name></member>
+    <member refid="namespacego__to__point_1afecad4058844db05d8321199e25b4498" kind="variable"><name>lb_a</name></member>
+    <member refid="namespacego__to__point_1a16c473b9e717200c483d18e66b48152a" kind="variable"><name>ub_d</name></member>
+    <member refid="namespacego__to__point_1a3caa5a6c1e8d7b4854f62a9e35dfad6f" kind="variable"><name>pub</name></member>
+    <member refid="namespacego__to__point_1a1ace7fa0371345e7a7501959f0e004e0" kind="function"><name>go_to_point_switch</name></member>
+    <member refid="namespacego__to__point_1a36304a9f313b0579f7fc69fa01695524" kind="function"><name>clbk_odom</name></member>
+    <member refid="namespacego__to__point_1a31ee48e5cae36821049b572a96b7c8be" kind="function"><name>change_state</name></member>
+    <member refid="namespacego__to__point_1ac688bb56fa84763ea2edefc30cae032a" kind="function"><name>normalize_angle</name></member>
+    <member refid="namespacego__to__point_1a9c3011a3065fcbefcc1c5ad8c9979669" kind="function"><name>fix_yaw</name></member>
+    <member refid="namespacego__to__point_1ac8579665c0fbf665f734476554fac37d" kind="function"><name>go_straight_ahead</name></member>
+    <member refid="namespacego__to__point_1a9bb3c726bc638ed49519d74277fce5a4" kind="function"><name>done</name></member>
+    <member refid="namespacego__to__point_1ab92bd6db1ec323a4d795ed6cb40aebe1" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="namespacestd__srvs_1_1srv" kind="namespace"><name>std_srvs::srv</name>
+  </compound>
+  <compound refid="code__documentation_2go__to__point_8rst_8txt" kind="file"><name>go_to_point.rst.txt</name>
+  </compound>
+  <compound refid="erl__assignment__2_2scripts_2go__to__point_8rst_8txt" kind="file"><name>go_to_point.rst.txt</name>
+  </compound>
+  <compound refid="code__documentation_2index_8md_8txt" kind="file"><name>index.md.txt</name>
+  </compound>
+  <compound refid="documents_2index_8md_8txt" kind="file"><name>index.md.txt</name>
+  </compound>
+  <compound refid="interfaces-docs-goto-point_8md_8txt" kind="file"><name>interfaces-docs-goto-point.md.txt</name>
+  </compound>
+  <compound refid="markdown-vs-rest_8md_8txt" kind="file"><name>markdown-vs-rest.md.txt</name>
+  </compound>
+  <compound refid="__build_2html_2__sources_2erl2_2_c_make_lists_8txt" kind="file"><name>CMakeLists.txt</name>
+  </compound>
+  <compound refid="__build_2html_2__sources_2erl__assignment__2_2_c_make_lists_8txt" kind="file"><name>CMakeLists.txt</name>
+  </compound>
+  <compound refid="erl2_2_c_make_lists_8txt" kind="file"><name>CMakeLists.txt</name>
+  </compound>
+  <compound refid="erl__assignment__2_2_c_make_lists_8txt" kind="file"><name>CMakeLists.txt</name>
+  </compound>
+  <compound refid="erl2_2_r_e_a_d_m_e_8md_8txt" kind="file"><name>README.md.txt</name>
+  </compound>
+  <compound refid="_r_e_a_d_m_e_8md_8txt" kind="file"><name>README.md.txt</name>
+  </compound>
+  <compound refid="index_8rst_8txt" kind="file"><name>index.rst.txt</name>
+    <member refid="index_8rst_8txt_1ae5bb300954830ede9da67440dcb4b2b5" kind="variable"><name>file</name></member>
+    <member refid="index_8rst_8txt_1aef3f652165d0d9f09dbe82f3ac90933a" kind="variable"><name>Jul</name></member>
+  </compound>
   <compound refid="code__documentation_2index_8md" kind="file"><name>index.md</name>
   </compound>
   <compound refid="documents_2index_8md" kind="file"><name>index.md</name>
   </compound>
   <compound refid="conf_8py" kind="file"><name>conf.py</name>
   </compound>
-  <compound refid="markdown-vs-rest_8md" kind="file"><name>markdown-vs-rest.md</name>
+  <compound refid="interfaces-docs-goto-point_8md" kind="file"><name>interfaces-docs-goto-point.md</name>
   </compound>
-  <compound refid="_c_make_lists_8txt" kind="file"><name>CMakeLists.txt</name>
+  <compound refid="markdown-vs-rest_8md" kind="file"><name>markdown-vs-rest.md</name>
   </compound>
   <compound refid="erl2_2_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
   </compound>
@@ -52,9 +110,13 @@
     <member refid="simulation_8cpp_1a876a1245db85a2bb87c08ae086f1eafa" kind="function"><name>oracleCallback</name></member>
     <member refid="simulation_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" kind="function"><name>main</name></member>
   </compound>
+  <compound refid="go__to__point_8py" kind="file"><name>go_to_point.py</name>
+  </compound>
   <compound refid="md_code_documentation_index" kind="page"><name>md_code_documentation_index</name>
   </compound>
   <compound refid="md_documents_index" kind="page"><name>md_documents_index</name>
+  </compound>
+  <compound refid="md_documents_interfaces-docs-goto-point" kind="page"><name>md_documents_interfaces-docs-goto-point</name>
   </compound>
   <compound refid="md_documents_markdown-vs-rest" kind="page"><name>md_documents_markdown-vs-rest</name>
   </compound>
@@ -62,11 +124,31 @@
   </compound>
   <compound refid="md__r_e_a_d_m_e" kind="page"><name>md_README</name>
   </compound>
+  <compound refid="dir_45b9293d3daaa82c00b5908f14ebb805" kind="dir"><name>_build</name>
+  </compound>
+  <compound refid="dir_02bdb4005edb5055ba0ef39c3e2b4a3d" kind="dir"><name>_build/html/_sources</name>
+  </compound>
+  <compound refid="dir_19d2a84171ad5410f35a5a0a65c9e77a" kind="dir"><name>_build/html/_sources/code_documentation</name>
+  </compound>
   <compound refid="dir_dc965ea0807d6e8790d6607c44bea479" kind="dir"><name>code_documentation</name>
   </compound>
   <compound refid="dir_8dd08f2658aa08180a5d08d0b206f839" kind="dir"><name>documents</name>
   </compound>
+  <compound refid="dir_38e8b9ed5b7b9416573615062e91436d" kind="dir"><name>_build/html/_sources/documents</name>
+  </compound>
+  <compound refid="dir_09f276876714b9b6bcda51e45892d10b" kind="dir"><name>_build/html/_sources/erl2</name>
+  </compound>
   <compound refid="dir_8856e980821a611535096e59d7a85e0c" kind="dir"><name>erl2</name>
+  </compound>
+  <compound refid="dir_b930f76dc92bdcca0a0f99df67331e55" kind="dir"><name>erl_assignment_2</name>
+  </compound>
+  <compound refid="dir_7684bd246eff0ed87f8fd9e8ddb2ccaa" kind="dir"><name>_build/html/_sources/erl_assignment_2</name>
+  </compound>
+  <compound refid="dir_63358181ce567149a79d24bdd45b3e93" kind="dir"><name>_build/html</name>
+  </compound>
+  <compound refid="dir_215af93534fac58a5f794055521b1936" kind="dir"><name>_build/html/_sources/erl_assignment_2/scripts</name>
+  </compound>
+  <compound refid="dir_e5f6a432fdab201ad870d7689d2a031e" kind="dir"><name>erl_assignment_2/scripts</name>
   </compound>
   <compound refid="dir_07aec606a6715acfc4b32b8a919bf5e7" kind="dir"><name>erl2/src</name>
   </compound>

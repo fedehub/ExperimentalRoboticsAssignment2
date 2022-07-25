@@ -7,7 +7,7 @@
     </briefdescription>
     <detaileddescription>
 <para>see <ulink url="https://myst-parser.readthedocs.io/en/latest/syntax/roles-and-directives.html">this</ulink></para>
-<sect1 id="md_documents_markdown-vs-rest_1autotoc_md3">
+<sect1 id="md_documents_markdown-vs-rest_1autotoc_md14">
 <title>ToC tree</title>
 <para>in reST:</para>
 <para><programlisting><codeline><highlight class="normal">..<sp/>toctree::</highlight></codeline>

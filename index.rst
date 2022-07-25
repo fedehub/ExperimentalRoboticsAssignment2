@@ -11,7 +11,7 @@ Welcome to ExperimentalRoboticsAssignment2's documentation!
    :caption: Code documentation
    :glob:
    
-   
+   ./code_documentation/index.md
 
 
 .. toctree::

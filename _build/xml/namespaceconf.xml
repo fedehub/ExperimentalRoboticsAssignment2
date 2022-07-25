@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="conf.py" line="22" column="1" bodyfile="conf.py" bodystart="22" bodyend="-1"/>
+        <location file="conf.py" line="24" column="1" bodyfile="conf.py" bodystart="24" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceconf_1a33fa97cf51dcb25970fbf53f10159589" prot="public" static="no" mutable="no">
         <type>string</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="conf.py" line="23" column="1" bodyfile="conf.py" bodystart="23" bodyend="-1"/>
+        <location file="conf.py" line="25" column="1" bodyfile="conf.py" bodystart="25" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceconf_1a637c239d256432248aa8d9f3ab0b8c52" prot="public" static="no" mutable="no">
         <type>string</type>
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="conf.py" line="24" column="1" bodyfile="conf.py" bodystart="24" bodyend="-1"/>
+        <location file="conf.py" line="26" column="1" bodyfile="conf.py" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceconf_1a325dc746d8bf05c54d26351c35a21d90" prot="public" static="no" mutable="no">
         <type>string</type>
@@ -57,7 +57,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="conf.py" line="27" column="1" bodyfile="conf.py" bodystart="27" bodyend="-1"/>
+        <location file="conf.py" line="29" column="1" bodyfile="conf.py" bodystart="29" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceconf_1ae475e080536acb271a0a0efe56c3ba42" prot="public" static="no" mutable="no">
         <type>list</type>
@@ -87,7 +87,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="conf.py" line="36" column="1" bodyfile="conf.py" bodystart="36" bodyend="-1"/>
+        <location file="conf.py" line="38" column="1" bodyfile="conf.py" bodystart="38" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceconf_1ae850ae634911b713e036b43894fdd525" prot="public" static="no" mutable="no">
         <type>list</type>
@@ -101,7 +101,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="conf.py" line="55" column="1" bodyfile="conf.py" bodystart="55" bodyend="-1"/>
+        <location file="conf.py" line="57" column="1" bodyfile="conf.py" bodystart="57" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceconf_1a7ad48fb6f3e9b129c02346ea0d3527c1" prot="public" static="no" mutable="no">
         <type>list</type>
@@ -115,7 +115,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="conf.py" line="60" column="1" bodyfile="conf.py" bodystart="60" bodyend="-1"/>
+        <location file="conf.py" line="62" column="1" bodyfile="conf.py" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceconf_1a94c3a9e097903ba149e86d3037ca3b7a" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list conf.autodoc_mock_imports</definition>
+        <argsstring></argsstring>
+        <name>autodoc_mock_imports</name>
+        <initializer>=  [&quot;rospy&quot;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="conf.py" line="68" column="1" bodyfile="conf.py" bodystart="68" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceconf_1a6c3bfcc1a44546c1c75ce20f55bd0fd6" prot="public" static="no" mutable="no">
         <type>string</type>
@@ -129,7 +143,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="conf.py" line="68" column="1" bodyfile="conf.py" bodystart="68" bodyend="-1"/>
+        <location file="conf.py" line="76" column="1" bodyfile="conf.py" bodystart="76" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceconf_1af4fb5d8851ccaade135c2668dd3ced41" prot="public" static="no" mutable="no">
         <type>list</type>
@@ -143,7 +157,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="conf.py" line="73" column="1" bodyfile="conf.py" bodystart="73" bodyend="-1"/>
+        <location file="conf.py" line="81" column="1" bodyfile="conf.py" bodystart="81" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceconf_1a6fcd7e5236f355b1e1a55f9d95988810" prot="public" static="no" mutable="no">
         <type>string</type>
@@ -157,7 +171,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="conf.py" line="76" column="1" bodyfile="conf.py" bodystart="76" bodyend="-1"/>
+        <location file="conf.py" line="84" column="1" bodyfile="conf.py" bodystart="84" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceconf_1a8f403b478ab86c8b7663d82045f21741" prot="public" static="no" mutable="no">
         <type>dictionary</type>
@@ -175,7 +189,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="conf.py" line="79" column="1" bodyfile="conf.py" bodystart="79" bodyend="-1"/>
+        <location file="conf.py" line="87" column="1" bodyfile="conf.py" bodystart="87" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceconf_1a3117edf4443d9b8c70a9f0f44294ba79" prot="public" static="no" mutable="no">
         <type>string</type>
@@ -189,7 +203,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="conf.py" line="89" column="1" bodyfile="conf.py" bodystart="89" bodyend="-1"/>
+        <location file="conf.py" line="97" column="1" bodyfile="conf.py" bodystart="97" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceconf_1a332f430461432dc465213f884a1e4967" prot="public" static="no" mutable="no">
         <type></type>
@@ -202,7 +216,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="conf.py" line="95" column="1" bodyfile="conf.py" bodystart="95" bodyend="-1"/>
+        <location file="conf.py" line="103" column="1" bodyfile="conf.py" bodystart="103" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceconf_1acb47d2c0c2904fa7d36b63142533f383" prot="public" static="no" mutable="no">
         <type>dictionary</type>
@@ -218,7 +232,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="conf.py" line="98" column="1" bodyfile="conf.py" bodystart="98" bodyend="-1"/>
+        <location file="conf.py" line="106" column="1" bodyfile="conf.py" bodystart="106" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceconf_1a6eba2d2c7ae923054b1c49e686ec89b9" prot="public" static="no" mutable="no">
         <type>string</type>
@@ -232,7 +246,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="conf.py" line="103" column="1" bodyfile="conf.py" bodystart="103" bodyend="-1"/>
+        <location file="conf.py" line="111" column="1" bodyfile="conf.py" bodystart="111" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceconf_1a54585428ce84441199d9dfd7087e2243" prot="public" static="no" mutable="no">
         <type>tuple</type>
@@ -246,7 +260,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="conf.py" line="104" column="1" bodyfile="conf.py" bodystart="104" bodyend="-1"/>
+        <location file="conf.py" line="112" column="1" bodyfile="conf.py" bodystart="112" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceconf_1a05f7acd354f09362b4fa8f2abdfa1b54" prot="public" static="no" mutable="no">
         <type>list</type>
@@ -274,7 +288,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="conf.py" line="110" column="1" bodyfile="conf.py" bodystart="110" bodyend="-1"/>
+        <location file="conf.py" line="118" column="1" bodyfile="conf.py" bodystart="118" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
