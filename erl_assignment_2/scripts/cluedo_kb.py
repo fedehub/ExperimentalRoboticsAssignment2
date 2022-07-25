@@ -6,6 +6,7 @@
 import rospy
 from erl2.msg import ErlOracle
 from erl_assignment_2_msgs.srv import GetId, GetIdRequest, GetIdResponse
+from erl_assignment_2_msgs.srv import MarkWrongId, MarkWrongIdRequest, MarkWrongIdResponse
 
 record_where = 0
 record_what = 1
@@ -165,6 +166,30 @@ def get_id( req ):
 
 
 
+def mark_wrong_id( req ):
+	'''discard a ID from the system.
+	
+	Parameters:
+		req (erl_assignment_2/MarkWrongIdRequest):
+			the service request
+	
+	Returns:
+		req (erl_assignment_2/MarkWrongIdResponse) empty
+	'''
+	
+	global kb, kb_consistent
+	
+	# delete the ID from the index list
+	if len( kb_consistent ) > 0 :
+		kb[req.ID][is_active] = False
+		kb[req.ID][is_complete] = False
+		
+		kb_consistent.remove( req.ID )
+		
+		rospy.loginfo( f"(mark_wrong_id) discarded ID={req.ID}" )
+
+
+
 def shut_msg( ):
 	rospy.loginfo( "stopping ... " )
 
@@ -187,6 +212,9 @@ if __name__ == "__main__":
 	
 	rospy.loginfo( "cluedo_kb client /get_id..." )
 	srv_get_id = rospy.Service( "/get_id", GetId, get_id )
+	
+	rospy.loginfo( "cluedo_kb client /mark_wrong_id..." )
+	srv_get_id = rospy.Service( "/mark_wrong_id", MarkWrongId, mark_wrong_id )
 	
 	rospy.loginfo( "cluedo_kb starting..." )
 	rospy.spin( )

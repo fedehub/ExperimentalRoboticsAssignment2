@@ -1,0 +1,8 @@
+## service file 'MarkWrongId.srv'
+
+# the ID to discard
+string ID
+
+---
+
+# empty response

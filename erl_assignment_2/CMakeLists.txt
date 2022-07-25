@@ -14,6 +14,8 @@ find_package(catkin REQUIRED COMPONENTS
   std_srvs
   erl2
   erl_assignment_2_msgs
+  rosplan_planning_system
+  diagnostic_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -152,6 +154,10 @@ include_directories(
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
+
+add_executable( action_interface src/action_interface.cpp )
+add_dependencies( action_interface ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} )
+target_link_libraries( action_interface ${catkin_LIBRARIES} )
 
 #############
 ## Install ##

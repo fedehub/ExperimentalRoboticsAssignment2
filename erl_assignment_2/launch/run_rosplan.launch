@@ -2,11 +2,11 @@
 
 <launch>
 
-<arg name="domain_path"	default="$(find erl_assignment_2)/pddl/detectibot_pddl/db_domain.pddl" />
-<arg name="problem_path"	default="$(find erl_assignment_2)/pddl/detectibot_pddl/db_problem.pddl" />
+<arg name="domain_path"	 default="$(find erl_assignment_2)/pddl/detectibot_pddl/db_domain.pddl" />
+<arg name="problem_path" default="$(find erl_assignment_2)/pddl/detectibot_pddl/db_problem.pddl" />
 
-<arg name="use_simulated_actions" default="true" />
-<arg name="use_real_actions" default="false" />
+<arg name="use_simulated_actions" default="false" />
+<arg name="use_real_actions" default="true" />
 
 <!-- knowledge base -->
 <node name="rosplan_knowledge_base" pkg="rosplan_knowledge_base" type="knowledgeBase" respawn="false" output="screen">
@@ -49,6 +49,7 @@
 	<param name="action_feedback_topic" value="action_feedback" />
 </node>
 
+<!-- actions -->
 <include file="$(find erl_assignment_2)/launch/run_simulated_actions.launch" if="$(arg use_simulated_actions)" />
 <include file="$(find erl_assignment_2)/launch/run_detectibot_actions.launch" if="$(arg use_real_actions)" />
 

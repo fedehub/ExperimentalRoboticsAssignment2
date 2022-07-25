@@ -59,6 +59,7 @@
   <depend>std_srvs</depend>
   <depend>erl2</depend>
   <depend>erl_assignment_2_msgs</depend>
+  <depend>diagnostic_msgs</depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->
