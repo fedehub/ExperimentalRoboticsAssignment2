@@ -107,7 +107,7 @@ ros::NodeHandle nh;
 ros::Publisher vis_pub = nh.advertise<visualization_msgs::MarkerArray>( "/visualization_marker", 0 );
 oracle_pub = nh.advertise<erl2::ErlOracle>( "/oracle_hint", 0 );
 ros::ServiceServer service= nh.advertiseService("/oracle_solution", oracleService);
-// ros::Subscriber sub = nh.subscribe("/gazebo/link_states", 10, oracleCallback);
+ros::Subscriber sub = nh.subscribe("/gazebo/link_states", 10, oracleCallback);
 visualization_msgs::MarkerArray markers;
 srand (time(NULL));
 const double zpos[2] = {0.75, 1.25};

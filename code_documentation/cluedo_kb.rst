@@ -33,6 +33,23 @@ For getting a valid hint, a request to the service server ``/GetId`` is done, so
 	int32 consistent_id
 
 
+How to check the hint's valididty
+---------------------------------
+
+This service is provided for checking wheteher or not the hypothesis queried to the Oracle is the **true one!**
+
+service */mark_wrong_id* of type *erl_assignment_2_msgs/MarkWrongId*.
+
+.. code-block::
+  
+  # request
+  int32 ID
+  
+  ---
+  
+  # response (empty)
+
+
 
 Code Reference
 ---------------

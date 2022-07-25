@@ -49,6 +49,10 @@
 	<param name="action_feedback_topic" value="action_feedback" />
 </node>
 
+<!-- detecibot nodes -->
+<node pkg="erl_assignment_2" type="cluedo_kb.py" name="cluedo_kb" output="screen"/>
+<!-- <node pkg="erl_assignment_2" type="" name="" output="screen"/> -->
+
 <!-- actions -->
 <include file="$(find erl_assignment_2)/launch/run_simulated_actions.launch" if="$(arg use_simulated_actions)" />
 <include file="$(find erl_assignment_2)/launch/run_detectibot_actions.launch" if="$(arg use_real_actions)" />
