@@ -24,7 +24,7 @@ Note:
 '''
 
 kb_consistent = None
-''' indexex of the remaining consistent IDs
+''' indexex of the remaining active IDs, not necessailry complete
 '''
 
 srv_get_id = None
@@ -151,6 +151,10 @@ def get_id( req ):
 		(erl_assignment_2/GetIdResponse) the id and if there are
 		still available IDs. 
 	
+	Note:
+		the service coulf return also (true, -1) in a situation in which
+		there are some active ID, but none of them is complete. 
+	
 	'''
 	
 	global kb, kb_consistent
@@ -160,7 +164,10 @@ def get_id( req ):
 	res.consistent_id = -1
 	
 	if res.consistent_found:
-		res.consistent_id = kb_consistent[0]
+		for id in kb_consistent:
+			if kb[id][is_complete]:
+				res.consistent_id = id
+				break
 	
 	return res
 

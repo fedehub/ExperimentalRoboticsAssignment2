@@ -309,6 +309,43 @@ private:
 		// altrimenti c'hai azzeccato!
 		//    return true
 		
+		// get one consistent hint (if any)
+		erl_assignment_2_msgs::GetId id_srv;
+		cl_get_id.call( id_srv );
+		
+		if( !id_srv.response.consistent_found )
+		{
+			ROS_WARN_STREAM( "(no remaining ids) case UNSOLVABLE." );
+			return false;
+		}
+		
+		int c_id = 0;
+		if( id_srv.response.consistent_id < 0 )
+		{
+			ROS_WARN_STREAM( "(no complete hypotheses to propose) NEED FOR REPLAN." );
+			
+			/// @todo replan strategy
+			
+			return false;
+		}
+		else
+			c_id = id_srv.response.consistent_id;
+		
+		// get the solution from the Oracle
+		erl2::Oracle solution;
+		cl_solution.call( solution );
+		
+		if( c_id != solution.response.ID  )
+		{
+			ROS_WARN_STREAM( "(wrong ID) NEED FOR REPLAN." );
+			
+			/// @todo replan strategy
+			
+			return false;
+		}
+		
+		ROS_INFO_STREAM( "TRUE ID FOUND! ID=" << c_id );
+		
 		return true;
 	}
 	
