@@ -2,7 +2,7 @@
 Code docs -- *go_to_point.py*
 ==============================
 
-HOW TO use this node -- service behaviour
+How to use this node -- service behaviour
 -----------------------------------------
 
 1. set the ROSParameters *des_pos_x* and *des_pos_y* in the parameter server using *rospy.set_param( "name", value )*
