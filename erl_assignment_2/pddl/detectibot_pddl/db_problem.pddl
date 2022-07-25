@@ -8,10 +8,7 @@
     tp -  temple
 )
 (:init
-
-
-
-    (at_temple tp)
+	(at_temple tp)
 	(not_gripper_inplace)
 	(not_has_been_at wp1)
 	(not_has_been_at wp2)
@@ -22,7 +19,6 @@
 	(not_gathered_hint wp3)
 	(not_gathered_hint wp4)
 )
-(:goal (and
-    (true_hypo)
-))
+(:goal
+    (true_hypo ))
 )

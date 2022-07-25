@@ -1,17 +1,17 @@
 (define (domain db_domain)
 
 (:requirements 
-		:strips 
-		:typing 
-		:fluents 
-		:disjunctive-preconditions 
-		:durative-actions 
-		:adl)
+	:strips
+	:typing
+	:fluents
+	:disjunctive-preconditions
+	:durative-actions
+	:adl
+)
 
 (:types
 	waypoint
 	temple
-	robot
 )
 
 (:predicates
