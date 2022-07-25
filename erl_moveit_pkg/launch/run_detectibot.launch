@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+
+<node pkg="erl_assignment_2" type="manipulation" name="manipulation" />
+
+<include file="$(find erl_moveit_pkg)/launch/demo_gazebo.launch" />
+
+</launch>
