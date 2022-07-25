@@ -352,6 +352,7 @@
         <references refid="simulation_8cpp_1a68fa6a0c7a1208892294604263e23d92" compoundref="simulation_8cpp" startline="22">person</references>
         <references refid="simulation_8cpp_1a5e5bd50ead53d20df3f8ede527f47ce7" compoundref="simulation_8cpp" startline="24">place</references>
         <references refid="simulation_8cpp_1a37d4a0b625b8b9583adf9362f5aae971" compoundref="simulation_8cpp" startline="26">uIDs</references>
+        <referencedby refid="simulation_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" compoundref="simulation_8cpp" startline="102" endline="211">main</referencedby>
       </memberdef>
       <memberdef kind="function" id="simulation_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -377,6 +378,7 @@
         <references refid="simulation_8cpp_1a0bc4146f286fe42bd5e8fa1e53826447" compoundref="simulation_8cpp" startline="15">marky</references>
         <references refid="simulation_8cpp_1a8d90002e6a9c50028f184b22c380efc4" compoundref="simulation_8cpp" startline="16">markz</references>
         <references refid="simulation_8cpp_1a32812fe000700d7aa8988d74e59471c7" compoundref="simulation_8cpp" startline="12">oracle_pub</references>
+        <references refid="simulation_8cpp_1a876a1245db85a2bb87c08ae086f1eafa" compoundref="simulation_8cpp" startline="43" endline="100">oracleCallback</references>
         <references refid="simulation_8cpp_1ae1a3f65d934a3c4a938e85d5071dfaa5" compoundref="simulation_8cpp" startline="37" endline="41">oracleService</references>
         <references refid="_oracle_8rst_8txt_1a636972db0d9482f50e11146b2ccaf387" compoundref="_oracle_8rst_8txt" startline="41">service</references>
         <references refid="simulation_8cpp_1a37d4a0b625b8b9583adf9362f5aae971" compoundref="simulation_8cpp" startline="26">uIDs</references>
@@ -497,7 +499,7 @@
 <codeline lineno="107"><highlight class="normal">ros::Publisher<sp/>vis_pub<sp/>=<sp/>nh.advertise&lt;visualization_msgs::MarkerArray&gt;(<sp/></highlight><highlight class="stringliteral">&quot;/visualization_marker&quot;</highlight><highlight class="normal">,<sp/>0<sp/>);</highlight></codeline>
 <codeline lineno="108"><highlight class="normal"><ref refid="simulation_8cpp_1a32812fe000700d7aa8988d74e59471c7" kindref="member">oracle_pub</ref><sp/>=<sp/>nh.advertise&lt;erl2::ErlOracle&gt;(<sp/></highlight><highlight class="stringliteral">&quot;/oracle_hint&quot;</highlight><highlight class="normal">,<sp/>0<sp/>);</highlight></codeline>
 <codeline lineno="109"><highlight class="normal">ros::ServiceServer<sp/><ref refid="_oracle_8rst_8txt_1a636972db0d9482f50e11146b2ccaf387" kindref="member">service</ref>=<sp/>nh.advertiseService(</highlight><highlight class="stringliteral">&quot;/oracle_solution&quot;</highlight><highlight class="normal">,<sp/><ref refid="simulation_8cpp_1ae1a3f65d934a3c4a938e85d5071dfaa5" kindref="member">oracleService</ref>);</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"></highlight><highlight class="comment">//<sp/>ros::Subscriber<sp/>sub<sp/>=<sp/>nh.subscribe(&quot;/gazebo/link_states&quot;,<sp/>10,<sp/>oracleCallback);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal">ros::Subscriber<sp/>sub<sp/>=<sp/>nh.subscribe(</highlight><highlight class="stringliteral">&quot;/gazebo/link_states&quot;</highlight><highlight class="normal">,<sp/>10,<sp/><ref refid="simulation_8cpp_1a876a1245db85a2bb87c08ae086f1eafa" kindref="member">oracleCallback</ref>);</highlight></codeline>
 <codeline lineno="111"><highlight class="normal">visualization_msgs::MarkerArray<sp/>markers;</highlight></codeline>
 <codeline lineno="112"><highlight class="normal">srand<sp/>(time(NULL));</highlight></codeline>
 <codeline lineno="113"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>zpos[2]<sp/>=<sp/>{0.75,<sp/>1.25};</highlight></codeline>

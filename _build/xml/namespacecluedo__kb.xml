@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="10" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="10" bodyend="-1"/>
+        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="11" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="11" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacecluedo__kb_1a727404718e0777bf45e91fa9458e1f18" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="11" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="11" bodyend="-1"/>
+        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="12" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="12" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacecluedo__kb_1a0e82193f2d59570204a37c310bc95e7b" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="12" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="12" bodyend="-1"/>
+        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="13" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="13" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacecluedo__kb_1af2159774e7dc8e59e293d9057d60e690" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -57,7 +57,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="13" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="13" bodyend="-1"/>
+        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="14" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="14" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacecluedo__kb_1a5be4e3b61f6bdb880099c78cf658f5dc" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -71,7 +71,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="14" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="14" bodyend="-1"/>
+        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="15" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="15" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacecluedo__kb_1a8636f58ddb22c3c70904f8e30a4dcc5e" prot="public" static="no" mutable="no">
         <type></type>
@@ -85,7 +85,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="16" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="16" bodyend="-1"/>
+        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="17" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="17" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacecluedo__kb_1a335d9858030dee0238a6f2fc67a05023" prot="public" static="no" mutable="no">
         <type></type>
@@ -99,7 +99,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="25" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="25" bodyend="-1"/>
+        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="26" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacecluedo__kb_1a1c63dfe724e4e24b2985ef2adb3bbfbb" prot="public" static="no" mutable="no">
         <type></type>
@@ -113,7 +113,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="29" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="29" bodyend="-1"/>
+        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="30" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="30" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -138,9 +138,9 @@ Parameters:
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="35" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="35" bodyend="47"/>
-        <references refid="namespacecluedo__kb_1a5b22ff3cf204215f52ecb6c13d8a806d" compoundref="cluedo__kb_8py" startline="48" endline="110">add_hint_to_list</references>
-        <references refid="namespacecluedo__kb_1a8f44cecf16139c1d94cbf2a2bfc193cb" compoundref="cluedo__kb_8py" startline="111" endline="137">is_valid_hint</references>
+        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="36" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="36" bodyend="48"/>
+        <references refid="namespacecluedo__kb_1a5b22ff3cf204215f52ecb6c13d8a806d" compoundref="cluedo__kb_8py" startline="49" endline="111">add_hint_to_list</references>
+        <references refid="namespacecluedo__kb_1a8f44cecf16139c1d94cbf2a2bfc193cb" compoundref="cluedo__kb_8py" startline="112" endline="138">is_valid_hint</references>
       </memberdef>
       <memberdef kind="function" id="namespacecluedo__kb_1a5b22ff3cf204215f52ecb6c13d8a806d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -167,8 +167,8 @@ Parameters:
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="48" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="48" bodyend="110"/>
-        <referencedby refid="namespacecluedo__kb_1a1d7f88bfe0321a672bdef29136ac817f" compoundref="cluedo__kb_8py" startline="35" endline="47">add_hint</referencedby>
+        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="49" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="49" bodyend="111"/>
+        <referencedby refid="namespacecluedo__kb_1a1d7f88bfe0321a672bdef29136ac817f" compoundref="cluedo__kb_8py" startline="36" endline="48">add_hint</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacecluedo__kb_1a8f44cecf16139c1d94cbf2a2bfc193cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -199,8 +199,8 @@ Returns:
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="111" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="111" bodyend="137"/>
-        <referencedby refid="namespacecluedo__kb_1a1d7f88bfe0321a672bdef29136ac817f" compoundref="cluedo__kb_8py" startline="35" endline="47">add_hint</referencedby>
+        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="112" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="112" bodyend="138"/>
+        <referencedby refid="namespacecluedo__kb_1a1d7f88bfe0321a672bdef29136ac817f" compoundref="cluedo__kb_8py" startline="36" endline="48">add_hint</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacecluedo__kb_1a9c5cbd279b89f36f5f84c0e2dd63fca8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -226,11 +226,41 @@ Parameters:
 
 Returns:
     (erl_assignment_2/GetIdResponse) the id and if there are
-    still available IDs. </verbatim> </para>
+    still available IDs. 
+
+Note:
+    the service coulf return also (true, -1) in a situation in which
+    there are some active ID, but none of them is complete. </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="138" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="138" bodyend="167"/>
+        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="139" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="139" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacecluedo__kb_1afe9cb44eb6b95930542c455410ad70fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cluedo_kb.mark_wrong_id</definition>
+        <argsstring>(req)</argsstring>
+        <name>mark_wrong_id</name>
+        <param>
+          <type>req</type>
+          <defname>req</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>discard a ID from the system.
+
+Parameters:
+    req (erl_assignment_2/MarkWrongIdRequest):
+        the service request
+
+Returns:
+    req (erl_assignment_2/MarkWrongIdResponse) empty
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="176" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="176" bodyend="199"/>
       </memberdef>
       <memberdef kind="function" id="namespacecluedo__kb_1ae00019d2c2ba8a48f8255f575cc3fd8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -243,13 +273,13 @@ Returns:
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="168" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="168" bodyend="172"/>
+        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="200" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="200" bodyend="204"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<para><verbatim>cluedo_kb node</verbatim> </para>
+<para><verbatim>file cluedo_kb node</verbatim> </para>
     </detaileddescription>
     <location file="erl_assignment_2/scripts/cluedo_kb.py" line="1" column="1"/>
   </compounddef>

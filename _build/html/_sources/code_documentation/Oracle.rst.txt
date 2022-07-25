@@ -3,7 +3,7 @@ Code docs -- *simulation.cpp*
 ==============================
 
 
-HOW TO receive a hint
+How to receive a hint
 ----------------------
 
 the node publishes the hint (message *erl2/ErlOracle*) through the topic */oracle_hint*. Here's the message prototype:
@@ -24,10 +24,10 @@ the hint is sent each time the *cluedo_link* is near enough to a marker.
 	* the field "key" could contain "-1", and also "value" could 
 
 
-HOW TO check if the hint is valid
+How to check if the hint is valid
 ----------------------------------
 
-to check if a ID is the solution of the mystery, call the service */oracle_solution* of type *erl2/Oracle*. Here's the prototype of the service:
+to check whether a specific ID is the solution of the mystery, call the service */oracle_solution* of type ``erl2/Oracle``. Here's the prototype of the service:
 
 .. code-block::
 	
@@ -35,7 +35,7 @@ to check if a ID is the solution of the mystery, call the service */oracle_solut
 	int32 ID
 
 
-hints generation
+Hints generation
 -----------------
 
 referring to the code, 

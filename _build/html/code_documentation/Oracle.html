@@ -18,7 +18,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Code docs – cluedo_kb" href="cluedo_kb.html" />
+    <link rel="next" title="Code docs – action_interface" href="action_interface.html" />
     <link rel="prev" title="Code Documentation for ExperimentalRoboticsAssignment2" href="index.html" /> 
 </head>
 
@@ -41,11 +41,12 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Code Documentation for ExperimentalRoboticsAssignment2</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Code docs – <em>simulation.cpp</em></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#how-to-receive-a-hint">HOW TO receive a hint</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#how-to-check-if-the-hint-is-valid">HOW TO check if the hint is valid</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#hints-generation">hints generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-receive-a-hint">How to receive a hint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-check-if-the-hint-is-valid">How to check if the hint is valid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hints-generation">Hints generation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="action_interface.html">Code docs – <em>action_interface</em></a></li>
 <li class="toctree-l2"><a class="reference internal" href="cluedo_kb.html">Code docs – <em>cluedo_kb</em></a></li>
 <li class="toctree-l2"><a class="reference internal" href="go_to_point.html">Code docs – <em>go_to_point.py</em></a></li>
 </ul>
@@ -84,11 +85,11 @@
   <div class="section" id="code-docs-simulation-cpp">
 <h1>Code docs – <em>simulation.cpp</em><a class="headerlink" href="#code-docs-simulation-cpp" title="Permalink to this headline"></a></h1>
 <div class="section" id="how-to-receive-a-hint">
-<h2>HOW TO receive a hint<a class="headerlink" href="#how-to-receive-a-hint" title="Permalink to this headline"></a></h2>
+<h2>How to receive a hint<a class="headerlink" href="#how-to-receive-a-hint" title="Permalink to this headline"></a></h2>
 <p>the node publishes the hint (message <em>erl2/ErlOracle</em>) through the topic <em>/oracle_hint</em>. Here’s the message prototype:</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>int32 ID
-string key
-string value
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">int32</span> <span class="n">ID</span>
+<span class="n">string</span> <span class="k">key</span>
+<span class="n">string</span> <span class="n">value</span>
 </pre></div>
 </div>
 <p>the hint is sent each time the <em>cluedo_link</em> is near enough to a marker.</p>
@@ -103,15 +104,15 @@ string value
 </div>
 </div>
 <div class="section" id="how-to-check-if-the-hint-is-valid">
-<h2>HOW TO check if the hint is valid<a class="headerlink" href="#how-to-check-if-the-hint-is-valid" title="Permalink to this headline"></a></h2>
-<p>to check if a ID is the solution of the mystery, call the service <em>/oracle_solution</em> of type <em>erl2/Oracle</em>. Here’s the prototype of the service:</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>---
-int32 ID
+<h2>How to check if the hint is valid<a class="headerlink" href="#how-to-check-if-the-hint-is-valid" title="Permalink to this headline"></a></h2>
+<p>to check whether a specific ID is the solution of the mystery, call the service <em>/oracle_solution</em> of type <code class="docutils literal notranslate"><span class="pre">erl2/Oracle</span></code>. Here’s the prototype of the service:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="c1">---</span>
+<span class="n">int32</span> <span class="n">ID</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="hints-generation">
-<h2>hints generation<a class="headerlink" href="#hints-generation" title="Permalink to this headline"></a></h2>
+<h2>Hints generation<a class="headerlink" href="#hints-generation" title="Permalink to this headline"></a></h2>
 <p>referring to the code,</p>
 <ul class="simple">
 <li><p>the ID of the hint is from 0 to 5</p></li>
@@ -130,7 +131,7 @@ int32 ID
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="Code Documentation for ExperimentalRoboticsAssignment2" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="cluedo_kb.html" class="btn btn-neutral float-right" title="Code docs – cluedo_kb" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="action_interface.html" class="btn btn-neutral float-right" title="Code docs – action_interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

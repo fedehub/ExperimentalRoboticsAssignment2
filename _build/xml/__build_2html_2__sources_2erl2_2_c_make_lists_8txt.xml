@@ -7,7 +7,7 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="normal">cmake_minimum_required(VERSION<sp/>3.0.2)</highlight></codeline>
+<codeline lineno="1"><highlight class="normal"><ref refid="erl__moveit__pkg_2_c_make_lists_8txt_1a49dc3793aeb2c8092741520d6352500e" kindref="member">cmake_minimum_required</ref>(VERSION<sp/>3.0.2)</highlight></codeline>
 <codeline lineno="2"><highlight class="normal"><ref refid="namespaceconf_1a45653c983098153b78e33600e39230eb" kindref="member">project</ref>(erl2)</highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">##<sp/>Compile<sp/>as<sp/>C++11,<sp/>supported<sp/>in<sp/>ROS<sp/>Kinetic<sp/>and<sp/>newer</highlight><highlight class="normal"></highlight></codeline>

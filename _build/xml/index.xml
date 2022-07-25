@@ -1,5 +1,33 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.17">
+  <compound refid="class_k_c_l__rosplan_1_1action__interface__class" kind="class"><name>KCL_rosplan::action_interface_class</name>
+    <member refid="class_k_c_l__rosplan_1_1action__interface__class_1ad068891618f1664ad175cfc159094595" kind="variable"><name>nh</name></member>
+    <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a6acbccaccf744b135b0748275202afba" kind="variable"><name>init_node</name></member>
+    <member refid="class_k_c_l__rosplan_1_1action__interface__class_1ad14d158016a87ec934502428c2d1d433" kind="variable"><name>action_name</name></member>
+    <member refid="class_k_c_l__rosplan_1_1action__interface__class_1acb45bcd09ebdc4924db9461d1347ab8d" kind="variable"><name>cl_nav</name></member>
+    <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a42e318fb636e4548cf28563a938e9065" kind="variable"><name>cl_get_id</name></member>
+    <member refid="class_k_c_l__rosplan_1_1action__interface__class_1acbaf1bee6385e9045c596ae7086d3040" kind="variable"><name>cl_mark</name></member>
+    <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a02da37e1c3bb176c3f09a562ae553301" kind="variable"><name>cl_solution</name></member>
+    <member refid="class_k_c_l__rosplan_1_1action__interface__class_1afd577106fac9210ebf3d646b3fa278cd" kind="function"><name>action_interface_class</name></member>
+    <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a95031d82d5d29999785684a7633ccddd" kind="function"><name>concreteCallback</name></member>
+    <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a2af139a1c70bcef5dd5bbe2241b40f09" kind="function"><name>setup_node</name></member>
+    <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a5e0ca921b7190a7eb69805f9c3aae9a5" kind="function"><name>exec_action</name></member>
+    <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a37e916143bff2e842afc3dceb6da692e" kind="function"><name>leave_temple_setup</name></member>
+    <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a326c547a150a16f42739a162e8d6d7e1" kind="function"><name>leave_temple_action</name></member>
+    <member refid="class_k_c_l__rosplan_1_1action__interface__class_1abb6ade799c69dee192521d97e5219c75" kind="function"><name>go_to_wp_setup</name></member>
+    <member refid="class_k_c_l__rosplan_1_1action__interface__class_1aeed667f1cd4164217e86c8012e4dedbe" kind="function"><name>go_to_wp_action</name></member>
+    <member refid="class_k_c_l__rosplan_1_1action__interface__class_1adf3ff4b2fbd3bec5dc52b2596e7361c0" kind="function"><name>shift_gripper_setup</name></member>
+    <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a078eef1e588742d598555ff3bc3e5944" kind="function"><name>shift_gripper_action</name></member>
+    <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a4f47b988cb397c7eab47a954aca80e57" kind="function"><name>gather_hint_setup</name></member>
+    <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a312f6a27d3f5e652d6d7cf101f79a01e" kind="function"><name>gather_hint_action</name></member>
+    <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a50c53d86b82e10e2b920bad8c0f697a5" kind="function"><name>reach_temple_setup</name></member>
+    <member refid="class_k_c_l__rosplan_1_1action__interface__class_1adba2c9c01fd73133d1e2a0e0fd9b992a" kind="function"><name>reach_temple_action</name></member>
+    <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a45258636dac508ff314caaf79c8d1e13" kind="function"><name>check_consistent_hypo_setup</name></member>
+    <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a7bb0e9eebb0f905f947bb1513919e5c2" kind="function"><name>check_consistent_hypo_action</name></member>
+    <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a5087a1854c5e1c54d7be896ba6d7209c" kind="function"><name>query_hypo_setup</name></member>
+    <member refid="class_k_c_l__rosplan_1_1action__interface__class_1aed41605d09fcd4d22c86495ed37c466c" kind="function"><name>query_hypo_action</name></member>
+    <member refid="class_k_c_l__rosplan_1_1action__interface__class_1aab6590616018a9a01eda609701e74459" kind="function"><name>action_to_string</name></member>
+  </compound>
   <compound refid="namespacecluedo__kb" kind="namespace"><name>cluedo_kb</name>
     <member refid="namespacecluedo__kb_1a0fb9cc01990ff96751d9a8df8f473ad2" kind="variable"><name>record_where</name></member>
     <member refid="namespacecluedo__kb_1a727404718e0777bf45e91fa9458e1f18" kind="variable"><name>record_what</name></member>
@@ -13,6 +41,7 @@
     <member refid="namespacecluedo__kb_1a5b22ff3cf204215f52ecb6c13d8a806d" kind="function"><name>add_hint_to_list</name></member>
     <member refid="namespacecluedo__kb_1a8f44cecf16139c1d94cbf2a2bfc193cb" kind="function"><name>is_valid_hint</name></member>
     <member refid="namespacecluedo__kb_1a9c5cbd279b89f36f5f84c0e2dd63fca8" kind="function"><name>get_id</name></member>
+    <member refid="namespacecluedo__kb_1afe9cb44eb6b95930542c455410ad70fe" kind="function"><name>mark_wrong_id</name></member>
     <member refid="namespacecluedo__kb_1ae00019d2c2ba8a48f8255f575cc3fd8a" kind="function"><name>shut_msg</name></member>
   </compound>
   <compound refid="namespaceconf" kind="namespace"><name>conf</name>
@@ -62,6 +91,8 @@
     <member refid="namespacego__to__point_1a9bb3c726bc638ed49519d74277fce5a4" kind="function"><name>done</name></member>
     <member refid="namespacego__to__point_1ab92bd6db1ec323a4d795ed6cb40aebe1" kind="function"><name>main</name></member>
   </compound>
+  <compound refid="namespace_k_c_l__rosplan" kind="namespace"><name>KCL_rosplan</name>
+  </compound>
   <compound refid="namespacestd__srvs_1_1srv" kind="namespace"><name>std_srvs::srv</name>
   </compound>
   <compound refid="cluedo__kb_8rst_8txt" kind="file"><name>cluedo_kb.rst.txt</name>
@@ -99,6 +130,9 @@
   <compound refid="erl__assignment__2_2_c_make_lists_8txt" kind="file"><name>CMakeLists.txt</name>
   </compound>
   <compound refid="erl__assignment__2__msgs_2_c_make_lists_8txt" kind="file"><name>CMakeLists.txt</name>
+  </compound>
+  <compound refid="erl__moveit__pkg_2_c_make_lists_8txt" kind="file"><name>CMakeLists.txt</name>
+    <member refid="erl__moveit__pkg_2_c_make_lists_8txt_1a49dc3793aeb2c8092741520d6352500e" kind="function"><name>cmake_minimum_required</name></member>
   </compound>
   <compound refid="erl2_2_r_e_a_d_m_e_8md_8txt" kind="file"><name>README.md.txt</name>
   </compound>
@@ -153,6 +187,16 @@
   </compound>
   <compound refid="go__to__point_8py" kind="file"><name>go_to_point.py</name>
   </compound>
+  <compound refid="action__interface_8cpp" kind="file"><name>action_interface.cpp</name>
+    <member refid="action__interface_8cpp_1afe4664cca95c5e9b93e4a25874bc871d" kind="define"><name>LEAVE_TEMPLE</name></member>
+    <member refid="action__interface_8cpp_1afbc16abf7fcce6f53cf8977d76c78ece" kind="define"><name>GO_TO_WP</name></member>
+    <member refid="action__interface_8cpp_1a905f67ab58312915d0c5d40847c80c0c" kind="define"><name>SHIFT_GRIPPER</name></member>
+    <member refid="action__interface_8cpp_1aa69a2751821fe07e1faea957e42c9180" kind="define"><name>GATHER_HINT</name></member>
+    <member refid="action__interface_8cpp_1ab348801e93c20ce28d21d673571cbeb5" kind="define"><name>REACH_TEMPLE</name></member>
+    <member refid="action__interface_8cpp_1a7413401b40b075490286cc2d28fa6dee" kind="define"><name>CHECK_CONSISTENT_HYPO</name></member>
+    <member refid="action__interface_8cpp_1a6f47e7b691fe6f78786eb95f849f33ea" kind="define"><name>QUERY_HYPO</name></member>
+    <member refid="action__interface_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" kind="function"><name>main</name></member>
+  </compound>
   <compound refid="md_code_documentation_index" kind="page"><name>md_code_documentation_index</name>
   </compound>
   <compound refid="md_documents_index" kind="page"><name>md_documents_index</name>
@@ -193,6 +237,8 @@
   </compound>
   <compound refid="dir_eefb14575556cea8c8edda92b08ebe6f" kind="dir"><name>erl_assignment_2_msgs</name>
   </compound>
+  <compound refid="dir_45ec1bfde743b2654ea33aa86d3495a4" kind="dir"><name>erl_moveit_pkg</name>
+  </compound>
   <compound refid="dir_63358181ce567149a79d24bdd45b3e93" kind="dir"><name>_build/html</name>
   </compound>
   <compound refid="dir_ffbedad2841d703e2d166fd609a893cf" kind="dir"><name>erl_assignment_2/pddl</name>
@@ -202,6 +248,8 @@
   <compound refid="dir_e5f6a432fdab201ad870d7689d2a031e" kind="dir"><name>erl_assignment_2/scripts</name>
   </compound>
   <compound refid="dir_215af93534fac58a5f794055521b1936" kind="dir"><name>_build/html/_sources/erl_assignment_2/scripts</name>
+  </compound>
+  <compound refid="dir_31508095010e70e9f76cbbf3db9bce1e" kind="dir"><name>erl_assignment_2/src</name>
   </compound>
   <compound refid="dir_07aec606a6715acfc4b32b8a919bf5e7" kind="dir"><name>erl2/src</name>
   </compound>

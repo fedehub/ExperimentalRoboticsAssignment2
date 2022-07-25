@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code docs – action_interface &mdash; ExperimentalRoboticsAssignment2 v1.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Code docs – cluedo_kb" href="cluedo_kb.html" />
+    <link rel="prev" title="Code docs – simulation.cpp" href="Oracle.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> ExperimentalRoboticsAssignment2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Code documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Code Documentation for ExperimentalRoboticsAssignment2</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Oracle.html">Code docs – <em>simulation.cpp</em></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Code docs – <em>action_interface</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="cluedo_kb.html">Code docs – <em>cluedo_kb</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="go_to_point.html">Code docs – <em>go_to_point.py</em></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Documents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../documents/index.html">Other Documentation for ExperimentalRoboticsAssignment2</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ExperimentalRoboticsAssignment2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Code Documentation for ExperimentalRoboticsAssignment2</a> &raquo;</li>
+      <li>Code docs – <em>action_interface</em></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/code_documentation/action_interface.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="code-docs-action-interface">
+<h1>Code docs – <em>action_interface</em><a class="headerlink" href="#code-docs-action-interface" title="Permalink to this headline"></a></h1>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.LEAVE_TEMPLE">
+<span class="target" id="action__interface_8cpp_1afe4664cca95c5e9b93e4a25874bc871d"></span><span class="sig-name descname"><span class="n"><span class="pre">LEAVE_TEMPLE</span></span></span><a class="headerlink" href="#c.LEAVE_TEMPLE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>(leave_temple ?from - temple ?to - waypoint) </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.GO_TO_WP">
+<span class="target" id="action__interface_8cpp_1afbc16abf7fcce6f53cf8977d76c78ece"></span><span class="sig-name descname"><span class="n"><span class="pre">GO_TO_WP</span></span></span><a class="headerlink" href="#c.GO_TO_WP" title="Permalink to this definition"></a><br /></dt>
+<dd><p>(go_to_wp ?from ?to - waypoint) </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.SHIFT_GRIPPER">
+<span class="target" id="action__interface_8cpp_1a905f67ab58312915d0c5d40847c80c0c"></span><span class="sig-name descname"><span class="n"><span class="pre">SHIFT_GRIPPER</span></span></span><a class="headerlink" href="#c.SHIFT_GRIPPER" title="Permalink to this definition"></a><br /></dt>
+<dd><p>(shift_gripper ?wp - waypoint) </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.GATHER_HINT">
+<span class="target" id="action__interface_8cpp_1aa69a2751821fe07e1faea957e42c9180"></span><span class="sig-name descname"><span class="n"><span class="pre">GATHER_HINT</span></span></span><a class="headerlink" href="#c.GATHER_HINT" title="Permalink to this definition"></a><br /></dt>
+<dd><p>(gather_hint ?wp - waypoint) </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.REACH_TEMPLE">
+<span class="target" id="action__interface_8cpp_1ab348801e93c20ce28d21d673571cbeb5"></span><span class="sig-name descname"><span class="n"><span class="pre">REACH_TEMPLE</span></span></span><a class="headerlink" href="#c.REACH_TEMPLE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>(reach_temple ?from - waypoint ?to - temple) </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.CHECK_CONSISTENT_HYPO">
+<span class="target" id="action__interface_8cpp_1a7413401b40b075490286cc2d28fa6dee"></span><span class="sig-name descname"><span class="n"><span class="pre">CHECK_CONSISTENT_HYPO</span></span></span><a class="headerlink" href="#c.CHECK_CONSISTENT_HYPO" title="Permalink to this definition"></a><br /></dt>
+<dd><p>(check_consistent_hypo ?wp - waypoint) </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.QUERY_HYPO">
+<span class="target" id="action__interface_8cpp_1a6f47e7b691fe6f78786eb95f849f33ea"></span><span class="sig-name descname"><span class="n"><span class="pre">QUERY_HYPO</span></span></span><a class="headerlink" href="#c.QUERY_HYPO" title="Permalink to this definition"></a><br /></dt>
+<dd><p>(query_hypo ?tp - temple) </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv44mainiPPc">
+<span id="_CPPv34mainiPPc"></span><span id="_CPPv24mainiPPc"></span><span id="main__i.cPP"></span><span class="target" id="action__interface_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">main</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">argc</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">argv</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv44mainiPPc" title="Permalink to this definition"></a><br /></dt>
+<dd><p>node main function </p>
+</dd></dl>
+
+</div>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv411KCL_rosplan">
+<span id="_CPPv311KCL_rosplan"></span><span id="_CPPv211KCL_rosplan"></span><span id="KCL_rosplan"></span><span class="target" id="namespace_k_c_l__rosplan"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">KCL_rosplan</span></span></span><a class="headerlink" href="#_CPPv411KCL_rosplan" title="Permalink to this definition"></a><br /></dt>
+<dd><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_classE">
+<span id="_CPPv3N11KCL_rosplan22action_interface_classE"></span><span id="_CPPv2N11KCL_rosplan22action_interface_classE"></span><span id="KCL_rosplan::action_interface_class"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">action_interface_class</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">RPActionInterface</span></span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_classE" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class22action_interface_classEv">
+<span id="_CPPv3N11KCL_rosplan22action_interface_class22action_interface_classEv"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class22action_interface_classEv"></span><span id="KCL_rosplan::action_interface_class::action_interface_class"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1afd577106fac9210ebf3d646b3fa278cd"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">action_interface_class</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class22action_interface_classEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>class constructor </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class16concreteCallbackERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE">
+<span id="_CPPv3N11KCL_rosplan22action_interface_class16concreteCallbackERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class16concreteCallbackERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="KCL_rosplan::action_interface_class::concreteCallback__rosplan_dispatch_msgs::ActionDispatch::ConstPtrCR"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1a95031d82d5d29999785684a7633ccddd"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">concreteCallback</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">rosplan_dispatch_msgs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ActionDispatch</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ConstPtr</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class16concreteCallbackERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>action callback </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class10setup_nodeEv">
+<span id="_CPPv3N11KCL_rosplan22action_interface_class10setup_nodeEv"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class10setup_nodeEv"></span><span id="KCL_rosplan::action_interface_class::setup_node"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1a2af139a1c70bcef5dd5bbe2241b40f09"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setup_node</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class10setup_nodeEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>action initialiser dispatcher </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class11exec_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE">
+<span id="_CPPv3N11KCL_rosplan22action_interface_class11exec_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class11exec_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="KCL_rosplan::action_interface_class::exec_action__rosplan_dispatch_msgs::ActionDispatch::ConstPtrCR"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1a5e0ca921b7190a7eb69805f9c3aae9a5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">exec_action</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">rosplan_dispatch_msgs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ActionDispatch</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ConstPtr</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class11exec_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>action execution dispatcher </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class18leave_temple_setupEv">
+<span id="_CPPv3N11KCL_rosplan22action_interface_class18leave_temple_setupEv"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class18leave_temple_setupEv"></span><span id="KCL_rosplan::action_interface_class::leave_temple_setup"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1a37e916143bff2e842afc3dceb6da692e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">leave_temple_setup</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class18leave_temple_setupEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>setup action leave_temple </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class19leave_temple_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE">
+<span id="_CPPv3N11KCL_rosplan22action_interface_class19leave_temple_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class19leave_temple_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="KCL_rosplan::action_interface_class::leave_temple_action__rosplan_dispatch_msgs::ActionDispatch::ConstPtrCR"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1a326c547a150a16f42739a162e8d6d7e1"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">leave_temple_action</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">rosplan_dispatch_msgs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ActionDispatch</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ConstPtr</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class19leave_temple_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>leave temple execution </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class14go_to_wp_setupEv">
+<span id="_CPPv3N11KCL_rosplan22action_interface_class14go_to_wp_setupEv"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class14go_to_wp_setupEv"></span><span id="KCL_rosplan::action_interface_class::go_to_wp_setup"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1abb6ade799c69dee192521d97e5219c75"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">go_to_wp_setup</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class14go_to_wp_setupEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>setup action go_to_wp </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class15go_to_wp_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE">
+<span id="_CPPv3N11KCL_rosplan22action_interface_class15go_to_wp_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class15go_to_wp_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="KCL_rosplan::action_interface_class::go_to_wp_action__rosplan_dispatch_msgs::ActionDispatch::ConstPtrCR"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1aeed667f1cd4164217e86c8012e4dedbe"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">go_to_wp_action</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">rosplan_dispatch_msgs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ActionDispatch</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ConstPtr</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class15go_to_wp_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>go_to_wp execution </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class19shift_gripper_setupEv">
+<span id="_CPPv3N11KCL_rosplan22action_interface_class19shift_gripper_setupEv"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class19shift_gripper_setupEv"></span><span id="KCL_rosplan::action_interface_class::shift_gripper_setup"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1adf3ff4b2fbd3bec5dc52b2596e7361c0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">shift_gripper_setup</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class19shift_gripper_setupEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>setup action shift_gripper </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class20shift_gripper_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE">
+<span id="_CPPv3N11KCL_rosplan22action_interface_class20shift_gripper_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class20shift_gripper_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="KCL_rosplan::action_interface_class::shift_gripper_action__rosplan_dispatch_msgs::ActionDispatch::ConstPtrCR"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1a078eef1e588742d598555ff3bc3e5944"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">shift_gripper_action</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">rosplan_dispatch_msgs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ActionDispatch</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ConstPtr</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class20shift_gripper_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>shift_gripper execution </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class17gather_hint_setupEv">
+<span id="_CPPv3N11KCL_rosplan22action_interface_class17gather_hint_setupEv"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class17gather_hint_setupEv"></span><span id="KCL_rosplan::action_interface_class::gather_hint_setup"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1a4f47b988cb397c7eab47a954aca80e57"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gather_hint_setup</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class17gather_hint_setupEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>setup action gather_hint </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class18gather_hint_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE">
+<span id="_CPPv3N11KCL_rosplan22action_interface_class18gather_hint_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class18gather_hint_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="KCL_rosplan::action_interface_class::gather_hint_action__rosplan_dispatch_msgs::ActionDispatch::ConstPtrCR"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1a312f6a27d3f5e652d6d7cf101f79a01e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gather_hint_action</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">rosplan_dispatch_msgs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ActionDispatch</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ConstPtr</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class18gather_hint_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>gather_hint execution </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class18reach_temple_setupEv">
+<span id="_CPPv3N11KCL_rosplan22action_interface_class18reach_temple_setupEv"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class18reach_temple_setupEv"></span><span id="KCL_rosplan::action_interface_class::reach_temple_setup"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1a50c53d86b82e10e2b920bad8c0f697a5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reach_temple_setup</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class18reach_temple_setupEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>setup action reach_temple </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class19reach_temple_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE">
+<span id="_CPPv3N11KCL_rosplan22action_interface_class19reach_temple_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class19reach_temple_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="KCL_rosplan::action_interface_class::reach_temple_action__rosplan_dispatch_msgs::ActionDispatch::ConstPtrCR"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1adba2c9c01fd73133d1e2a0e0fd9b992a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reach_temple_action</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">rosplan_dispatch_msgs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ActionDispatch</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ConstPtr</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class19reach_temple_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>reach_temple execution </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class27check_consistent_hypo_setupEv">
+<span id="_CPPv3N11KCL_rosplan22action_interface_class27check_consistent_hypo_setupEv"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class27check_consistent_hypo_setupEv"></span><span id="KCL_rosplan::action_interface_class::check_consistent_hypo_setup"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1a45258636dac508ff314caaf79c8d1e13"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">check_consistent_hypo_setup</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class27check_consistent_hypo_setupEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>setup action check_consistent_hypo </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class28check_consistent_hypo_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE">
+<span id="_CPPv3N11KCL_rosplan22action_interface_class28check_consistent_hypo_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class28check_consistent_hypo_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="KCL_rosplan::action_interface_class::check_consistent_hypo_action__rosplan_dispatch_msgs::ActionDispatch::ConstPtrCR"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1a7bb0e9eebb0f905f947bb1513919e5c2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">check_consistent_hypo_action</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">rosplan_dispatch_msgs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ActionDispatch</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ConstPtr</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class28check_consistent_hypo_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>check_consistent_hypo execution </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class16query_hypo_setupEv">
+<span id="_CPPv3N11KCL_rosplan22action_interface_class16query_hypo_setupEv"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class16query_hypo_setupEv"></span><span id="KCL_rosplan::action_interface_class::query_hypo_setup"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1a5087a1854c5e1c54d7be896ba6d7209c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">query_hypo_setup</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class16query_hypo_setupEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>setup action check_consistent_hypo </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class17query_hypo_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE">
+<span id="_CPPv3N11KCL_rosplan22action_interface_class17query_hypo_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class17query_hypo_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="KCL_rosplan::action_interface_class::query_hypo_action__rosplan_dispatch_msgs::ActionDispatch::ConstPtrCR"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1aed41605d09fcd4d22c86495ed37c466c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">query_hypo_action</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">rosplan_dispatch_msgs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ActionDispatch</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ConstPtr</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class17query_hypo_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>check_consistent_hypo execution </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class16action_to_stringERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE">
+<span id="_CPPv3N11KCL_rosplan22action_interface_class16action_to_stringERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class16action_to_stringERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="KCL_rosplan::action_interface_class::action_to_string__rosplan_dispatch_msgs::ActionDispatch::ConstPtrCR"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1aab6590616018a9a01eda609701e74459"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">action_to_string</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">rosplan_dispatch_msgs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ActionDispatch</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ConstPtr</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class16action_to_stringERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>action data to string </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class2nhE">
+<span id="_CPPv3N11KCL_rosplan22action_interface_class2nhE"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class2nhE"></span><span id="KCL_rosplan::action_interface_class::nh__ros::NodeHandle"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1ad068891618f1664ad175cfc159094595"></span><span class="n"><span class="pre">ros</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">NodeHandle</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nh</span></span></span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class2nhE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>node handle </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class9init_nodeE">
+<span id="_CPPv3N11KCL_rosplan22action_interface_class9init_nodeE"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class9init_nodeE"></span><span id="KCL_rosplan::action_interface_class::init_node__b"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1a6acbccaccf744b135b0748275202afba"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">init_node</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class9init_nodeE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>if the node has been initialised or not </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class11action_nameE">
+<span id="_CPPv3N11KCL_rosplan22action_interface_class11action_nameE"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class11action_nameE"></span><span id="KCL_rosplan::action_interface_class::action_name__ss"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1ad14d158016a87ec934502428c2d1d433"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">action_name</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class11action_nameE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>tne name of the action implemented by this node </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class6cl_navE">
+<span id="_CPPv3N11KCL_rosplan22action_interface_class6cl_navE"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class6cl_navE"></span><span id="KCL_rosplan::action_interface_class::cl_nav__ros::ServiceClient"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1acb45bcd09ebdc4924db9461d1347ab8d"></span><span class="n"><span class="pre">ros</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ServiceClient</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cl_nav</span></span></span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class6cl_navE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>go_to_point client </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class9cl_get_idE">
+<span id="_CPPv3N11KCL_rosplan22action_interface_class9cl_get_idE"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class9cl_get_idE"></span><span id="KCL_rosplan::action_interface_class::cl_get_id__ros::ServiceClient"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1a42e318fb636e4548cf28563a938e9065"></span><span class="n"><span class="pre">ros</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ServiceClient</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cl_get_id</span></span></span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class9cl_get_idE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>get_id client </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class7cl_markE">
+<span id="_CPPv3N11KCL_rosplan22action_interface_class7cl_markE"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class7cl_markE"></span><span id="KCL_rosplan::action_interface_class::cl_mark__ros::ServiceClient"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1acbaf1bee6385e9045c596ae7086d3040"></span><span class="n"><span class="pre">ros</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ServiceClient</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cl_mark</span></span></span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class7cl_markE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>mark_wrong_id client </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class11cl_solutionE">
+<span id="_CPPv3N11KCL_rosplan22action_interface_class11cl_solutionE"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class11cl_solutionE"></span><span id="KCL_rosplan::action_interface_class::cl_solution__ros::ServiceClient"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1a02da37e1c3bb176c3f09a562ae553301"></span><span class="n"><span class="pre">ros</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ServiceClient</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cl_solution</span></span></span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class11cl_solutionE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>oracle solution client </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Oracle.html" class="btn btn-neutral float-left" title="Code docs – simulation.cpp" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cluedo_kb.html" class="btn btn-neutral float-right" title="Code docs – cluedo_kb" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Federico Civetta.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

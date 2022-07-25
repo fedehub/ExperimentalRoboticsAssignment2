@@ -19,7 +19,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Other Documentation for ExperimentalRoboticsAssignment2" href="../documents/index.html" />
-    <link rel="prev" title="Code Documentation for ExperimentalRoboticsAssignment2" href="index.html" /> 
+    <link rel="prev" title="Code docs – cluedo_kb" href="cluedo_kb.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -40,8 +40,11 @@
               <p class="caption" role="heading"><span class="caption-text">Code documentation</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Code Documentation for ExperimentalRoboticsAssignment2</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Oracle.html">Code docs – <em>simulation.cpp</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="action_interface.html">Code docs – <em>action_interface</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="cluedo_kb.html">Code docs – <em>cluedo_kb</em></a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Code docs – <em>go_to_point.py</em></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#how-to-use-this-node-service-behaviour">HOW TO use this node – service behaviour</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-use-this-node-service-behaviour">How to use this node – service behaviour</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#code-reference">code reference</a></li>
 </ul>
 </li>
@@ -81,10 +84,10 @@
   <div class="section" id="code-docs-go-to-point-py">
 <h1>Code docs – <em>go_to_point.py</em><a class="headerlink" href="#code-docs-go-to-point-py" title="Permalink to this headline"></a></h1>
 <div class="section" id="how-to-use-this-node-service-behaviour">
-<h2>HOW TO use this node – service behaviour<a class="headerlink" href="#how-to-use-this-node-service-behaviour" title="Permalink to this headline"></a></h2>
+<h2>How to use this node – service behaviour<a class="headerlink" href="#how-to-use-this-node-service-behaviour" title="Permalink to this headline"></a></h2>
 <ol class="arabic simple">
 <li><p>set the ROSParameters <em>des_pos_x</em> and <em>des_pos_y</em> in the parameter server using <em>rospy.set_param( “name”, value )</em></p></li>
-<li><p>send <em>data=true</em> to the service /go_to_point</p></li>
+<li><p>send <em>data=true</em> to the service <code class="docutils literal notranslate"><span class="pre">/go_to_point</span></code> of type <code class="docutils literal notranslate"><span class="pre">std_srvs::SetBool</span></code></p></li>
 <li><p>wait until the server returns</p></li>
 </ol>
 <p><em>and here we go!</em></p>
@@ -114,7 +117,7 @@ service</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Code Documentation for ExperimentalRoboticsAssignment2" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cluedo_kb.html" class="btn btn-neutral float-left" title="Code docs – cluedo_kb" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="../documents/index.html" class="btn btn-neutral float-right" title="Other Documentation for ExperimentalRoboticsAssignment2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

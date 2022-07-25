@@ -1,0 +1,496 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="class_k_c_l__rosplan_1_1action__interface__class" kind="class" language="C++" prot="public">
+    <compoundname>KCL_rosplan::action_interface_class</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">RPActionInterface</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_k_c_l__rosplan_1_1action__interface__class_1ad068891618f1664ad175cfc159094595" prot="private" static="no" mutable="no">
+        <type>ros::NodeHandle</type>
+        <definition>ros::NodeHandle KCL_rosplan::action_interface_class::nh</definition>
+        <argsstring></argsstring>
+        <name>nh</name>
+        <briefdescription>
+<para>node handle </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/src/action_interface.cpp" line="112" column="17" bodyfile="erl_assignment_2/src/action_interface.cpp" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_c_l__rosplan_1_1action__interface__class_1a6acbccaccf744b135b0748275202afba" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool KCL_rosplan::action_interface_class::init_node</definition>
+        <argsstring></argsstring>
+        <name>init_node</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>if the node has been initialised or not </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/src/action_interface.cpp" line="115" column="6" bodyfile="erl_assignment_2/src/action_interface.cpp" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_c_l__rosplan_1_1action__interface__class_1ad14d158016a87ec934502428c2d1d433" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string KCL_rosplan::action_interface_class::action_name</definition>
+        <argsstring></argsstring>
+        <name>action_name</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+<para>tne name of the action implemented by this node </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/src/action_interface.cpp" line="118" column="13" bodyfile="erl_assignment_2/src/action_interface.cpp" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_c_l__rosplan_1_1action__interface__class_1acb45bcd09ebdc4924db9461d1347ab8d" prot="private" static="no" mutable="no">
+        <type>ros::ServiceClient</type>
+        <definition>ros::ServiceClient KCL_rosplan::action_interface_class::cl_nav</definition>
+        <argsstring></argsstring>
+        <name>cl_nav</name>
+        <briefdescription>
+<para><ref refid="namespacego__to__point" kindref="compound">go_to_point</ref> client </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/src/action_interface.cpp" line="121" column="20" bodyfile="erl_assignment_2/src/action_interface.cpp" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_c_l__rosplan_1_1action__interface__class_1a42e318fb636e4548cf28563a938e9065" prot="private" static="no" mutable="no">
+        <type>ros::ServiceClient</type>
+        <definition>ros::ServiceClient KCL_rosplan::action_interface_class::cl_get_id</definition>
+        <argsstring></argsstring>
+        <name>cl_get_id</name>
+        <briefdescription>
+<para>get_id client </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/src/action_interface.cpp" line="124" column="20" bodyfile="erl_assignment_2/src/action_interface.cpp" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_c_l__rosplan_1_1action__interface__class_1acbaf1bee6385e9045c596ae7086d3040" prot="private" static="no" mutable="no">
+        <type>ros::ServiceClient</type>
+        <definition>ros::ServiceClient KCL_rosplan::action_interface_class::cl_mark</definition>
+        <argsstring></argsstring>
+        <name>cl_mark</name>
+        <briefdescription>
+<para>mark_wrong_id client </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/src/action_interface.cpp" line="127" column="20" bodyfile="erl_assignment_2/src/action_interface.cpp" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_k_c_l__rosplan_1_1action__interface__class_1a02da37e1c3bb176c3f09a562ae553301" prot="private" static="no" mutable="no">
+        <type>ros::ServiceClient</type>
+        <definition>ros::ServiceClient KCL_rosplan::action_interface_class::cl_solution</definition>
+        <argsstring></argsstring>
+        <name>cl_solution</name>
+        <briefdescription>
+<para>oracle solution client </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/src/action_interface.cpp" line="130" column="20" bodyfile="erl_assignment_2/src/action_interface.cpp" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_k_c_l__rosplan_1_1action__interface__class_1afd577106fac9210ebf3d646b3fa278cd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>KCL_rosplan::action_interface_class::action_interface_class</definition>
+        <argsstring>()</argsstring>
+        <name>action_interface_class</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>class constructor </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/src/action_interface.cpp" line="44" column="1" bodyfile="erl_assignment_2/src/action_interface.cpp" bodystart="44" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_c_l__rosplan_1_1action__interface__class_1a95031d82d5d29999785684a7633ccddd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KCL_rosplan::action_interface_class::concreteCallback</definition>
+        <argsstring>(const rosplan_dispatch_msgs::ActionDispatch::ConstPtr &amp;msg)</argsstring>
+        <name>concreteCallback</name>
+        <param>
+          <type>const rosplan_dispatch_msgs::ActionDispatch::ConstPtr &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>action callback </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/src/action_interface.cpp" line="50" column="6" bodyfile="erl_assignment_2/src/action_interface.cpp" bodystart="50" bodyend="63"/>
+        <references refid="class_k_c_l__rosplan_1_1action__interface__class_1a5e0ca921b7190a7eb69805f9c3aae9a5" compoundref="action__interface_8cpp" startline="87" endline="107">exec_action</references>
+        <references refid="class_k_c_l__rosplan_1_1action__interface__class_1a2af139a1c70bcef5dd5bbe2241b40f09" compoundref="action__interface_8cpp" startline="66" endline="84">setup_node</references>
+      </memberdef>
+      <memberdef kind="function" id="class_k_c_l__rosplan_1_1action__interface__class_1a2af139a1c70bcef5dd5bbe2241b40f09" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void KCL_rosplan::action_interface_class::setup_node</definition>
+        <argsstring>()</argsstring>
+        <name>setup_node</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>action initialiser dispatcher </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/src/action_interface.cpp" line="66" column="6" bodyfile="erl_assignment_2/src/action_interface.cpp" bodystart="66" bodyend="84"/>
+        <references refid="action__interface_8cpp_1a7413401b40b075490286cc2d28fa6dee" compoundref="action__interface_8cpp" startline="30">CHECK_CONSISTENT_HYPO</references>
+        <references refid="action__interface_8cpp_1aa69a2751821fe07e1faea957e42c9180" compoundref="action__interface_8cpp" startline="24">GATHER_HINT</references>
+        <references refid="action__interface_8cpp_1afbc16abf7fcce6f53cf8977d76c78ece" compoundref="action__interface_8cpp" startline="18">GO_TO_WP</references>
+        <references refid="action__interface_8cpp_1afe4664cca95c5e9b93e4a25874bc871d" compoundref="action__interface_8cpp" startline="15">LEAVE_TEMPLE</references>
+        <references refid="action__interface_8cpp_1a6f47e7b691fe6f78786eb95f849f33ea" compoundref="action__interface_8cpp" startline="33">QUERY_HYPO</references>
+        <references refid="action__interface_8cpp_1ab348801e93c20ce28d21d673571cbeb5" compoundref="action__interface_8cpp" startline="27">REACH_TEMPLE</references>
+        <references refid="action__interface_8cpp_1a905f67ab58312915d0c5d40847c80c0c" compoundref="action__interface_8cpp" startline="21">SHIFT_GRIPPER</references>
+        <referencedby refid="class_k_c_l__rosplan_1_1action__interface__class_1a95031d82d5d29999785684a7633ccddd" compoundref="action__interface_8cpp" startline="50" endline="63">concreteCallback</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_k_c_l__rosplan_1_1action__interface__class_1a5e0ca921b7190a7eb69805f9c3aae9a5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KCL_rosplan::action_interface_class::exec_action</definition>
+        <argsstring>(const rosplan_dispatch_msgs::ActionDispatch::ConstPtr &amp;msg)</argsstring>
+        <name>exec_action</name>
+        <param>
+          <type>const rosplan_dispatch_msgs::ActionDispatch::ConstPtr &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>action execution dispatcher </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/src/action_interface.cpp" line="87" column="6" bodyfile="erl_assignment_2/src/action_interface.cpp" bodystart="87" bodyend="107"/>
+        <references refid="action__interface_8cpp_1a7413401b40b075490286cc2d28fa6dee" compoundref="action__interface_8cpp" startline="30">CHECK_CONSISTENT_HYPO</references>
+        <references refid="action__interface_8cpp_1aa69a2751821fe07e1faea957e42c9180" compoundref="action__interface_8cpp" startline="24">GATHER_HINT</references>
+        <references refid="action__interface_8cpp_1afbc16abf7fcce6f53cf8977d76c78ece" compoundref="action__interface_8cpp" startline="18">GO_TO_WP</references>
+        <references refid="action__interface_8cpp_1afe4664cca95c5e9b93e4a25874bc871d" compoundref="action__interface_8cpp" startline="15">LEAVE_TEMPLE</references>
+        <references refid="action__interface_8cpp_1a6f47e7b691fe6f78786eb95f849f33ea" compoundref="action__interface_8cpp" startline="33">QUERY_HYPO</references>
+        <references refid="action__interface_8cpp_1ab348801e93c20ce28d21d673571cbeb5" compoundref="action__interface_8cpp" startline="27">REACH_TEMPLE</references>
+        <references refid="action__interface_8cpp_1a905f67ab58312915d0c5d40847c80c0c" compoundref="action__interface_8cpp" startline="21">SHIFT_GRIPPER</references>
+        <referencedby refid="class_k_c_l__rosplan_1_1action__interface__class_1a95031d82d5d29999785684a7633ccddd" compoundref="action__interface_8cpp" startline="50" endline="63">concreteCallback</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_k_c_l__rosplan_1_1action__interface__class_1a37e916143bff2e842afc3dceb6da692e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void KCL_rosplan::action_interface_class::leave_temple_setup</definition>
+        <argsstring>()</argsstring>
+        <name>leave_temple_setup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>setup action leave_temple </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/src/action_interface.cpp" line="138" column="6" bodyfile="erl_assignment_2/src/action_interface.cpp" bodystart="138" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_c_l__rosplan_1_1action__interface__class_1a326c547a150a16f42739a162e8d6d7e1" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KCL_rosplan::action_interface_class::leave_temple_action</definition>
+        <argsstring>(const rosplan_dispatch_msgs::ActionDispatch::ConstPtr &amp;msg)</argsstring>
+        <name>leave_temple_action</name>
+        <param>
+          <type>const rosplan_dispatch_msgs::ActionDispatch::ConstPtr &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>leave temple execution </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/src/action_interface.cpp" line="145" column="6" bodyfile="erl_assignment_2/src/action_interface.cpp" bodystart="145" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_c_l__rosplan_1_1action__interface__class_1abb6ade799c69dee192521d97e5219c75" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void KCL_rosplan::action_interface_class::go_to_wp_setup</definition>
+        <argsstring>()</argsstring>
+        <name>go_to_wp_setup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>setup action go_to_wp </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/src/action_interface.cpp" line="166" column="6" bodyfile="erl_assignment_2/src/action_interface.cpp" bodystart="166" bodyend="170"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_c_l__rosplan_1_1action__interface__class_1aeed667f1cd4164217e86c8012e4dedbe" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KCL_rosplan::action_interface_class::go_to_wp_action</definition>
+        <argsstring>(const rosplan_dispatch_msgs::ActionDispatch::ConstPtr &amp;msg)</argsstring>
+        <name>go_to_wp_action</name>
+        <param>
+          <type>const rosplan_dispatch_msgs::ActionDispatch::ConstPtr &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>go_to_wp execution </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/src/action_interface.cpp" line="173" column="6" bodyfile="erl_assignment_2/src/action_interface.cpp" bodystart="173" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_c_l__rosplan_1_1action__interface__class_1adf3ff4b2fbd3bec5dc52b2596e7361c0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void KCL_rosplan::action_interface_class::shift_gripper_setup</definition>
+        <argsstring>()</argsstring>
+        <name>shift_gripper_setup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>setup action shift_gripper </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/src/action_interface.cpp" line="194" column="6" bodyfile="erl_assignment_2/src/action_interface.cpp" bodystart="194" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_c_l__rosplan_1_1action__interface__class_1a078eef1e588742d598555ff3bc3e5944" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KCL_rosplan::action_interface_class::shift_gripper_action</definition>
+        <argsstring>(const rosplan_dispatch_msgs::ActionDispatch::ConstPtr &amp;msg)</argsstring>
+        <name>shift_gripper_action</name>
+        <param>
+          <type>const rosplan_dispatch_msgs::ActionDispatch::ConstPtr &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>shift_gripper execution </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/src/action_interface.cpp" line="201" column="6" bodyfile="erl_assignment_2/src/action_interface.cpp" bodystart="201" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_c_l__rosplan_1_1action__interface__class_1a4f47b988cb397c7eab47a954aca80e57" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void KCL_rosplan::action_interface_class::gather_hint_setup</definition>
+        <argsstring>()</argsstring>
+        <name>gather_hint_setup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>setup action gather_hint </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/src/action_interface.cpp" line="218" column="6" bodyfile="erl_assignment_2/src/action_interface.cpp" bodystart="218" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_c_l__rosplan_1_1action__interface__class_1a312f6a27d3f5e652d6d7cf101f79a01e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KCL_rosplan::action_interface_class::gather_hint_action</definition>
+        <argsstring>(const rosplan_dispatch_msgs::ActionDispatch::ConstPtr &amp;msg)</argsstring>
+        <name>gather_hint_action</name>
+        <param>
+          <type>const rosplan_dispatch_msgs::ActionDispatch::ConstPtr &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>gather_hint execution </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/src/action_interface.cpp" line="225" column="6" bodyfile="erl_assignment_2/src/action_interface.cpp" bodystart="225" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_c_l__rosplan_1_1action__interface__class_1a50c53d86b82e10e2b920bad8c0f697a5" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void KCL_rosplan::action_interface_class::reach_temple_setup</definition>
+        <argsstring>()</argsstring>
+        <name>reach_temple_setup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>setup action reach_temple </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/src/action_interface.cpp" line="242" column="6" bodyfile="erl_assignment_2/src/action_interface.cpp" bodystart="242" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_c_l__rosplan_1_1action__interface__class_1adba2c9c01fd73133d1e2a0e0fd9b992a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KCL_rosplan::action_interface_class::reach_temple_action</definition>
+        <argsstring>(const rosplan_dispatch_msgs::ActionDispatch::ConstPtr &amp;msg)</argsstring>
+        <name>reach_temple_action</name>
+        <param>
+          <type>const rosplan_dispatch_msgs::ActionDispatch::ConstPtr &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>reach_temple execution </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/src/action_interface.cpp" line="249" column="6" bodyfile="erl_assignment_2/src/action_interface.cpp" bodystart="249" bodyend="258"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_c_l__rosplan_1_1action__interface__class_1a45258636dac508ff314caaf79c8d1e13" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void KCL_rosplan::action_interface_class::check_consistent_hypo_setup</definition>
+        <argsstring>()</argsstring>
+        <name>check_consistent_hypo_setup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>setup action check_consistent_hypo </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/src/action_interface.cpp" line="266" column="6" bodyfile="erl_assignment_2/src/action_interface.cpp" bodystart="266" bodyend="269"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_c_l__rosplan_1_1action__interface__class_1a7bb0e9eebb0f905f947bb1513919e5c2" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KCL_rosplan::action_interface_class::check_consistent_hypo_action</definition>
+        <argsstring>(const rosplan_dispatch_msgs::ActionDispatch::ConstPtr &amp;msg)</argsstring>
+        <name>check_consistent_hypo_action</name>
+        <param>
+          <type>const rosplan_dispatch_msgs::ActionDispatch::ConstPtr &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>check_consistent_hypo execution </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/src/action_interface.cpp" line="272" column="6" bodyfile="erl_assignment_2/src/action_interface.cpp" bodystart="272" bodyend="277"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_c_l__rosplan_1_1action__interface__class_1a5087a1854c5e1c54d7be896ba6d7209c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void KCL_rosplan::action_interface_class::query_hypo_setup</definition>
+        <argsstring>()</argsstring>
+        <name>query_hypo_setup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>setup action check_consistent_hypo </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/src/action_interface.cpp" line="285" column="6" bodyfile="erl_assignment_2/src/action_interface.cpp" bodystart="285" bodyend="295"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_c_l__rosplan_1_1action__interface__class_1aed41605d09fcd4d22c86495ed37c466c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool KCL_rosplan::action_interface_class::query_hypo_action</definition>
+        <argsstring>(const rosplan_dispatch_msgs::ActionDispatch::ConstPtr &amp;msg)</argsstring>
+        <name>query_hypo_action</name>
+        <param>
+          <type>const rosplan_dispatch_msgs::ActionDispatch::ConstPtr &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>check_consistent_hypo execution </para>
+        </detaileddescription>
+        <inbodydescription>
+<para><xrefsect id="todo_1_todo000001"><xreftitle>Todo</xreftitle><xrefdescription><para>replan strategy </para>
+</xrefdescription></xrefsect></para>
+<para><xrefsect id="todo_1_todo000002"><xreftitle>Todo</xreftitle><xrefdescription><para>replan strategy </para>
+</xrefdescription></xrefsect></para>
+        </inbodydescription>
+        <location file="erl_assignment_2/src/action_interface.cpp" line="298" column="6" bodyfile="erl_assignment_2/src/action_interface.cpp" bodystart="298" bodyend="350"/>
+      </memberdef>
+      <memberdef kind="function" id="class_k_c_l__rosplan_1_1action__interface__class_1aab6590616018a9a01eda609701e74459" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string KCL_rosplan::action_interface_class::action_to_string</definition>
+        <argsstring>(const rosplan_dispatch_msgs::ActionDispatch::ConstPtr &amp;msg)</argsstring>
+        <name>action_to_string</name>
+        <param>
+          <type>const rosplan_dispatch_msgs::ActionDispatch::ConstPtr &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>action data to string </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/src/action_interface.cpp" line="358" column="13" bodyfile="erl_assignment_2/src/action_interface.cpp" bodystart="358" bodyend="368"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KCL_rosplan::action_interface_class</label>
+        <link refid="class_k_c_l__rosplan_1_1action__interface__class"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>RPActionInterface</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KCL_rosplan::action_interface_class</label>
+        <link refid="class_k_c_l__rosplan_1_1action__interface__class"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>RPActionInterface</label>
+      </node>
+    </collaborationgraph>
+    <location file="erl_assignment_2/src/action_interface.cpp" line="41" column="1" bodyfile="erl_assignment_2/src/action_interface.cpp" bodystart="40" bodyend="369"/>
+    <listofallmembers>
+      <member refid="class_k_c_l__rosplan_1_1action__interface__class_1afd577106fac9210ebf3d646b3fa278cd" prot="public" virt="non-virtual"><scope>KCL_rosplan::action_interface_class</scope><name>action_interface_class</name></member>
+      <member refid="class_k_c_l__rosplan_1_1action__interface__class_1ad14d158016a87ec934502428c2d1d433" prot="private" virt="non-virtual"><scope>KCL_rosplan::action_interface_class</scope><name>action_name</name></member>
+      <member refid="class_k_c_l__rosplan_1_1action__interface__class_1aab6590616018a9a01eda609701e74459" prot="private" virt="non-virtual"><scope>KCL_rosplan::action_interface_class</scope><name>action_to_string</name></member>
+      <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a7bb0e9eebb0f905f947bb1513919e5c2" prot="private" virt="non-virtual"><scope>KCL_rosplan::action_interface_class</scope><name>check_consistent_hypo_action</name></member>
+      <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a45258636dac508ff314caaf79c8d1e13" prot="private" virt="non-virtual"><scope>KCL_rosplan::action_interface_class</scope><name>check_consistent_hypo_setup</name></member>
+      <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a42e318fb636e4548cf28563a938e9065" prot="private" virt="non-virtual"><scope>KCL_rosplan::action_interface_class</scope><name>cl_get_id</name></member>
+      <member refid="class_k_c_l__rosplan_1_1action__interface__class_1acbaf1bee6385e9045c596ae7086d3040" prot="private" virt="non-virtual"><scope>KCL_rosplan::action_interface_class</scope><name>cl_mark</name></member>
+      <member refid="class_k_c_l__rosplan_1_1action__interface__class_1acb45bcd09ebdc4924db9461d1347ab8d" prot="private" virt="non-virtual"><scope>KCL_rosplan::action_interface_class</scope><name>cl_nav</name></member>
+      <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a02da37e1c3bb176c3f09a562ae553301" prot="private" virt="non-virtual"><scope>KCL_rosplan::action_interface_class</scope><name>cl_solution</name></member>
+      <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a95031d82d5d29999785684a7633ccddd" prot="public" virt="non-virtual"><scope>KCL_rosplan::action_interface_class</scope><name>concreteCallback</name></member>
+      <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a5e0ca921b7190a7eb69805f9c3aae9a5" prot="public" virt="non-virtual"><scope>KCL_rosplan::action_interface_class</scope><name>exec_action</name></member>
+      <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a312f6a27d3f5e652d6d7cf101f79a01e" prot="private" virt="non-virtual"><scope>KCL_rosplan::action_interface_class</scope><name>gather_hint_action</name></member>
+      <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a4f47b988cb397c7eab47a954aca80e57" prot="private" virt="non-virtual"><scope>KCL_rosplan::action_interface_class</scope><name>gather_hint_setup</name></member>
+      <member refid="class_k_c_l__rosplan_1_1action__interface__class_1aeed667f1cd4164217e86c8012e4dedbe" prot="private" virt="non-virtual"><scope>KCL_rosplan::action_interface_class</scope><name>go_to_wp_action</name></member>
+      <member refid="class_k_c_l__rosplan_1_1action__interface__class_1abb6ade799c69dee192521d97e5219c75" prot="private" virt="non-virtual"><scope>KCL_rosplan::action_interface_class</scope><name>go_to_wp_setup</name></member>
+      <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a6acbccaccf744b135b0748275202afba" prot="private" virt="non-virtual"><scope>KCL_rosplan::action_interface_class</scope><name>init_node</name></member>
+      <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a326c547a150a16f42739a162e8d6d7e1" prot="private" virt="non-virtual"><scope>KCL_rosplan::action_interface_class</scope><name>leave_temple_action</name></member>
+      <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a37e916143bff2e842afc3dceb6da692e" prot="private" virt="non-virtual"><scope>KCL_rosplan::action_interface_class</scope><name>leave_temple_setup</name></member>
+      <member refid="class_k_c_l__rosplan_1_1action__interface__class_1ad068891618f1664ad175cfc159094595" prot="private" virt="non-virtual"><scope>KCL_rosplan::action_interface_class</scope><name>nh</name></member>
+      <member refid="class_k_c_l__rosplan_1_1action__interface__class_1aed41605d09fcd4d22c86495ed37c466c" prot="private" virt="non-virtual"><scope>KCL_rosplan::action_interface_class</scope><name>query_hypo_action</name></member>
+      <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a5087a1854c5e1c54d7be896ba6d7209c" prot="private" virt="non-virtual"><scope>KCL_rosplan::action_interface_class</scope><name>query_hypo_setup</name></member>
+      <member refid="class_k_c_l__rosplan_1_1action__interface__class_1adba2c9c01fd73133d1e2a0e0fd9b992a" prot="private" virt="non-virtual"><scope>KCL_rosplan::action_interface_class</scope><name>reach_temple_action</name></member>
+      <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a50c53d86b82e10e2b920bad8c0f697a5" prot="private" virt="non-virtual"><scope>KCL_rosplan::action_interface_class</scope><name>reach_temple_setup</name></member>
+      <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a2af139a1c70bcef5dd5bbe2241b40f09" prot="public" virt="non-virtual"><scope>KCL_rosplan::action_interface_class</scope><name>setup_node</name></member>
+      <member refid="class_k_c_l__rosplan_1_1action__interface__class_1a078eef1e588742d598555ff3bc3e5944" prot="private" virt="non-virtual"><scope>KCL_rosplan::action_interface_class</scope><name>shift_gripper_action</name></member>
+      <member refid="class_k_c_l__rosplan_1_1action__interface__class_1adf3ff4b2fbd3bec5dc52b2596e7361c0" prot="private" virt="non-virtual"><scope>KCL_rosplan::action_interface_class</scope><name>shift_gripper_setup</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
