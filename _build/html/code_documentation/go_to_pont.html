@@ -19,7 +19,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Other Documentation for ExperimentalRoboticsAssignment2" href="../documents/index.html" />
-    <link rel="prev" title="Code Documentation for ExperimentalRoboticsAssignment2" href="index.html" /> 
+    <link rel="prev" title="Code docs – go_to_point.py" href="go_to_point.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -40,11 +40,8 @@
               <p class="caption" role="heading"><span class="caption-text">Code documentation</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Code Documentation for ExperimentalRoboticsAssignment2</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Code docs – <em>go_to_point.py</em></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#how-to-use-this-node-service-behaviour">HOW TO use this node – service behaviour</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#code-reference">code reference</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="go_to_point.html">Code docs – <em>go_to_point.py</em></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Code docs – <em>go_to_point.py</em></a></li>
 </ul>
 </li>
 </ul>
@@ -70,7 +67,7 @@
           <li><a href="index.html">Code Documentation for ExperimentalRoboticsAssignment2</a> &raquo;</li>
       <li>Code docs – <em>go_to_point.py</em></li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/code_documentation/go_to_point.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/code_documentation/go_to_pont.md.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -78,43 +75,44 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="code-docs-go-to-point-py">
+  <div class="tex2jax_ignore mathjax_ignore section" id="code-docs-go-to-point-py">
 <h1>Code docs – <em>go_to_point.py</em><a class="headerlink" href="#code-docs-go-to-point-py" title="Permalink to this headline"></a></h1>
-<div class="section" id="how-to-use-this-node-service-behaviour">
-<h2>HOW TO use this node – service behaviour<a class="headerlink" href="#how-to-use-this-node-service-behaviour" title="Permalink to this headline"></a></h2>
-<ol class="arabic simple">
-<li><p>set the ROSParameters <em>des_pos_x</em> and <em>des_pos_y</em> in the parameter server using <em>rospy.set_param( “name”, value )</em></p></li>
-<li><p>send <em>data=true</em> to the service /go_to_point</p></li>
-<li><p>wait until the server returns</p></li>
-</ol>
-<p><em>and here we go!</em></p>
-</div>
-<div class="section" id="code-reference">
-<h2>code reference<a class="headerlink" href="#code-reference" title="Permalink to this headline"></a></h2>
-<dl class="py function">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">go_to_point.</span></span><span class="sig-name descname"><span class="pre">go_to_point_switch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">req</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/go_to_point.html#go_to_point_switch"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
-<dd><p>SERVICE IMPLEMENTATION OF /go_to_point</p>
-<p>the service sets the value of the activity flag.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>req</strong> (<em>std_srvs/SetBoolRequest</em>) – the activity value will be equal to the req.data passed to the
-service</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>(std_srvs/SetBoolResponse) success is always true</p>
+<p>… py:module:: go_to_point</p>
+<dl class="myst field-list simple">
+<dt class="field-odd">noindex</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<p>… py:function:: go_to_point_switch(req)</p>
+<dl class="myst field-list">
+<dt class="field-odd">noindex</dt>
+<dd class="field-odd"><dl class="myst field-list simple">
+<dt class="field-odd">module</dt>
+<dd class="field-odd"><p>go_to_point</p>
 </dd>
 </dl>
-</dd></dl>
-
-</div>
+<p>SERVICE IMPLEMENTATION OF /go_to_point</p>
+<p>the service sets the value of the activity flag.</p>
+<dl class="myst field-list simple">
+<dt class="field-odd">param req</dt>
+<dd class="field-odd"><p>the activity value will be equal to the req.data passed to the
+service</p>
+</dd>
+<dt class="field-even">type req</dt>
+<dd class="field-even"><p>std_srvs/SetBoolRequest</p>
+</dd>
+<dt class="field-odd">returns</dt>
+<dd class="field-odd"><p>(std_srvs/SetBoolResponse) success is always true</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </div>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Code Documentation for ExperimentalRoboticsAssignment2" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="go_to_point.html" class="btn btn-neutral float-left" title="Code docs – go_to_point.py" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="../documents/index.html" class="btn btn-neutral float-right" title="Other Documentation for ExperimentalRoboticsAssignment2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

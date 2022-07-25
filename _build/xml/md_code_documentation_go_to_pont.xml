@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="md_code_documentation_go_to_pont" kind="page">
+    <compoundname>md_code_documentation_go_to_pont</compoundname>
+    <title>Code docs – &lt;em&gt;go_to_point.py&lt;/em&gt;</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><programlisting filename=".automodule"><codeline><highlight class="normal">---</highlight></codeline>
+<codeline><highlight class="normal">members:</highlight></codeline>
+<codeline><highlight class="normal">noindex:</highlight></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+</programlisting> </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>
