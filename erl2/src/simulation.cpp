@@ -107,7 +107,7 @@ ros::NodeHandle nh;
 ros::Publisher vis_pub = nh.advertise<visualization_msgs::MarkerArray>( "/visualization_marker", 0 );
 oracle_pub = nh.advertise<erl2::ErlOracle>( "/oracle_hint", 0 );
 ros::ServiceServer service= nh.advertiseService("/oracle_solution", oracleService);
-ros::Subscriber sub = nh.subscribe("/gazebo/link_states", 10, oracleCallback);
+// ros::Subscriber sub = nh.subscribe("/gazebo/link_states", 10, oracleCallback);
 visualization_msgs::MarkerArray markers;
 srand (time(NULL));
 const double zpos[2] = {0.75, 1.25};
@@ -170,6 +170,8 @@ marker.pose.position.z = zpos[RandIndex];
 markz[3]=marker.pose.position.z;
 markers.markers.push_back(marker);
 
+ROS_INFO_STREAM( "entering cycle..." );
+
 int uid;
 for (int i = 0; i < 4; i++){	
 	do{
@@ -189,6 +191,11 @@ for (int i = 0; i < 4; i++){
     uIDs[i] = uid;
 	}
 }
+
+ROS_INFO_STREAM( "uIDs: [" << uIDs[0] << ", " << uIDs[1] << ", " << uIDs[2] << "]" );
+ROS_INFO_STREAM( "winner ID=" << winID );
+ROS_INFO_STREAM( "publishing markers..." );
+
 
 
 

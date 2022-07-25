@@ -57,6 +57,8 @@
   <exec_depend>rospy</exec_depend>
   <depend>std_msgs</depend>
   <depend>std_srvs</depend>
+  <depend>erl2</depend>
+  <depend>erl_assignment_2_msgs</depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->

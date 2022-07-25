@@ -110,7 +110,7 @@
 <codeline lineno="101"><highlight class="normal">```</highlight></codeline>
 <codeline lineno="102"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>data<sp/>#<sp/>e.g.<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>hardware<sp/>enabling<sp/>/<sp/>disabling</highlight></codeline>
 <codeline lineno="103"><highlight class="normal">---</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>success<sp/><sp/><sp/>#<sp/>indicate<sp/>successful<sp/>run<sp/>of<sp/>triggered<sp/>service</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>success<sp/><sp/><sp/>#<sp/>indicate<sp/>successful<sp/>run<sp/>of<sp/>triggered<sp/><ref refid="_oracle_8rst_8txt_1a636972db0d9482f50e11146b2ccaf387" kindref="member">service</ref></highlight></codeline>
 <codeline lineno="105"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>message<sp/>#<sp/>informational,<sp/>e.g.<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>error<sp/>messages</highlight></codeline>
 <codeline lineno="106"><highlight class="normal">```</highlight></codeline>
 <codeline lineno="107"><highlight class="normal"></highlight></codeline>

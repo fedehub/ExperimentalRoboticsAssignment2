@@ -77,7 +77,7 @@ project(erl_assignment_2_msgs)</p>
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS</p>
 <blockquote>
-<div><p>mmessage_generation
+<div><p>message_generation
 std_msgs</p>
 </div></blockquote>
 <p>)</p>
@@ -115,11 +115,12 @@ std_msgs</p>
 #   Message2.msg
 # )</p>
 <p>## Generate services in the ‘srv’ folder
-# add_service_files(
-#   FILES
-#   Service1.srv
-#   Service2.srv
-# )</p>
+add_service_files(</p>
+<blockquote>
+<div><p>FILES
+GetId.srv</p>
+</div></blockquote>
+<p>)</p>
 <p>## Generate actions in the ‘action’ folder
 # add_action_files(
 #   FILES
@@ -127,10 +128,12 @@ std_msgs</p>
 #   Action2.action
 # )</p>
 <p>## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs
-# )</p>
+generate_messages(</p>
+<blockquote>
+<div><p>DEPENDENCIES
+std_msgs</p>
+</div></blockquote>
+<p>)</p>
 </div>
 <div class="section" id="declare-ros-dynamic-reconfigure-parameters">
 <h1>## Declare ROS dynamic reconfigure parameters ##<a class="headerlink" href="#declare-ros-dynamic-reconfigure-parameters" title="Permalink to this headline"></a></h1>

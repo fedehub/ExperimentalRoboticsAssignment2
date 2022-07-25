@@ -76,7 +76,7 @@
         </inbodydescription>
         <location file="erl2/src/simulation.cpp" line="12" column="16" bodyfile="erl2/src/simulation.cpp" bodystart="12" bodyend="-1"/>
         <referencedby refid="simulation_8cpp_1a876a1245db85a2bb87c08ae086f1eafa" compoundref="simulation_8cpp" startline="43" endline="100">oracleCallback</referencedby>
-        <referencedby refid="simulation_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" compoundref="simulation_8cpp" startline="102" endline="204">main</referencedby>
+        <referencedby refid="simulation_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" compoundref="simulation_8cpp" startline="102" endline="211">main</referencedby>
       </memberdef>
       <memberdef kind="variable" id="simulation_8cpp_1a36b0204cd96e3dc326a2adfa3d1dceda" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -91,7 +91,7 @@
         </inbodydescription>
         <location file="erl2/src/simulation.cpp" line="14" column="8" bodyfile="erl2/src/simulation.cpp" bodystart="14" bodyend="-1"/>
         <referencedby refid="simulation_8cpp_1a876a1245db85a2bb87c08ae086f1eafa" compoundref="simulation_8cpp" startline="43" endline="100">oracleCallback</referencedby>
-        <referencedby refid="simulation_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" compoundref="simulation_8cpp" startline="102" endline="204">main</referencedby>
+        <referencedby refid="simulation_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" compoundref="simulation_8cpp" startline="102" endline="211">main</referencedby>
       </memberdef>
       <memberdef kind="variable" id="simulation_8cpp_1a0bc4146f286fe42bd5e8fa1e53826447" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -106,7 +106,7 @@
         </inbodydescription>
         <location file="erl2/src/simulation.cpp" line="15" column="8" bodyfile="erl2/src/simulation.cpp" bodystart="15" bodyend="-1"/>
         <referencedby refid="simulation_8cpp_1a876a1245db85a2bb87c08ae086f1eafa" compoundref="simulation_8cpp" startline="43" endline="100">oracleCallback</referencedby>
-        <referencedby refid="simulation_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" compoundref="simulation_8cpp" startline="102" endline="204">main</referencedby>
+        <referencedby refid="simulation_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" compoundref="simulation_8cpp" startline="102" endline="211">main</referencedby>
       </memberdef>
       <memberdef kind="variable" id="simulation_8cpp_1a8d90002e6a9c50028f184b22c380efc4" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -121,7 +121,7 @@
         </inbodydescription>
         <location file="erl2/src/simulation.cpp" line="16" column="8" bodyfile="erl2/src/simulation.cpp" bodystart="16" bodyend="-1"/>
         <referencedby refid="simulation_8cpp_1a876a1245db85a2bb87c08ae086f1eafa" compoundref="simulation_8cpp" startline="43" endline="100">oracleCallback</referencedby>
-        <referencedby refid="simulation_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" compoundref="simulation_8cpp" startline="102" endline="204">main</referencedby>
+        <referencedby refid="simulation_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" compoundref="simulation_8cpp" startline="102" endline="211">main</referencedby>
       </memberdef>
       <memberdef kind="variable" id="simulation_8cpp_1a412ed4d68a81f370cdcd20e3019db982" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -158,7 +158,7 @@
         <definition>const std::string key[3]</definition>
         <argsstring>[3]</argsstring>
         <name>key</name>
-        <initializer>= {&quot;who&quot;, &quot;what&quot;, &quot;where&quot;}</initializer>
+        <initializer>= {&quot;who&quot;, &quot;what&quot;, &quot;<ref refid="_oracle_8rst_8txt_1af579bf261664fbbaa4fcd4607da3804f" kindref="member">where</ref>&quot;}</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -226,7 +226,7 @@
         </inbodydescription>
         <location file="erl2/src/simulation.cpp" line="26" column="5" bodyfile="erl2/src/simulation.cpp" bodystart="26" bodyend="-1"/>
         <referencedby refid="simulation_8cpp_1a876a1245db85a2bb87c08ae086f1eafa" compoundref="simulation_8cpp" startline="43" endline="100">oracleCallback</referencedby>
-        <referencedby refid="simulation_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" compoundref="simulation_8cpp" startline="102" endline="204">main</referencedby>
+        <referencedby refid="simulation_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" compoundref="simulation_8cpp" startline="102" endline="211">main</referencedby>
       </memberdef>
       <memberdef kind="variable" id="simulation_8cpp_1a90c5d03e068ddae91702223f47eff712" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -242,7 +242,7 @@
         </inbodydescription>
         <location file="erl2/src/simulation.cpp" line="27" column="5" bodyfile="erl2/src/simulation.cpp" bodystart="27" bodyend="-1"/>
         <referencedby refid="simulation_8cpp_1ae1a3f65d934a3c4a938e85d5071dfaa5" compoundref="simulation_8cpp" startline="37" endline="41">oracleService</referencedby>
-        <referencedby refid="simulation_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" compoundref="simulation_8cpp" startline="102" endline="204">main</referencedby>
+        <referencedby refid="simulation_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" compoundref="simulation_8cpp" startline="102" endline="211">main</referencedby>
       </memberdef>
       <memberdef kind="variable" id="simulation_8cpp_1ac8241cdb5162da1999f5377e7e209201" prot="public" static="no" mutable="no">
         <type>std::vector&lt; erl2::ErlOracle &gt;</type>
@@ -322,7 +322,7 @@
         </inbodydescription>
         <location file="erl2/src/simulation.cpp" line="37" column="6" bodyfile="erl2/src/simulation.cpp" bodystart="37" bodyend="41"/>
         <references refid="simulation_8cpp_1a90c5d03e068ddae91702223f47eff712" compoundref="simulation_8cpp" startline="27">winID</references>
-        <referencedby refid="simulation_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" compoundref="simulation_8cpp" startline="102" endline="204">main</referencedby>
+        <referencedby refid="simulation_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" compoundref="simulation_8cpp" startline="102" endline="211">main</referencedby>
       </memberdef>
       <memberdef kind="function" id="simulation_8cpp_1a876a1245db85a2bb87c08ae086f1eafa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -352,7 +352,6 @@
         <references refid="simulation_8cpp_1a68fa6a0c7a1208892294604263e23d92" compoundref="simulation_8cpp" startline="22">person</references>
         <references refid="simulation_8cpp_1a5e5bd50ead53d20df3f8ede527f47ce7" compoundref="simulation_8cpp" startline="24">place</references>
         <references refid="simulation_8cpp_1a37d4a0b625b8b9583adf9362f5aae971" compoundref="simulation_8cpp" startline="26">uIDs</references>
-        <referencedby refid="simulation_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" compoundref="simulation_8cpp" startline="102" endline="204">main</referencedby>
       </memberdef>
       <memberdef kind="function" id="simulation_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -373,13 +372,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl2/src/simulation.cpp" line="102" column="5" bodyfile="erl2/src/simulation.cpp" bodystart="102" bodyend="204"/>
+        <location file="erl2/src/simulation.cpp" line="102" column="5" bodyfile="erl2/src/simulation.cpp" bodystart="102" bodyend="211"/>
         <references refid="simulation_8cpp_1a36b0204cd96e3dc326a2adfa3d1dceda" compoundref="simulation_8cpp" startline="14">markx</references>
         <references refid="simulation_8cpp_1a0bc4146f286fe42bd5e8fa1e53826447" compoundref="simulation_8cpp" startline="15">marky</references>
         <references refid="simulation_8cpp_1a8d90002e6a9c50028f184b22c380efc4" compoundref="simulation_8cpp" startline="16">markz</references>
         <references refid="simulation_8cpp_1a32812fe000700d7aa8988d74e59471c7" compoundref="simulation_8cpp" startline="12">oracle_pub</references>
-        <references refid="simulation_8cpp_1a876a1245db85a2bb87c08ae086f1eafa" compoundref="simulation_8cpp" startline="43" endline="100">oracleCallback</references>
         <references refid="simulation_8cpp_1ae1a3f65d934a3c4a938e85d5071dfaa5" compoundref="simulation_8cpp" startline="37" endline="41">oracleService</references>
+        <references refid="_oracle_8rst_8txt_1a636972db0d9482f50e11146b2ccaf387" compoundref="_oracle_8rst_8txt" startline="41">service</references>
         <references refid="simulation_8cpp_1a37d4a0b625b8b9583adf9362f5aae971" compoundref="simulation_8cpp" startline="26">uIDs</references>
         <references refid="simulation_8cpp_1a90c5d03e068ddae91702223f47eff712" compoundref="simulation_8cpp" startline="27">winID</references>
       </memberdef>
@@ -497,8 +496,8 @@
 <codeline lineno="106"><highlight class="normal">ros::NodeHandle<sp/>nh;</highlight></codeline>
 <codeline lineno="107"><highlight class="normal">ros::Publisher<sp/>vis_pub<sp/>=<sp/>nh.advertise&lt;visualization_msgs::MarkerArray&gt;(<sp/></highlight><highlight class="stringliteral">&quot;/visualization_marker&quot;</highlight><highlight class="normal">,<sp/>0<sp/>);</highlight></codeline>
 <codeline lineno="108"><highlight class="normal"><ref refid="simulation_8cpp_1a32812fe000700d7aa8988d74e59471c7" kindref="member">oracle_pub</ref><sp/>=<sp/>nh.advertise&lt;erl2::ErlOracle&gt;(<sp/></highlight><highlight class="stringliteral">&quot;/oracle_hint&quot;</highlight><highlight class="normal">,<sp/>0<sp/>);</highlight></codeline>
-<codeline lineno="109"><highlight class="normal">ros::ServiceServer<sp/>service=<sp/>nh.advertiseService(</highlight><highlight class="stringliteral">&quot;/oracle_solution&quot;</highlight><highlight class="normal">,<sp/><ref refid="simulation_8cpp_1ae1a3f65d934a3c4a938e85d5071dfaa5" kindref="member">oracleService</ref>);</highlight></codeline>
-<codeline lineno="110"><highlight class="normal">ros::Subscriber<sp/>sub<sp/>=<sp/>nh.subscribe(</highlight><highlight class="stringliteral">&quot;/gazebo/link_states&quot;</highlight><highlight class="normal">,<sp/>10,<sp/><ref refid="simulation_8cpp_1a876a1245db85a2bb87c08ae086f1eafa" kindref="member">oracleCallback</ref>);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">ros::ServiceServer<sp/><ref refid="_oracle_8rst_8txt_1a636972db0d9482f50e11146b2ccaf387" kindref="member">service</ref>=<sp/>nh.advertiseService(</highlight><highlight class="stringliteral">&quot;/oracle_solution&quot;</highlight><highlight class="normal">,<sp/><ref refid="simulation_8cpp_1ae1a3f65d934a3c4a938e85d5071dfaa5" kindref="member">oracleService</ref>);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="comment">//<sp/>ros::Subscriber<sp/>sub<sp/>=<sp/>nh.subscribe(&quot;/gazebo/link_states&quot;,<sp/>10,<sp/>oracleCallback);</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="111"><highlight class="normal">visualization_msgs::MarkerArray<sp/>markers;</highlight></codeline>
 <codeline lineno="112"><highlight class="normal">srand<sp/>(time(NULL));</highlight></codeline>
 <codeline lineno="113"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>zpos[2]<sp/>=<sp/>{0.75,<sp/>1.25};</highlight></codeline>
@@ -561,38 +560,45 @@
 <codeline lineno="170"><highlight class="normal"><ref refid="simulation_8cpp_1a8d90002e6a9c50028f184b22c380efc4" kindref="member">markz</ref>[3]=marker.pose.position.z;</highlight></codeline>
 <codeline lineno="171"><highlight class="normal">markers.markers.push_back(marker);</highlight></codeline>
 <codeline lineno="172"><highlight class="normal"></highlight></codeline>
-<codeline lineno="173"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>uid;</highlight></codeline>
-<codeline lineno="174"><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>4;<sp/>i++){<sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uid<sp/>=<sp/>rand()%6;</highlight></codeline>
-<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>3;<sp/>i++<sp/>){</highlight></codeline>
-<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(uid<sp/>==<sp/><ref refid="simulation_8cpp_1a37d4a0b625b8b9583adf9362f5aae971" kindref="member">uIDs</ref>[i]<sp/>){</highlight></codeline>
-<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uid<sp/>=<sp/>-1;</highlight></codeline>
-<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(uid<sp/>==<sp/>-1);</highlight></codeline>
-<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(i==3){</highlight></codeline>
-<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="simulation_8cpp_1a90c5d03e068ddae91702223f47eff712" kindref="member">winID</ref><sp/>=<sp/>uid;</highlight></codeline>
-<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="simulation_8cpp_1a37d4a0b625b8b9583adf9362f5aae971" kindref="member">uIDs</ref>[i]<sp/>=<sp/>uid;</highlight></codeline>
-<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="191"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="192"><highlight class="normal"></highlight></codeline>
-<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal">ROS_INFO_STREAM(<sp/></highlight><highlight class="stringliteral">&quot;entering<sp/>cycle...&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>uid;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>4;<sp/>i++){<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uid<sp/>=<sp/>rand()%6;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>3;<sp/>i++<sp/>){</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(uid<sp/>==<sp/><ref refid="simulation_8cpp_1a37d4a0b625b8b9583adf9362f5aae971" kindref="member">uIDs</ref>[i]<sp/>){</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uid<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(uid<sp/>==<sp/>-1);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(i==3){</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="simulation_8cpp_1a90c5d03e068ddae91702223f47eff712" kindref="member">winID</ref><sp/>=<sp/>uid;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="simulation_8cpp_1a37d4a0b625b8b9583adf9362f5aae971" kindref="member">uIDs</ref>[i]<sp/>=<sp/>uid;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="194"><highlight class="normal"></highlight></codeline>
-<codeline lineno="195"><highlight class="normal"></highlight></codeline>
-<codeline lineno="196"><highlight class="normal"></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(ros::ok()){</highlight></codeline>
-<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>vis_pub.publish(markers);</highlight></codeline>
-<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::spinOnce();</highlight></codeline>
-<codeline lineno="199"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="195"><highlight class="normal">ROS_INFO_STREAM(<sp/></highlight><highlight class="stringliteral">&quot;uIDs:<sp/>[&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="simulation_8cpp_1a37d4a0b625b8b9583adf9362f5aae971" kindref="member">uIDs</ref>[0]<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="simulation_8cpp_1a37d4a0b625b8b9583adf9362f5aae971" kindref="member">uIDs</ref>[1]<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="simulation_8cpp_1a37d4a0b625b8b9583adf9362f5aae971" kindref="member">uIDs</ref>[2]<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;]&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal">ROS_INFO_STREAM(<sp/></highlight><highlight class="stringliteral">&quot;winner<sp/>ID=&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="simulation_8cpp_1a90c5d03e068ddae91702223f47eff712" kindref="member">winID</ref><sp/>);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal">ROS_INFO_STREAM(<sp/></highlight><highlight class="stringliteral">&quot;publishing<sp/>markers...&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
 <codeline lineno="200"><highlight class="normal"></highlight></codeline>
-<codeline lineno="201"><highlight class="normal">ros::shutdown();</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
 <codeline lineno="202"><highlight class="normal"></highlight></codeline>
-<codeline lineno="203"><highlight class="normal"></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
-<codeline lineno="204"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(ros::ok()){</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>vis_pub.publish(markers);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::spinOnce();</highlight></codeline>
+<codeline lineno="206"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal">ros::shutdown();</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="erl2/src/simulation.cpp"/>
   </compounddef>

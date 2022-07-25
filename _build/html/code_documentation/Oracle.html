@@ -18,7 +18,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Code docs – go_to_point.py" href="go_to_point.html" />
+    <link rel="next" title="Code docs – cluedo_kb" href="cluedo_kb.html" />
     <link rel="prev" title="Code Documentation for ExperimentalRoboticsAssignment2" href="index.html" /> 
 </head>
 
@@ -43,8 +43,10 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Code docs – <em>simulation.cpp</em></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#how-to-receive-a-hint">HOW TO receive a hint</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#how-to-check-if-the-hint-is-valid">HOW TO check if the hint is valid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hints-generation">hints generation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="cluedo_kb.html">Code docs – <em>cluedo_kb</em></a></li>
 <li class="toctree-l2"><a class="reference internal" href="go_to_point.html">Code docs – <em>go_to_point.py</em></a></li>
 </ul>
 </li>
@@ -108,6 +110,19 @@ int32 ID
 </pre></div>
 </div>
 </div>
+<div class="section" id="hints-generation">
+<h2>hints generation<a class="headerlink" href="#hints-generation" title="Permalink to this headline"></a></h2>
+<p>referring to the code,</p>
+<ul class="simple">
+<li><p>the ID of the hint is from 0 to 5</p></li>
+<li><p>the orale knows only the IDs and not the corresponding solution in terms of where, what and who</p></li>
+</ul>
+<p>in particular,</p>
+<ul class="simple">
+<li><p>the <em>winID</em> is, randomly choosen from 0 to 5</p></li>
+<li><p>the array <em>uIDs</em> contains the inconsistent IDs</p></li>
+</ul>
+</div>
 </div>
 
 
@@ -115,7 +130,7 @@ int32 ID
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="Code Documentation for ExperimentalRoboticsAssignment2" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="go_to_point.html" class="btn btn-neutral float-right" title="Code docs – go_to_point.py" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="cluedo_kb.html" class="btn btn-neutral float-right" title="Code docs – cluedo_kb" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

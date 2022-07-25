@@ -12,6 +12,8 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   std_srvs
+  erl2
+  erl_assignment_2_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -162,6 +164,7 @@ include_directories(
 ## in contrast to setup.py, you can choose the destination
 catkin_install_python(PROGRAMS
   scripts/go_to_point.py
+  scripts/cluedo_kb.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
