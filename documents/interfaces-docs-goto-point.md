@@ -93,3 +93,15 @@ Twist twist
 # (x, y, z, rotation about X axis, rotation about Y axis, rotation about Z axis)
 float64[36] covariance
 ```
+
+## std_srvs/SetBool
+
+see also [std_srvs package](http://docs.ros.org/en/api/std_srvs/html/index-msg.html)
+
+```
+bool data # e.g. for hardware enabling / disabling
+---
+bool success   # indicate successful run of triggered service
+string message # informational, e.g. for error messages
+```
+
