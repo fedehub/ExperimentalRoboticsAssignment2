@@ -36,3 +36,13 @@ link text <./path/link.format>
 
 \```
 ```
+
+## reST codeblocks
+
+```
+.. code-block::
+	:caption: a code block caption
+	
+	import rospy 
+	# ...
+```

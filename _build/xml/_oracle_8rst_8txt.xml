@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="_oracle_8rst_8txt" kind="file" language="C++">
+    <compoundname>Oracle.rst.txt</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_oracle_8rst_8txt_1a9082c3d01dfdff845db35ba873e06318" prot="public" static="no" mutable="no">
+        <type>Code docs *simulation cpp to simulate a disturbance in the hint recognition by the sensing part *the field <ref refid="simulation_8cpp_1a0049a8a39c319bf1470f36c9e0f75abd" kindref="member">key</ref> could be empty *the field value vould be empty *the field <ref refid="simulation_8cpp_1a0049a8a39c319bf1470f36c9e0f75abd" kindref="member">key</ref> could</type>
+        <definition>Code docs* simulation cpp to simulate a disturbance in the hint recognition by the sensing part* the field key could be empty* the field value vould be empty* the field key could contain</definition>
+        <argsstring></argsstring>
+        <name>contain</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="_build/html/_sources/code_documentation/Oracle.rst.txt" line="23" column="22" bodyfile="_build/html/_sources/code_documentation/Oracle.rst.txt" bodystart="3" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal">Code<sp/>docs<sp/>--<sp/>*simulation.cpp*</highlight></codeline>
+<codeline lineno="3" refid="_oracle_8rst_8txt_1a9082c3d01dfdff845db35ba873e06318" refkind="member"><highlight class="normal">==============================</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">HOW<sp/>TO<sp/>receive<sp/>a<sp/>hint</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">----------------------</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">the<sp/>node<sp/>publishes<sp/>the<sp/>hint<sp/>(message<sp/>erl2/ErlOracle)<sp/>through<sp/>the<sp/>topic<sp/>*/oracle_hint*.<sp/>Here</highlight><highlight class="stringliteral">&apos;s<sp/>the<sp/>message<sp/>prototype:</highlight></codeline>
+<codeline lineno="9"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="10"><highlight class="stringliteral">..<sp/>code-block::</highlight></codeline>
+<codeline lineno="11"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="12"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>int32<sp/>ID</highlight></codeline>
+<codeline lineno="13"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>string<sp/>key</highlight></codeline>
+<codeline lineno="14"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>string<sp/>value</highlight></codeline>
+<codeline lineno="15"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="16"><highlight class="stringliteral">the<sp/>hint<sp/>is<sp/>sent<sp/>each<sp/>time<sp/>the<sp/>*cluedo_link*<sp/>is<sp/>near<sp/>enough<sp/>to<sp/>a<sp/>marker.<sp/></highlight></codeline>
+<codeline lineno="17"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="18"><highlight class="stringliteral">..<sp/>note::</highlight></codeline>
+<codeline lineno="19"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>the<sp/>oracle<sp/>could<sp/>send<sp/>wrong<sp/>informations,<sp/>to<sp/>simulate<sp/>a<sp/>disturbance<sp/>in<sp/>the<sp/>hint<sp/>recognition<sp/>by<sp/>the<sp/>sensing<sp/>part.<sp/></highlight></codeline>
+<codeline lineno="20"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>*<sp/>the<sp/>field<sp/>&quot;key&quot;<sp/>could<sp/>be<sp/>empty</highlight></codeline>
+<codeline lineno="22"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>*<sp/>the<sp/>field<sp/>&quot;value&quot;<sp/>vould<sp/>be<sp/>empty</highlight></codeline>
+<codeline lineno="23"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>*<sp/>the<sp/>field<sp/>&quot;key&quot;<sp/>could<sp/>contain<sp/>&quot;-1&quot;,<sp/>and<sp/>also<sp/>&quot;value&quot;<sp/>could<sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="25"><highlight class="stringliteral"></highlight></codeline>
+    </programlisting>
+    <location file="_build/html/_sources/code_documentation/Oracle.rst.txt"/>
+  </compounddef>
+</doxygen>

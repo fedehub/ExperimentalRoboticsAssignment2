@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="cluedo__kb_8py" kind="file" language="Python">
+    <compoundname>cluedo_kb.py</compoundname>
+    <innerclass refid="classcluedo__kb_1_1classnode__cluedo__kb" prot="public">cluedo_kb::classnode_cluedo_kb</innerclass>
+    <innernamespace refid="namespacecluedo__kb">cluedo_kb</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="namespacecluedo__kb" refkind="compound"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="stringliteral">&apos;&apos;&apos;</highlight></codeline>
+<codeline lineno="3"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="4"><highlight class="stringliteral">&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>rospy</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="namespacecluedo__kb_1a057b16ad81b33f38c1979fda0ef11d68" refkind="member"><highlight class="normal">NODE_NAME<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;cluedo_kb&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="namespacecluedo__kb_1a2f534b91191bae817cedc4af1fb29793" refkind="member"><highlight class="normal">LOGSQUARE<sp/>=<sp/></highlight><highlight class="keyword">lambda</highlight><highlight class="normal"><sp/>mstr<sp/>:<sp/>f</highlight><highlight class="stringliteral">&quot;[{mstr}]<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="namespacecluedo__kb_1a4b1cecfe154b6e7d1bb27b13f606dcb2" refkind="member"><highlight class="normal">OUTLABEL<sp/>=<sp/><ref refid="namespacecluedo__kb_1a2f534b91191bae817cedc4af1fb29793" kindref="member">LOGSQUARE</ref>(<sp/>NODE_NAME<sp/>)</highlight></codeline>
+<codeline lineno="12" refid="namespacecluedo__kb_1a2cab184129f6dcd9ef29e6c59461f29f" refkind="member"><highlight class="normal">TLOG<sp/>=<sp/></highlight><highlight class="keyword">lambda</highlight><highlight class="normal"><sp/>m<sp/>:<sp/>rospy.loginfo(<sp/>OUTLABEL<sp/>+<sp/>str(<sp/>m<sp/>)<sp/>)</highlight></codeline>
+<codeline lineno="13" refid="namespacecluedo__kb_1ae32fe7bbef1dd9fef0c16de01e504bc3" refkind="member"><highlight class="normal">TWARN<sp/>=<sp/></highlight><highlight class="keyword">lambda</highlight><highlight class="normal"><sp/>m<sp/>:<sp/>rospy.logwarn(<sp/>OUTLABEL<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;WARNING:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>str(<sp/>m<sp/>)<sp/>)</highlight></codeline>
+<codeline lineno="14" refid="namespacecluedo__kb_1afc8bd9ce93f2ea3bbba6a270f7cad4fe" refkind="member"><highlight class="normal">TERR<sp/>=<sp/></highlight><highlight class="keyword">lambda</highlight><highlight class="normal"><sp/>m<sp/>:<sp/>rospy.logerr(<sp/>OUTLABEL<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;ERROR&quot;</highlight><highlight class="normal"><sp/>+<sp/>str(<sp/>m<sp/>)<sp/>)</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="namespacecluedo__kb_1a0fb9cc01990ff96751d9a8df8f473ad2" refkind="member"><highlight class="normal">record_where<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="17" refid="namespacecluedo__kb_1a727404718e0777bf45e91fa9458e1f18" refkind="member"><highlight class="normal">record_what<sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="18" refid="namespacecluedo__kb_1a0e82193f2d59570204a37c310bc95e7b" refkind="member"><highlight class="normal">record_who<sp/>=<sp/>2</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="classcluedo__kb_1_1classnode__cluedo__kb" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcluedo__kb_1_1classnode__cluedo__kb" kindref="compound">classnode_cluedo_kb</ref>:</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="23" refid="classcluedo__kb_1_1classnode__cluedo__kb_1a25f8f8bef9548af2d650d906b8e15ee6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classcluedo__kb_1_1classnode__cluedo__kb_1a25f8f8bef9548af2d650d906b8e15ee6" kindref="member">__init__</ref>(<sp/>self<sp/>):</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;&apos;&apos;Node<sp/>Constrctor</highlight></codeline>
+<codeline lineno="25"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="26"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TODO:</highlight></codeline>
+<codeline lineno="27"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>implement<sp/>me!</highlight></codeline>
+<codeline lineno="28"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">pass</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="31" refid="classcluedo__kb_1_1classnode__cluedo__kb_1aa62d3090fb8b99437b2fb42ebcf99347" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classcluedo__kb_1_1classnode__cluedo__kb_1aa62d3090fb8b99437b2fb42ebcf99347" kindref="member">spin</ref>(<sp/>self<sp/>):</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;&apos;&apos;The<sp/>main<sp/>functionality<sp/>of<sp/>the<sp/>node</highlight></codeline>
+<codeline lineno="33"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TODO:</highlight></codeline>
+<codeline lineno="35"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>implement<sp/>me!</highlight></codeline>
+<codeline lineno="36"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;&apos;&apos;</highlight></codeline>
+<codeline lineno="39"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>=<sp/>rospy.Rate(<sp/>5<sp/>)</highlight></codeline>
+<codeline lineno="40"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>not<sp/>rospy.is_shutdown():</highlight></codeline>
+<codeline lineno="41"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pass</highlight></codeline>
+<codeline lineno="42"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.spin(<sp/>)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">pass</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">pass</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">#<sp/>...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="namespacecluedo__kb_1ae00019d2c2ba8a48f8255f575cc3fd8a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacecluedo__kb_1ae00019d2c2ba8a48f8255f575cc3fd8a" kindref="member">shut_msg</ref>(<sp/>):</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacecluedo__kb_1a2cab184129f6dcd9ef29e6c59461f29f" kindref="member">TLOG</ref>(<sp/></highlight><highlight class="stringliteral">&quot;stopping<sp/>...<sp/>&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.init_node(<sp/>NODE_NAME<sp/>)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.on_shutdown(<sp/>shut_msg<sp/>)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacecluedo__kb_1a2cab184129f6dcd9ef29e6c59461f29f" kindref="member">TLOG</ref>(<sp/></highlight><highlight class="stringliteral">&quot;starting<sp/>...<sp/>&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>TODO<sp/>define<sp/>here<sp/>messages<sp/>and<sp/>services<sp/>...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacecluedo__kb_1a2cab184129f6dcd9ef29e6c59461f29f" kindref="member">TLOG</ref>(<sp/></highlight><highlight class="stringliteral">&quot;ready&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>TODO<sp/>here<sp/>the<sp/>main<sp/>functionality<sp/>...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>(<sp/><ref refid="classcluedo__kb_1_1classnode__cluedo__kb" kindref="compound">classnode_cluedo_kb</ref>(<sp/>)<sp/>).spin(<sp/>)</highlight></codeline>
+    </programlisting>
+    <location file="erl_assignment_2/scripts/cluedo_kb.py"/>
+  </compounddef>
+</doxygen>

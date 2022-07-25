@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacecluedo__kb" kind="namespace" language="Python">
+    <compoundname>cluedo_kb</compoundname>
+    <innerclass refid="classcluedo__kb_1_1classnode__cluedo__kb" prot="public">cluedo_kb::classnode_cluedo_kb</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacecluedo__kb_1a057b16ad81b33f38c1979fda0ef11d68" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string cluedo_kb.NODE_NAME</definition>
+        <argsstring></argsstring>
+        <name>NODE_NAME</name>
+        <initializer>=  &quot;cluedo_kb&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="8" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacecluedo__kb_1a2f534b91191bae817cedc4af1fb29793" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string cluedo_kb.LOGSQUARE</definition>
+        <argsstring></argsstring>
+        <name>LOGSQUARE</name>
+        <initializer>=  lambda mstr : f&quot;[{mstr}] &quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="10" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacecluedo__kb_1a4b1cecfe154b6e7d1bb27b13f606dcb2" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string cluedo_kb.OUTLABEL</definition>
+        <argsstring></argsstring>
+        <name>OUTLABEL</name>
+        <initializer>=  <ref refid="namespacecluedo__kb_1a2f534b91191bae817cedc4af1fb29793" kindref="member">LOGSQUARE</ref>( <ref refid="namespacecluedo__kb_1a057b16ad81b33f38c1979fda0ef11d68" kindref="member">NODE_NAME</ref> )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="11" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacecluedo__kb_1a2cab184129f6dcd9ef29e6c59461f29f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>cluedo_kb.TLOG</definition>
+        <argsstring></argsstring>
+        <name>TLOG</name>
+        <initializer>=  lambda m : rospy.loginfo( <ref refid="namespacecluedo__kb_1a4b1cecfe154b6e7d1bb27b13f606dcb2" kindref="member">OUTLABEL</ref> + str( m ) )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="12" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="12" bodyend="-1"/>
+        <referencedby refid="namespacecluedo__kb_1ae00019d2c2ba8a48f8255f575cc3fd8a" compoundref="cluedo__kb_8py" startline="51" endline="55">shut_msg</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="namespacecluedo__kb_1ae32fe7bbef1dd9fef0c16de01e504bc3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>cluedo_kb.TWARN</definition>
+        <argsstring></argsstring>
+        <name>TWARN</name>
+        <initializer>=  lambda m : rospy.logwarn( <ref refid="namespacecluedo__kb_1a4b1cecfe154b6e7d1bb27b13f606dcb2" kindref="member">OUTLABEL</ref> + &quot;WARNING: &quot; + str( m ) )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="13" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacecluedo__kb_1afc8bd9ce93f2ea3bbba6a270f7cad4fe" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>cluedo_kb.TERR</definition>
+        <argsstring></argsstring>
+        <name>TERR</name>
+        <initializer>=  lambda m : rospy.logerr( <ref refid="namespacecluedo__kb_1a4b1cecfe154b6e7d1bb27b13f606dcb2" kindref="member">OUTLABEL</ref> + &quot;ERROR&quot; + str( m ) )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="14" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacecluedo__kb_1a0fb9cc01990ff96751d9a8df8f473ad2" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cluedo_kb.record_where</definition>
+        <argsstring></argsstring>
+        <name>record_where</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="16" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacecluedo__kb_1a727404718e0777bf45e91fa9458e1f18" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cluedo_kb.record_what</definition>
+        <argsstring></argsstring>
+        <name>record_what</name>
+        <initializer>=  1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="17" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacecluedo__kb_1a0e82193f2d59570204a37c310bc95e7b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cluedo_kb.record_who</definition>
+        <argsstring></argsstring>
+        <name>record_who</name>
+        <initializer>=  2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="18" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacecluedo__kb_1ae00019d2c2ba8a48f8255f575cc3fd8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cluedo_kb.shut_msg</definition>
+        <argsstring>()</argsstring>
+        <name>shut_msg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/scripts/cluedo_kb.py" line="51" column="1" bodyfile="erl_assignment_2/scripts/cluedo_kb.py" bodystart="51" bodyend="55"/>
+        <references refid="namespacecluedo__kb_1a2cab184129f6dcd9ef29e6c59461f29f" compoundref="cluedo__kb_8py" startline="12">TLOG</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim></verbatim> </para>
+    </detaileddescription>
+    <location file="erl_assignment_2/scripts/cluedo_kb.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

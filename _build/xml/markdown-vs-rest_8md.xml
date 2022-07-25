@@ -45,6 +45,16 @@
 <codeline></codeline>
 <codeline><highlight class="normal">\```</highlight></codeline>
 <codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>reST<sp/>codeblocks</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">..<sp/>code-block::</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>:caption:<sp/>a<sp/>code<sp/>block<sp/>caption</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>import<sp/>rospy<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
     </programlisting>
     <location file="documents/markdown-vs-rest.md"/>
   </compounddef>
