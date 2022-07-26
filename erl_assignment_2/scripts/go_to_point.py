@@ -153,7 +153,10 @@ def done(des_pos):
 
 def go_to_point( req ):
 	
+	global desired_position_, state_
+	
 	rate = rospy.Rate(20)
+	state_ = 0
 	
 	while not rospy.is_shutdown():
 		

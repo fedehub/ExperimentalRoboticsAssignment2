@@ -8,26 +8,26 @@ if __name__ == "__main__":
 	rospy.init_node( "main" )
 	
 	em = Empty( )
-	dis = DispatchService( )
+	dis = DispatchServiceResponse( )
 	
 	# planning triggers
 	cl_problem_interface = rospy.ServiceProxy( "/rosplan_problem_interface/problem_generation_server", Empty )
 	cl_planner_interface = rospy.ServiceProxy( "/rosplan_planner_interface/planning_server", Empty )
-	cl_parsing_interface = rospy.ServiceProxy( "/rosplan_parsing_interface/parse_rosplan", Empty )
+	cl_parsing_interface = rospy.ServiceProxy( "/rosplan_parsing_interface/parse_plan", Empty )
 	cl_plan_dispatcher = rospy.ServiceProxy( "/rosplan_plan_dispatcher/dispatch_plan", DispatchService )
 	
 	solved = False
 	
 	while not solved:
 		rospy.loginfo( "replanning..." )
-		cl_problem_interface( em )
-		cl_planner_interface( em )
-		cl_parsing_interface( em )
+		cl_problem_interface( )
+		cl_planner_interface( )
+		cl_parsing_interface( )
 		
 		rospy.loginfo( "dispatching plan..." )
-		cl_plan_dispatcher( dis )
+		dis = cl_plan_dispatcher( )
 		
-		solved = (dis.response.success and dis.response.goal_achieved)
+		solved = (dis.success and dis.goal_achieved)
 		if solved:
 			rospy.loginfo( "mystery solved." )
 		else:

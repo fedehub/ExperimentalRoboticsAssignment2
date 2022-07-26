@@ -417,12 +417,10 @@ private:
 		ros::param::set( "des_pos_x", target.x );
 		ros::param::set( "des_pos_y", target.y );
 		
+		ROS_INFO_STREAM( "navigation to (" << target.x << ", " << target.y << ")");
+		
 		// service call
 		std_srvs::SetBool cmd;
-		cl_nav.call( cmd );
-		
-		ros::param::set( "des_pos_x", 0.0 );
-		ros::param::set( "des_pos_y", 0.0 );
 		cl_nav.call( cmd );
 	}
 };

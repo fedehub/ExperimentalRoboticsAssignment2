@@ -51,6 +51,7 @@
 
 <!-- detecibot nodes -->
 <node pkg="erl_assignment_2" type="cluedo_kb.py" name="cluedo_kb" output="screen"/>
+<node pkg="erl2" type="simulation" name="simulation" output="screen"/>
 <!-- <node pkg="erl_assignment_2" type="" name="" output="screen"/> -->
 
 <!-- actions -->
