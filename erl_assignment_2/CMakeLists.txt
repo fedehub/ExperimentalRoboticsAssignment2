@@ -181,6 +181,7 @@ catkin_install_python(PROGRAMS
   scripts/go_to_point.py
   scripts/cluedo_kb.py
   scripts/test_nav.py
+  scripts/main.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

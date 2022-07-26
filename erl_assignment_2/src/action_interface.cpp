@@ -6,9 +6,11 @@
 #include "erl_assignment_2_msgs/GetId.h"
 #include "erl_assignment_2_msgs/MarkWrongId.h"
 #include "erl2/Oracle.h"
+#include "geometry_msgs/Point.h"
 
 #include <string>
 #include <vector>
+#include <map>
 
 
 /// (leave_temple ?from - temple ?to - waypoint)
@@ -43,7 +45,25 @@ public:
 	/** class constructor */
 	action_interface_class( ) : RPActionInterface( )
 	{
-		// ...
+		wps["center"] = geometry_msgs::Point( );
+		wps["center"].x = 0.0;
+		wps["center"].y = 0.0;
+		
+		wps["wp1"] = geometry_msgs::Point( );
+		wps["wp1"].x = 3.0;
+		wps["wp1"].y = 0.0;
+		
+		wps["wp2"] = geometry_msgs::Point( );
+		wps["wp2"].x = 0.0;
+		wps["wp2"].y = 3.0;
+		
+		wps["wp3"] = geometry_msgs::Point( );
+		wps["wp3"].x = -3.0;
+		wps["wp3"].y = 0.0;
+		
+		wps["wp4"] = geometry_msgs::Point( );
+		wps["wp4"].x = 0.0;
+		wps["wp4"].y = -3.0;
 	}
 	
 	/** action callback */
@@ -120,6 +140,9 @@ private:
 	/// go_to_point client
 	ros::ServiceClient cl_nav;
 	
+	/// manipulation client
+	ros::ServiceClient cl_manip;
+	
 	/// get_id client
 	ros::ServiceClient cl_get_id;
 	
@@ -128,6 +151,9 @@ private:
 	
 	/// oracle solution client
 	ros::ServiceClient cl_solution;
+	
+	/// waypoints
+	std::map<std::string, geometry_msgs::Point> wps;
 	
 	
 	
@@ -153,6 +179,8 @@ private:
 		//    trova le coordinate corrispondenti al waypoint
 		//    setta i parametri des_pos_x e des_pos_y con ros::param::set( "", val )
 		//    e chiamata a servizio
+		
+		navigate_to( wp_to );
 		
 		return true;
 	}
@@ -182,6 +210,8 @@ private:
 		//    setta i parametri des_pos_x e des_pos_y
 		//    chiamata a servizio
 		
+		navigate_to( wp_to );
+		
 		return true;
 	}
 	
@@ -194,7 +224,7 @@ private:
 	void shift_gripper_setup( )
 	{
 		// (client) /manipulation : std_srvs/SetBool
-		cl_nav = nh.serviceClient<std_srvs::SetBool>( "/manipulation" );
+		cl_manip = nh.serviceClient<std_srvs::SetBool>( "/manipulation" );
 	}
 	
 	/** shift_gripper execution */
@@ -205,6 +235,10 @@ private:
 		// avvicina il gripper al marker in modo che cluedo_kb possa ricevere l'hint via topic
 		//    prepara il messaggio SetBool con data=true
 		//    chiamata a servizio
+		
+		std_srvs::SetBool cmd;
+		cmd.request.data = true;
+		cl_manip.call( cmd );
 		
 		return true;
 	}
@@ -218,7 +252,7 @@ private:
 	void gather_hint_setup( )
 	{
 		// (client) /manipulation : std_srvs/SetBool
-		cl_nav = nh.serviceClient<std_srvs::SetBool>( "/manipulation" );
+		cl_manip = nh.serviceClient<std_srvs::SetBool>( "/manipulation" );
 	}
 	
 	/** gather_hint execution */
@@ -229,6 +263,10 @@ private:
 		// tira indietro il braccio (cluedo_kb ha ricevuto l'hint)
 		//    prepara il messaggio con setbool data=false
 		//    chiamata a servizio
+		
+		std_srvs::SetBool cmd;
+		cmd.request.data = false;
+		cl_manip.call( cmd );
 		
 		return true;
 	}
@@ -253,6 +291,8 @@ private:
 		// muovi il robot dalla posizione attuale al tempio
 		//    imposta des_pos_... a (0, 0)
 		//    chiamata a servizio: muovi il robot
+		
+		navigate_to( "center" );
 		
 		return true;
 	}
@@ -365,6 +405,25 @@ private:
 		
 		// ss += "\n";
 		return ss;
+	}
+	
+	/** navigation command */
+	void navigate_to( std::string wp )
+	{
+		// coordinates
+		geometry_msgs::Point target = wps[wp];
+		
+		// set the target into the param server
+		ros::param::set( "des_pos_x", target.x );
+		ros::param::set( "des_pos_y", target.y );
+		
+		// service call
+		std_srvs::SetBool cmd;
+		cl_nav.call( cmd );
+		
+		ros::param::set( "des_pos_x", 0.0 );
+		ros::param::set( "des_pos_y", 0.0 );
+		cl_nav.call( cmd );
 	}
 };
 }

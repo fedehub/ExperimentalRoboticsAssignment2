@@ -67,6 +67,8 @@
   <depend>moveit_ros_planning</depend>
   <depend>moveit_ros_planning_interface</depend>
   
+  <depend>rosplan_dispatch_msgs</depend>
+  
 
 
   <!-- The export tag contains other, unspecified, tags -->
