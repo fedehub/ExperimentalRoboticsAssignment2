@@ -151,6 +151,31 @@ def done(des_pos):
 		change_state(0)
 
 
+def go_to_point( req ):
+	
+	rate = rospy.Rate(20)
+	
+	while not rospy.is_shutdown():
+		
+		desired_position_.x = rospy.get_param('des_pos_x')
+		desired_position_.y = rospy.get_param('des_pos_y')
+		
+		if state_ == 0:
+			rospy.loginfo( f"fix_yaw({desired_position_})" )
+			fix_yaw(desired_position_)
+		elif state_ == 1:
+			rospy.loginfo( f"go_straight_ahead({desired_position_})" )
+			go_straight_ahead(desired_position_)
+		elif state_ == 2:
+			rospy.loginfo( "done!" )
+			done(desired_position_)
+			return SetBoolResponse( )
+		else:
+			rospy.logerr('Unknown state!')
+		
+		rate.sleep( )
+
+
 def main():
 	global pub, active_, desired_position_
 	
@@ -162,6 +187,11 @@ def main():
 	
 	srv = rospy.Service('go_to_point_switch', SetBool, go_to_point_switch)
 	
+	srv = rospy.Service('go_to_point', SetBool, go_to_point)
+	
+	rospy.spin( )
+	
+	'''
 	rate = rospy.Rate(20)
 	while not rospy.is_shutdown():
 		desired_position_.x = rospy.get_param('des_pos_x')
@@ -179,6 +209,7 @@ def main():
 				rospy.logerr('Unknown state!')
 
 		rate.sleep()
+	'''
 
 
 if __name__ == '__main__':

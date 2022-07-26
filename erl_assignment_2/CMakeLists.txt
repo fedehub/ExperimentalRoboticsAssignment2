@@ -180,6 +180,7 @@ target_link_libraries( manipulation ${catkin_LIBRARIES} )
 catkin_install_python(PROGRAMS
   scripts/go_to_point.py
   scripts/cluedo_kb.py
+  scripts/test_nav.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
