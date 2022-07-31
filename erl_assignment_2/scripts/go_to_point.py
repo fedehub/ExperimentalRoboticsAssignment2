@@ -188,7 +188,7 @@ def main():
 	
 	sub_odom = rospy.Subscriber('/odom', Odometry, clbk_odom)
 	
-	srv = rospy.Service('go_to_point_switch', SetBool, go_to_point_switch)
+	# srv = rospy.Service('go_to_point_switch', SetBool, go_to_point_switch)
 	
 	srv = rospy.Service('go_to_point', SetBool, go_to_point)
 	
