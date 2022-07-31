@@ -1,7 +1,7 @@
 ## service file 'MarkWrongId.srv'
 
 # the ID to discard
-string ID
+int32 ID
 
 ---
 

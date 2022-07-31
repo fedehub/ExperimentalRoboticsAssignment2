@@ -5,7 +5,7 @@ Code docs -- *cluedo_kb*
 How to store a hint 
 --------------------
 
-This node reads automatically the hint (mesage erl2/ErlOracle) by subscribing to the topic ``/oracle_hint`` provided by the Oracle node (namely *simulation.cpp*). Here's the message prototype:
+This node reads automatically the hint (mesage ``erl2/ErlOracle``) by subscribing to the topic ``/oracle_hint`` provided by the Oracle node (namely *simulation.cpp*). Here's the message prototype:
 
 .. code-block::
 	
@@ -14,10 +14,11 @@ This node reads automatically the hint (mesage erl2/ErlOracle) by subscribing to
 	string value 
 
 
+
 How to get a valid hint 
 ------------------------
 
-For getting a valid hint, a request to the service server ``/GetId`` is done, so that it can receive as response, a message of type ``erl_assignment_2_msgs/GetId``. Here's the Service prototype
+For getting a valid hint, a request to the service server ``/get_id`` is done, so that it can receive as response, a message of type ``erl_assignment_2_msgs/GetId``. Here's the Service prototype
 
 .. code-block::
 	
@@ -33,27 +34,12 @@ For getting a valid hint, a request to the service server ``/GetId`` is done, so
 	int32 consistent_id
 
 
-How to check the hint's valididty
----------------------------------
-
-This service is provided for checking wheteher or not the hypothesis queried to the Oracle is the **true one!**
-
-service */mark_wrong_id* of type *erl_assignment_2_msgs/MarkWrongId*.
-
-.. code-block::
-  
-  # request
-  int32 ID
-  
-  ---
-  
-  # response (empty)
-  
 
 How to discard a hint ID from the system 
 -----------------------------------------
 
 In order to discard a specific ID from the **ontology**, the service ``/mark_wrong_id`` is provided.
+
 Here below you can find a prototype of it:
 
 .. code-block::
@@ -61,7 +47,7 @@ Here below you can find a prototype of it:
 	## service file 'MarkWrongId.srv'
 	
 	# ID to be discarded
-	string ID
+	int32 ID
 	
 	---
 	
