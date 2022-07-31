@@ -48,6 +48,25 @@ service */mark_wrong_id* of type *erl_assignment_2_msgs/MarkWrongId*.
   ---
   
   # response (empty)
+  
+
+How to discard a hint ID from the system 
+-----------------------------------------
+
+In order to discard a specific ID from the **ontology**, the service ``/mark_wrong_id`` is provided.
+Here below you can find a prototype of it:
+
+.. code-block::
+	
+	## service file 'MarkWrongId.srv'
+	
+	# ID to be discarded
+	string ID
+	
+	---
+	
+	# empty response 
+	
 
 
 
