@@ -42,7 +42,10 @@ def add_hint( hint ):
 	'''
 	
 	if is_valid_hint( hint ):
+		rospy.loginfo(f"evaluating hint with data (key={hint.key} , value={hint.value})")
 		add_hint_to_list( hint )
+	else:
+		rospy.loginfo(f"received a unvalid hint with data (key={hint.key} , value={hint.value})")
 
 
 
@@ -68,27 +71,39 @@ def add_hint_to_list( hint ):
 		if kb[hint.ID][record_where] == "" :
 			rospy.loginfo( f"adding hint ID={hint.ID} WHERE={hint.value}" )
 			kb[hint.ID][record_where] = hint.value;
-			
+		
+		elif kb[hint.ID][record_where] == hint.value :
+			rospy.loginfo( f"skipping hint ID={hint.ID} WHERE={hint.value}" )
+		
 		else:
 			# ID not consistent
+			rospy.loginfo( f"removing hint ID={hint.ID} WHERE={hint.value}" )
 			delete_that = True
 			
 	elif hint.key == "what":
 		if kb[hint.ID][record_what] == "" :
 			rospy.loginfo( f"adding hint ID={hint.ID} WHAT={hint.value}" )
 			kb[hint.ID][record_what] = hint.value;
+		
+		elif kb[hint.ID][record_what] == hint.value :
+			rospy.loginfo( f"skipping hint ID={hint.ID} WHAT={hint.value}" )
 			
 		else:
 			# ID not consistent
+			rospy.loginfo( f"deleting hint ID={hint.ID} WHAT={hint.value}" )
 			delete_that = True
 			
 	elif hint.key == "who":
 		if kb[hint.ID][record_who] == "" :
 			rospy.loginfo( f"adding hint ID={hint.ID} WHO={hint.value}" )
 			kb[hint.ID][record_who] = hint.value;
+		
+		elif kb[hint.ID][record_who] == hint.value :
+			rospy.loginfo( f"skipping hint ID={hint.ID} WHO={hint.value}" )
 			
 		else:
 			# ID not consistent
+			rospy.loginfo( f"deleting hint ID={hint.ID} WHO={hint.value}" )
 			delete_that = True
 			
 	else:
@@ -106,7 +121,6 @@ def add_hint_to_list( hint ):
 		kb_consistent.remove( hint.ID );
 	elif len(kb_consistent) == 0:
 		rospy.loginfo( f"nothing to discard (received a unconsistent ID={hint.ID})" )
-
 
 
 def is_valid_hint( hint ):
@@ -129,7 +143,7 @@ def is_valid_hint( hint ):
 		return False
 	if hint.key == "" or hint.key == "-1":
 		return False;
-	if hint.value == "" or hint.value == "":
+	if hint.value == "" or hint.value == "-1":
 		return False
 	
 	return True;
