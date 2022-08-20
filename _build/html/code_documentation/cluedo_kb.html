@@ -45,7 +45,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Code docs – <em>cluedo_kb</em></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#how-to-store-a-hint">How to store a hint</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#how-to-get-a-valid-hint">How to get a valid hint</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#how-to-check-the-hint-s-valididty">How to check the hint’s valididty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-discard-a-hint-id-from-the-system">How to discard a hint ID from the system</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#code-reference">Code Reference</a></li>
 </ul>
 </li>
@@ -87,7 +87,7 @@
 <h1>Code docs – <em>cluedo_kb</em><a class="headerlink" href="#code-docs-cluedo-kb" title="Permalink to this headline"></a></h1>
 <div class="section" id="how-to-store-a-hint">
 <h2>How to store a hint<a class="headerlink" href="#how-to-store-a-hint" title="Permalink to this headline"></a></h2>
-<p>This node reads automatically the hint (mesage erl2/ErlOracle) by subscribing to the topic <code class="docutils literal notranslate"><span class="pre">/oracle_hint</span></code> provided by the Oracle node (namely <em>simulation.cpp</em>). Here’s the message prototype:</p>
+<p>This node reads automatically the hint (mesage <code class="docutils literal notranslate"><span class="pre">erl2/ErlOracle</span></code>) by subscribing to the topic <code class="docutils literal notranslate"><span class="pre">/oracle_hint</span></code> provided by the Oracle node (namely <em>simulation.cpp</em>). Here’s the message prototype:</p>
 <div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">int32</span> <span class="n">ID</span>
 <span class="n">string</span> <span class="k">key</span>
 <span class="n">string</span> <span class="n">value</span>
@@ -96,7 +96,7 @@
 </div>
 <div class="section" id="how-to-get-a-valid-hint">
 <h2>How to get a valid hint<a class="headerlink" href="#how-to-get-a-valid-hint" title="Permalink to this headline"></a></h2>
-<p>For getting a valid hint, a request to the service server <code class="docutils literal notranslate"><span class="pre">/GetId</span></code> is done, so that it can receive as response, a message of type <code class="docutils literal notranslate"><span class="pre">erl_assignment_2_msgs/GetId</span></code>. Here’s the Service prototype</p>
+<p>For getting a valid hint, a request to the service server <code class="docutils literal notranslate"><span class="pre">/get_id</span></code> is done, so that it can receive as response, a message of type <code class="docutils literal notranslate"><span class="pre">erl_assignment_2_msgs/GetId</span></code>. Here’s the Service prototype</p>
 <div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>## <span class="nv">service</span> <span class="nv">file</span> <span class="s1">&#39;</span><span class="s">GetId.srv</span><span class="s1">&#39;</span>
 # <span class="nv">empty</span> <span class="nv">request</span>
 
@@ -110,22 +110,34 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="how-to-check-the-hint-s-valididty">
-<h2>How to check the hint’s valididty<a class="headerlink" href="#how-to-check-the-hint-s-valididty" title="Permalink to this headline"></a></h2>
-<p>This service is provided for checking wheteher or not the hypothesis queried to the Oracle is the <strong>true one!</strong></p>
-<p>service <em>/mark_wrong_id</em> of type <em>erl_assignment_2_msgs/MarkWrongId</em>.</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="o">#</span> <span class="n">request</span>
+<div class="section" id="how-to-discard-a-hint-id-from-the-system">
+<h2>How to discard a hint ID from the system<a class="headerlink" href="#how-to-discard-a-hint-id-from-the-system" title="Permalink to this headline"></a></h2>
+<p>In order to discard a specific ID from the <strong>ontology</strong>, the service <code class="docutils literal notranslate"><span class="pre">/mark_wrong_id</span></code> is provided.</p>
+<p>Here below you can find a prototype of it:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="o">##</span> <span class="n">service</span> <span class="n">file</span> <span class="s1">&#39;MarkWrongId.srv&#39;</span>
+
+<span class="o">#</span> <span class="n">ID</span> <span class="k">to</span> <span class="n">be</span> <span class="n">discarded</span>
 <span class="n">int32</span> <span class="n">ID</span>
 
 <span class="c1">---</span>
 
-<span class="o">#</span> <span class="n">response</span> <span class="p">(</span><span class="n">empty</span><span class="p">)</span>
+<span class="o">#</span> <span class="n">empty</span> <span class="n">response</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="code-reference">
 <h2>Code Reference<a class="headerlink" href="#code-reference" title="Permalink to this headline"></a></h2>
 <p>file cluedo_kb node</p>
+<p>rostopic pub –once /oracle_hint erl2/ErlOracle</p>
+<p>rostopic pub –once /oracle_hint erl2/ErlOracle “ID: 0
+key: ‘who’
+value: ‘ciao’”
+rostopic pub –once /oracle_hint erl2/ErlOracle “ID: 0
+key: ‘where’
+value: ‘ciao’”
+rostopic pub –once /oracle_hint erl2/ErlOracle “ID: 0
+key: ‘what’
+value: ‘ciao’”</p>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">cluedo_kb.</span></span><span class="sig-name descname"><span class="pre">add_hint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hint</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cluedo_kb.html#add_hint"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
@@ -222,6 +234,12 @@ or not. Also the ID could be negative or zero.</p>
 <dd class="field-even"><p>req (erl_assignment_2/MarkWrongIdResponse) empty</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">cluedo_kb.</span></span><span class="sig-name descname"><span class="pre">print_kb_content</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cluedo_kb.html#print_kb_content"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>print the content inside the ontology on screen</p>
 </dd></dl>
 
 <dl class="py data">

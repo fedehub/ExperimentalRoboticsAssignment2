@@ -3,6 +3,7 @@
   <compounddef id="dir_31508095010e70e9f76cbbf3db9bce1e" kind="dir">
     <compoundname>erl_assignment_2/src</compoundname>
     <innerfile refid="action__interface_8cpp">action_interface.cpp</innerfile>
+    <innerfile refid="manipulation_8cpp">manipulation.cpp</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

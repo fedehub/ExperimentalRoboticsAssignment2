@@ -42,60 +42,33 @@ bool oracleService(erl2::Oracle::Request &req, erl2::Oracle::Response &res)
 
 void oracleCallback(const gazebo_msgs::LinkStates::ConstPtr& msg)
 {
-   for(int i=0; i< msg->name.size(); i++){
-	   if (msg->name[i].find("cluedo_link")!= std::string::npos){
-		   for(int j=0; j<4;j++){
-				if ((distfromtarget(msg->pose[i].position.x, msg->pose[i].position.y, msg->pose[i].position.z, markx[j],marky[j],markz[j])<0.5) && ((lastmarkx !=markx[j]) || (lastmarky != marky[j]))){
+   for(int i=0; i< msg->name.size(); i++)
+   {
+	   if (msg->name[i].find("cluedo_link")!= std::string::npos)
+	   {
+		   for(int j=0; j<4;j++)
+		   {
+				if ((distfromtarget(msg->pose[i].position.x, msg->pose[i].position.y, msg->pose[i].position.z, markx[j],marky[j],markz[j])<1.0) && ((lastmarkx !=markx[j]) || (lastmarky != marky[j])))
+				{
 				erl2::ErlOracle oracle_msg;
-				oracle_msg.ID = rand() % 6;
-				if(rand()%4==1){
-					int a = rand()%5;
-					if(a==0){
-						oracle_msg.key = "";
-						oracle_msg.value = "";
-					}
-					if (a==1){
-						oracle_msg.key="";
-						oracle_msg.value=person[rand()%6];
-					}
-					if (a==2){
-						oracle_msg.key="";
-						oracle_msg.value=object[rand()%6];
-					}
-					if (a==3){
-						oracle_msg.key="when";
-						oracle_msg.value="-1";
-					}
-					if (a==4){
-						oracle_msg.key="who";
-						oracle_msg.value="-1";
-					}
-				}
-				else {
-					oracle_msg.key = key[rand()%3];
-					bool existing = false;
-					for(int k=0; k<oracle_msgs.size();k++){
-						if((oracle_msg.ID == oracle_msgs[k].ID)&&(oracle_msg.key == oracle_msgs[k].key)){
-							oracle_msg.value = oracle_msgs[k].value;
-							existing = true;	
-						}
-					}
-					if ((!existing) || (std::find(std::begin(uIDs), std::end(uIDs), oracle_msg.ID) != std::end(uIDs))){	
-						if (oracle_msg.key == "who")
-							oracle_msg.value = person[rand()%6];
-						if (oracle_msg.key == "what")
-							oracle_msg.value = object[rand()%6];
-						if (oracle_msg.key == "where")
-							oracle_msg.value = place[rand()%9];
-						oracle_msgs.push_back(oracle_msg);
-					}
-				}
+				oracle_msg.ID = winID;
+				oracle_msg.key = key[rand()%3];
+				
+				if (oracle_msg.key == "who")
+					oracle_msg.value = person[winID];
+				if (oracle_msg.key == "what")
+					oracle_msg.value = object[winID];
+				if (oracle_msg.key == "where")
+					oracle_msg.value = place[winID];
+				
+				oracle_msgs.push_back(oracle_msg);
+				
 				oracle_pub.publish(oracle_msg);
 				lastmarkx = markx[j];
 				lastmarky = marky[j];
+				}
 		   }
 		}
-	  }
 	}
 } 
 

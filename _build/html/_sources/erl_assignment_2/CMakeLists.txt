@@ -16,6 +16,12 @@ find_package(catkin REQUIRED COMPONENTS
   erl_assignment_2_msgs
   rosplan_planning_system
   diagnostic_msgs
+  moveit_msgs
+  moveit_core
+  moveit_ros_perception
+  moveit_ros_planning
+  moveit_ros_planning_interface
+  rosplan_dispatch_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -159,6 +165,10 @@ add_executable( action_interface src/action_interface.cpp )
 add_dependencies( action_interface ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} )
 target_link_libraries( action_interface ${catkin_LIBRARIES} )
 
+add_executable( manipulation src/manipulation.cpp )
+add_dependencies( manipulation ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} )
+target_link_libraries( manipulation ${catkin_LIBRARIES} )
+
 #############
 ## Install ##
 #############
@@ -171,6 +181,8 @@ target_link_libraries( action_interface ${catkin_LIBRARIES} )
 catkin_install_python(PROGRAMS
   scripts/go_to_point.py
   scripts/cluedo_kb.py
+  scripts/test_nav.py
+  scripts/main.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

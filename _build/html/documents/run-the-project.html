@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Code docs – go_to_point.py &mdash; ExperimentalRoboticsAssignment2 v1.0.0 documentation</title>
+  <title>How to run the project &mdash; ExperimentalRoboticsAssignment2 v1.0.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
@@ -18,8 +18,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Other Documentation for ExperimentalRoboticsAssignment2" href="../documents/index.html" />
-    <link rel="prev" title="Code docs – go_to_point.py" href="go_to_point.html" /> 
+    <link rel="prev" title="MarkDown Vs reStructured Text" href="markdown-vs-rest.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -38,16 +37,17 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Code documentation</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Code Documentation for ExperimentalRoboticsAssignment2</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="go_to_point.html">Code docs – <em>go_to_point.py</em></a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Code docs – <em>go_to_point.py</em></a></li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code_documentation/index.html">Code Documentation for ExperimentalRoboticsAssignment2</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Other Documents</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../documents/index.html">Other Documentation for ExperimentalRoboticsAssignment2</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Other Documentation for ExperimentalRoboticsAssignment2</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="interfaces-docs-goto-point.html">Interfaces Documentation – node <em>go_to_point.py</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="markdown-vs-rest.html">MarkDown Vs reStructured Text</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">How to run the project</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -64,10 +64,10 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Code Documentation for ExperimentalRoboticsAssignment2</a> &raquo;</li>
-      <li>Code docs – <em>go_to_point.py</em></li>
+          <li><a href="index.html">Other Documentation for ExperimentalRoboticsAssignment2</a> &raquo;</li>
+      <li>How to run the project</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/code_documentation/go_to_pont.md.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/documents/run-the-project.md.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -75,45 +75,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="tex2jax_ignore mathjax_ignore section" id="code-docs-go-to-point-py">
-<h1>Code docs – <em>go_to_point.py</em><a class="headerlink" href="#code-docs-go-to-point-py" title="Permalink to this headline"></a></h1>
-<p>… py:module:: go_to_point</p>
-<dl class="myst field-list simple">
-<dt class="field-odd">noindex</dt>
-<dd class="field-odd"><p></p></dd>
-</dl>
-<p>… py:function:: go_to_point_switch(req)</p>
-<dl class="myst field-list">
-<dt class="field-odd">noindex</dt>
-<dd class="field-odd"><dl class="myst field-list simple">
-<dt class="field-odd">module</dt>
-<dd class="field-odd"><p>go_to_point</p>
-</dd>
-</dl>
-<p>SERVICE IMPLEMENTATION OF /go_to_point</p>
-<p>the service sets the value of the activity flag.</p>
-<dl class="myst field-list simple">
-<dt class="field-odd">param req</dt>
-<dd class="field-odd"><p>the activity value will be equal to the req.data passed to the
-service</p>
-</dd>
-<dt class="field-even">type req</dt>
-<dd class="field-even"><p>std_srvs/SetBoolRequest</p>
-</dd>
-<dt class="field-odd">returns</dt>
-<dd class="field-odd"><p>(std_srvs/SetBoolResponse) success is always true</p>
-</dd>
-</dl>
-</dd>
-</dl>
+  <div class="tex2jax_ignore mathjax_ignore section" id="how-to-run-the-project">
+<h1>How to run the project<a class="headerlink" href="#how-to-run-the-project" title="Permalink to this headline"></a></h1>
+<p>shell 1:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">roslaunch</span> <span class="n">erl_moveit_pkg</span> <span class="n">run_detectibot</span><span class="p">.</span><span class="n">launch</span> <span class="mi">2</span><span class="o">&gt;/</span><span class="n">dev</span><span class="o">/</span><span class="k">null</span>
+</pre></div>
+</div>
+<p>shell 2:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">roslaunch</span> <span class="n">erl_assignment_2</span> <span class="n">run_rosplan</span><span class="p">.</span><span class="n">launch</span>
+</pre></div>
+</div>
+<p>shell 3:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">rosrun</span> <span class="n">erl_assignment_2</span> <span class="n">main</span><span class="p">.</span><span class="n">py</span>
+</pre></div>
+</div>
 </div>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="go_to_point.html" class="btn btn-neutral float-left" title="Code docs – go_to_point.py" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../documents/index.html" class="btn btn-neutral float-right" title="Other Documentation for ExperimentalRoboticsAssignment2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="markdown-vs-rest.html" class="btn btn-neutral float-left" title="MarkDown Vs reStructured Text" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

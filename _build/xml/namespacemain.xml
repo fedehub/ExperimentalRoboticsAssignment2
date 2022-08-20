@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacemain" kind="namespace" language="Python">
+    <compoundname>main</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacemain_1a5fcf6b7ac1e63accb6462b8e22ffc14c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>main.cl_update_kb</definition>
+        <argsstring></argsstring>
+        <name>cl_update_kb</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/scripts/main.py" line="9" column="1" bodyfile="erl_assignment_2/scripts/main.py" bodystart="9" bodyend="-1"/>
+        <referencedby refid="namespacemain_1aa56d29f08d0961469cf62ac9f403c6d6" compoundref="main_8py" startline="41" endline="63">set_pred</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="namespacemain_1a3e764de4074bfb739d1998abced55ac1" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int main.ADD_KNOWLEDGE</definition>
+        <argsstring></argsstring>
+        <name>ADD_KNOWLEDGE</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/scripts/main.py" line="11" column="1" bodyfile="erl_assignment_2/scripts/main.py" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacemain_1a0bd46d27f049dfbb09392e957ec34568" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int main.DEL_KNOWLEDGE</definition>
+        <argsstring></argsstring>
+        <name>DEL_KNOWLEDGE</name>
+        <initializer>=  2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/scripts/main.py" line="12" column="1" bodyfile="erl_assignment_2/scripts/main.py" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacemain_1ac1dd3a22818fca415816d8a84cba1a2b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int main.KB_KTYPE_FLUENT</definition>
+        <argsstring></argsstring>
+        <name>KB_KTYPE_FLUENT</name>
+        <initializer>=  2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/scripts/main.py" line="14" column="1" bodyfile="erl_assignment_2/scripts/main.py" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacemain_1a5764eb307553af2ba7efd4eccf089952" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int main.KB_KTYPE_PREDICATE</definition>
+        <argsstring></argsstring>
+        <name>KB_KTYPE_PREDICATE</name>
+        <initializer>=  1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/scripts/main.py" line="15" column="1" bodyfile="erl_assignment_2/scripts/main.py" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacemain_1ad46251f88aa93898add539a906984b11" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>main.em</definition>
+        <argsstring></argsstring>
+        <name>em</name>
+        <initializer>=  Empty( )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/scripts/main.py" line="67" column="1" bodyfile="erl_assignment_2/scripts/main.py" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacemain_1a79880777c8390987e5399bf8a2bf1e2a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>main.dis</definition>
+        <argsstring></argsstring>
+        <name>dis</name>
+        <initializer>=  DispatchServiceResponse( )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/scripts/main.py" line="68" column="1" bodyfile="erl_assignment_2/scripts/main.py" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacemain_1aa64e399b790a8c0a824ef968ff9d2bf2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>main.cl_problem_interface</definition>
+        <argsstring></argsstring>
+        <name>cl_problem_interface</name>
+        <initializer>=  rospy.ServiceProxy( &quot;/rosplan_problem_interface/problem_generation_server&quot;, Empty )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/scripts/main.py" line="73" column="1" bodyfile="erl_assignment_2/scripts/main.py" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacemain_1a9a220dda4d4806f0613a8a629018b237" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>main.cl_planner_interface</definition>
+        <argsstring></argsstring>
+        <name>cl_planner_interface</name>
+        <initializer>=  rospy.ServiceProxy( &quot;/rosplan_planner_interface/planning_server&quot;, Empty )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/scripts/main.py" line="74" column="1" bodyfile="erl_assignment_2/scripts/main.py" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacemain_1af42266504582dd8a2b308d1b4b29ef5d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>main.cl_parsing_interface</definition>
+        <argsstring></argsstring>
+        <name>cl_parsing_interface</name>
+        <initializer>=  rospy.ServiceProxy( &quot;/rosplan_parsing_interface/parse_plan&quot;, Empty )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/scripts/main.py" line="75" column="1" bodyfile="erl_assignment_2/scripts/main.py" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacemain_1a362c7575c2d0679a88a44c15fbed9cc2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>main.cl_plan_dispatcher</definition>
+        <argsstring></argsstring>
+        <name>cl_plan_dispatcher</name>
+        <initializer>=  rospy.ServiceProxy( &quot;/rosplan_plan_dispatcher/dispatch_plan&quot;, DispatchService )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/scripts/main.py" line="76" column="1" bodyfile="erl_assignment_2/scripts/main.py" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacemain_1a8b5092cbbc941aa75e1117b09b762777" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>tuple main::solved</definition>
+        <argsstring></argsstring>
+        <name>solved</name>
+        <initializer>=  False</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/scripts/main.py" line="78" column="1" bodyfile="erl_assignment_2/scripts/main.py" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacemain_1a558d73008c7d1848ed77970cbb746a29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def main.replan_setup_kb</definition>
+        <argsstring>()</argsstring>
+        <name>replan_setup_kb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/scripts/main.py" line="17" column="1" bodyfile="erl_assignment_2/scripts/main.py" bodystart="17" bodyend="40"/>
+        <references refid="namespacemain_1aa56d29f08d0961469cf62ac9f403c6d6" compoundref="main_8py" startline="41" endline="63">set_pred</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacemain_1aa56d29f08d0961469cf62ac9f403c6d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def main.set_pred</definition>
+        <argsstring>(predicate, params, value)</argsstring>
+        <name>set_pred</name>
+        <param>
+          <type>predicate</type>
+          <defname>predicate</defname>
+        </param>
+        <param>
+          <type>params</type>
+          <defname>params</defname>
+        </param>
+        <param>
+          <type>value</type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>params: [ ... , [key, value], ... ]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/scripts/main.py" line="41" column="1" bodyfile="erl_assignment_2/scripts/main.py" bodystart="41" bodyend="63"/>
+        <references refid="namespacemain_1a5fcf6b7ac1e63accb6462b8e22ffc14c" compoundref="main_8py" startline="9">cl_update_kb</references>
+        <referencedby refid="namespacemain_1a558d73008c7d1848ed77970cbb746a29" compoundref="main_8py" startline="17" endline="40">replan_setup_kb</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="erl_assignment_2/scripts/main.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

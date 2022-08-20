@@ -72,6 +72,18 @@
 <span></span>
 <span class="sd">&#39;&#39;&#39;file cluedo_kb node</span>
 
+<span class="sd">rostopic pub --once /oracle_hint erl2/ErlOracle </span>
+
+<span class="sd">rostopic pub --once /oracle_hint erl2/ErlOracle &quot;ID: 0</span>
+<span class="sd">key: &#39;who&#39;</span>
+<span class="sd">value: &#39;ciao&#39;&quot; </span>
+<span class="sd">rostopic pub --once /oracle_hint erl2/ErlOracle &quot;ID: 0</span>
+<span class="sd">key: &#39;where&#39;</span>
+<span class="sd">value: &#39;ciao&#39;&quot; </span>
+<span class="sd">rostopic pub --once /oracle_hint erl2/ErlOracle &quot;ID: 0</span>
+<span class="sd">key: &#39;what&#39;</span>
+<span class="sd">value: &#39;ciao&#39;&quot; </span>
+
 <span class="sd">&#39;&#39;&#39;</span>
 
 <span class="kn">import</span> <span class="nn">rospy</span>
@@ -104,6 +116,34 @@
 
 
 
+<div class="viewcode-block" id="print_kb_content"><a class="viewcode-back" href="../code_documentation/cluedo_kb.html#cluedo_kb.print_kb_content">[docs]</a><span class="k">def</span> <span class="nf">print_kb_content</span><span class="p">():</span>
+	<span class="sd">&#39;&#39;&#39; print the content inside the ontology on screen</span>
+<span class="sd">	&#39;&#39;&#39;</span>
+	
+	<span class="k">global</span> <span class="n">kb</span><span class="p">,</span> <span class="n">kb_consistent</span>
+	<span class="k">global</span> <span class="n">record_who</span><span class="p">,</span> <span class="n">record_what</span><span class="p">,</span> <span class="n">record_where</span>
+	
+	<span class="c1"># print consistent indexes</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">kb_consistent</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+		<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;(kb) remaining active hints: {len(kb_consistent)}&quot;</span><span class="p">)</span>
+		<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;(kb) values:&quot;</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">kb_consistent</span><span class="p">:</span>
+			<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;(kb) ID={idx}&quot;</span><span class="p">)</span>
+		
+	<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;(kb) kb status: ({len(kb)} possible solutions)&quot;</span><span class="p">)</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">kb</span><span class="p">)):</span>
+		<span class="n">is_active_str</span> <span class="o">=</span> <span class="s2">&quot;false&quot;</span>
+		<span class="k">if</span> <span class="n">kb</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">3</span><span class="p">]:</span>
+			<span class="n">is_active_str</span> <span class="o">=</span> <span class="s2">&quot;true&quot;</span>
+		
+		<span class="n">is_complete_str</span> <span class="o">=</span> <span class="s2">&quot;false&quot;</span>
+		<span class="k">if</span> <span class="n">kb</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">4</span><span class="p">]:</span>
+			<span class="n">is_complete_str</span> <span class="o">=</span> <span class="s2">&quot;true&quot;</span>
+		
+		<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;(kb) ID={i} WHO={kb[i][record_who]} WHERE={kb[i][record_where]} WHAT={kb[i][record_what]} -- is_active={is_active_str} is_complete={is_complete_str}&quot;</span><span class="p">)</span></div>
+
+
+
 <div class="viewcode-block" id="add_hint"><a class="viewcode-back" href="../code_documentation/cluedo_kb.html#cluedo_kb.add_hint">[docs]</a><span class="k">def</span> <span class="nf">add_hint</span><span class="p">(</span> <span class="n">hint</span> <span class="p">):</span>
 	<span class="sd">&#39;&#39;&#39; receive and store (if possible) the hint</span>
 <span class="sd">	</span>
@@ -113,7 +153,12 @@
 <span class="sd">	&#39;&#39;&#39;</span>
 	
 	<span class="k">if</span> <span class="n">is_valid_hint</span><span class="p">(</span> <span class="n">hint</span> <span class="p">):</span>
-		<span class="n">add_hint_to_list</span><span class="p">(</span> <span class="n">hint</span> <span class="p">)</span></div>
+		<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;evaluating hint with data (key={hint.key} , value={hint.value})&quot;</span><span class="p">)</span>
+		<span class="n">add_hint_to_list</span><span class="p">(</span> <span class="n">hint</span> <span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;received a unvalid hint with data (key={hint.key} , value={hint.value})&quot;</span><span class="p">)</span>
+	
+	<span class="n">print_kb_content</span><span class="p">()</span></div>
 
 
 
@@ -132,6 +177,8 @@
 <span class="sd">	&#39;&#39;&#39;</span>
 	
 	<span class="k">global</span> <span class="n">kb</span><span class="p">,</span> <span class="n">kb_consistent</span>
+	<span class="k">global</span> <span class="n">record_who</span><span class="p">,</span> <span class="n">record_what</span><span class="p">,</span> <span class="n">record_where</span>
+	<span class="k">global</span> <span class="n">is_active</span><span class="p">,</span> <span class="n">is_complete</span>
 	
 	<span class="n">delete_that</span> <span class="o">=</span> <span class="bp">False</span><span class="p">;</span>
 	
@@ -139,32 +186,53 @@
 		<span class="k">if</span> <span class="n">kb</span><span class="p">[</span><span class="n">hint</span><span class="o">.</span><span class="n">ID</span><span class="p">][</span><span class="n">record_where</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="p">:</span>
 			<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span> <span class="n">f</span><span class="s2">&quot;adding hint ID={hint.ID} WHERE={hint.value}&quot;</span> <span class="p">)</span>
 			<span class="n">kb</span><span class="p">[</span><span class="n">hint</span><span class="o">.</span><span class="n">ID</span><span class="p">][</span><span class="n">record_where</span><span class="p">]</span> <span class="o">=</span> <span class="n">hint</span><span class="o">.</span><span class="n">value</span><span class="p">;</span>
-			
+		
+		<span class="k">elif</span> <span class="n">kb</span><span class="p">[</span><span class="n">hint</span><span class="o">.</span><span class="n">ID</span><span class="p">][</span><span class="n">record_where</span><span class="p">]</span> <span class="o">==</span> <span class="n">hint</span><span class="o">.</span><span class="n">value</span> <span class="p">:</span>
+			<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span> <span class="n">f</span><span class="s2">&quot;skipping hint ID={hint.ID} WHERE={hint.value}&quot;</span> <span class="p">)</span>
+		
 		<span class="k">else</span><span class="p">:</span>
 			<span class="c1"># ID not consistent</span>
+			<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span> <span class="n">f</span><span class="s2">&quot;removing hint ID={hint.ID} WHERE={hint.value}&quot;</span> <span class="p">)</span>
 			<span class="n">delete_that</span> <span class="o">=</span> <span class="bp">True</span>
 			
 	<span class="k">elif</span> <span class="n">hint</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;what&quot;</span><span class="p">:</span>
 		<span class="k">if</span> <span class="n">kb</span><span class="p">[</span><span class="n">hint</span><span class="o">.</span><span class="n">ID</span><span class="p">][</span><span class="n">record_what</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="p">:</span>
 			<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span> <span class="n">f</span><span class="s2">&quot;adding hint ID={hint.ID} WHAT={hint.value}&quot;</span> <span class="p">)</span>
 			<span class="n">kb</span><span class="p">[</span><span class="n">hint</span><span class="o">.</span><span class="n">ID</span><span class="p">][</span><span class="n">record_what</span><span class="p">]</span> <span class="o">=</span> <span class="n">hint</span><span class="o">.</span><span class="n">value</span><span class="p">;</span>
+		
+		<span class="k">elif</span> <span class="n">kb</span><span class="p">[</span><span class="n">hint</span><span class="o">.</span><span class="n">ID</span><span class="p">][</span><span class="n">record_what</span><span class="p">]</span> <span class="o">==</span> <span class="n">hint</span><span class="o">.</span><span class="n">value</span> <span class="p">:</span>
+			<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span> <span class="n">f</span><span class="s2">&quot;skipping hint ID={hint.ID} WHAT={hint.value}&quot;</span> <span class="p">)</span>
 			
 		<span class="k">else</span><span class="p">:</span>
 			<span class="c1"># ID not consistent</span>
+			<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span> <span class="n">f</span><span class="s2">&quot;deleting hint ID={hint.ID} WHAT={hint.value}&quot;</span> <span class="p">)</span>
 			<span class="n">delete_that</span> <span class="o">=</span> <span class="bp">True</span>
 			
 	<span class="k">elif</span> <span class="n">hint</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;who&quot;</span><span class="p">:</span>
 		<span class="k">if</span> <span class="n">kb</span><span class="p">[</span><span class="n">hint</span><span class="o">.</span><span class="n">ID</span><span class="p">][</span><span class="n">record_who</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="p">:</span>
 			<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span> <span class="n">f</span><span class="s2">&quot;adding hint ID={hint.ID} WHO={hint.value}&quot;</span> <span class="p">)</span>
 			<span class="n">kb</span><span class="p">[</span><span class="n">hint</span><span class="o">.</span><span class="n">ID</span><span class="p">][</span><span class="n">record_who</span><span class="p">]</span> <span class="o">=</span> <span class="n">hint</span><span class="o">.</span><span class="n">value</span><span class="p">;</span>
+		
+		<span class="k">elif</span> <span class="n">kb</span><span class="p">[</span><span class="n">hint</span><span class="o">.</span><span class="n">ID</span><span class="p">][</span><span class="n">record_who</span><span class="p">]</span> <span class="o">==</span> <span class="n">hint</span><span class="o">.</span><span class="n">value</span> <span class="p">:</span>
+			<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span> <span class="n">f</span><span class="s2">&quot;skipping hint ID={hint.ID} WHO={hint.value}&quot;</span> <span class="p">)</span>
 			
 		<span class="k">else</span><span class="p">:</span>
 			<span class="c1"># ID not consistent</span>
+			<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span> <span class="n">f</span><span class="s2">&quot;deleting hint ID={hint.ID} WHO={hint.value}&quot;</span> <span class="p">)</span>
 			<span class="n">delete_that</span> <span class="o">=</span> <span class="bp">True</span>
 			
 	<span class="k">else</span><span class="p">:</span>
 		<span class="n">rospy</span><span class="o">.</span><span class="n">logwarn</span><span class="p">(</span> <span class="n">f</span><span class="s2">&quot;(cluedo_kb -&gt; add_hint_to_list) received a unknown hint.key : {hint.key}&quot;</span> <span class="p">)</span>
 	
+	<span class="c1"># rospy.loginfo(f&quot;empty WHO? {kb[hint.ID][record_who] == &#39;&#39;}&quot;)</span>
+	<span class="c1"># rospy.loginfo(f&quot;empty WHERE? {kb[hint.ID][record_where] == &#39;&#39;}&quot;)</span>
+	<span class="c1"># rospy.loginfo(f&quot;empty WHAT? {kb[hint.ID][record_what] == &#39;&#39;}&quot;)</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">kb</span><span class="p">[</span><span class="n">hint</span><span class="o">.</span><span class="n">ID</span><span class="p">][</span><span class="n">record_where</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">kb</span><span class="p">[</span><span class="n">hint</span><span class="o">.</span><span class="n">ID</span><span class="p">][</span><span class="n">record_what</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">kb</span><span class="p">[</span><span class="n">hint</span><span class="o">.</span><span class="n">ID</span><span class="p">][</span><span class="n">record_who</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">):</span>
+		<span class="c1"># rospy.loginfo(f&quot;ID{hint.ID} is complete&quot;)</span>
+		<span class="n">kb</span><span class="p">[</span><span class="n">hint</span><span class="o">.</span><span class="n">ID</span><span class="p">][</span><span class="n">is_complete</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span> 
+	<span class="k">else</span><span class="p">:</span>
+		<span class="c1"># rospy.loginfo(f&quot;ID{hint.ID} is not complete&quot;)</span>
+		<span class="k">pass</span>
 	
 	<span class="k">if</span> <span class="n">delete_that</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">kb_consistent</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
 		<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span> <span class="n">f</span><span class="s2">&quot;discard hypothesis with ID={hint.ID}&quot;</span> <span class="p">)</span>
@@ -177,7 +245,6 @@
 		<span class="n">kb_consistent</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span> <span class="n">hint</span><span class="o">.</span><span class="n">ID</span> <span class="p">);</span>
 	<span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">kb_consistent</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
 		<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span> <span class="n">f</span><span class="s2">&quot;nothing to discard (received a unconsistent ID={hint.ID})&quot;</span> <span class="p">)</span></div>
-
 
 
 <div class="viewcode-block" id="is_valid_hint"><a class="viewcode-back" href="../code_documentation/cluedo_kb.html#cluedo_kb.is_valid_hint">[docs]</a><span class="k">def</span> <span class="nf">is_valid_hint</span><span class="p">(</span> <span class="n">hint</span> <span class="p">):</span>
@@ -200,7 +267,7 @@
 		<span class="k">return</span> <span class="bp">False</span>
 	<span class="k">if</span> <span class="n">hint</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="ow">or</span> <span class="n">hint</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;-1&quot;</span><span class="p">:</span>
 		<span class="k">return</span> <span class="bp">False</span><span class="p">;</span>
-	<span class="k">if</span> <span class="n">hint</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="ow">or</span> <span class="n">hint</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+	<span class="k">if</span> <span class="n">hint</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="ow">or</span> <span class="n">hint</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;-1&quot;</span><span class="p">:</span>
 		<span class="k">return</span> <span class="bp">False</span>
 	
 	<span class="k">return</span> <span class="bp">True</span><span class="p">;</span></div>
@@ -229,17 +296,26 @@
 <span class="sd">	&#39;&#39;&#39;</span>
 	
 	<span class="k">global</span> <span class="n">kb</span><span class="p">,</span> <span class="n">kb_consistent</span>
+	<span class="k">global</span> <span class="n">record_who</span><span class="p">,</span> <span class="n">record_what</span><span class="p">,</span> <span class="n">record_where</span>
+	<span class="k">global</span> <span class="n">is_active</span><span class="p">,</span> <span class="n">is_complete</span>
 	
 	<span class="n">res</span> <span class="o">=</span> <span class="n">GetIdResponse</span><span class="p">(</span> <span class="p">)</span>
 	<span class="n">res</span><span class="o">.</span><span class="n">consistent_found</span> <span class="o">=</span> <span class="p">(</span> <span class="nb">len</span><span class="p">(</span> <span class="n">kb_consistent</span> <span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">)</span>
 	<span class="n">res</span><span class="o">.</span><span class="n">consistent_id</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 	
+	<span class="n">rospy</span><span class="o">.</span><span class="n">logwarn</span><span class="p">(</span><span class="s2">&quot;called get_id() -- kb content:&quot;</span><span class="p">)</span>
+	<span class="n">print_kb_content</span><span class="p">()</span>
+	
 	<span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">consistent_found</span><span class="p">:</span>
 		<span class="k">for</span> <span class="nb">id</span> <span class="ow">in</span> <span class="n">kb_consistent</span><span class="p">:</span>
 			<span class="k">if</span> <span class="n">kb</span><span class="p">[</span><span class="nb">id</span><span class="p">][</span><span class="n">is_complete</span><span class="p">]:</span>
 				<span class="n">res</span><span class="o">.</span><span class="n">consistent_id</span> <span class="o">=</span> <span class="nb">id</span>
+				<span class="n">rospy</span><span class="o">.</span><span class="n">logwarn</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;called get_id() -- found consistent hypothesis with ID={res.consistent_id}&quot;</span><span class="p">)</span>
 				<span class="k">break</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">rospy</span><span class="o">.</span><span class="n">logwarn</span><span class="p">(</span><span class="s2">&quot;called get_id() -- no consistent hypotheses!&quot;</span><span class="p">)</span>
 	
+	<span class="n">rospy</span><span class="o">.</span><span class="n">logwarn</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;called get_id() -- returning res with res.consistent_found={res.consistent_found} res.consistent_id={res.consistent_id}&quot;</span><span class="p">)</span>
 	<span class="k">return</span> <span class="n">res</span></div>
 
 
@@ -280,7 +356,7 @@
 	<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span> <span class="s2">&quot;cluedo_kb initialization...&quot;</span> <span class="p">)</span>
 	<span class="n">kb</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span> <span class="p">)</span>
 	<span class="n">kb_consistent</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span> <span class="p">)</span>
-	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
 		<span class="n">kb</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">]</span> <span class="p">)</span>
 		<span class="n">kb_consistent</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">i</span> <span class="p">)</span>
 	<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span> <span class="s2">&quot;cluedo_kb initialization... done&quot;</span> <span class="p">)</span>

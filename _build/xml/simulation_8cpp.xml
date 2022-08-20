@@ -158,7 +158,7 @@
         <definition>const std::string key[3]</definition>
         <argsstring>[3]</argsstring>
         <name>key</name>
-        <initializer>= {&quot;who&quot;, &quot;what&quot;, &quot;<ref refid="_oracle_8rst_8txt_1af579bf261664fbbaa4fcd4607da3804f" kindref="member">where</ref>&quot;}</initializer>
+        <initializer>= {&quot;who&quot;, &quot;what&quot;, &quot;where&quot;}</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -380,7 +380,6 @@
         <references refid="simulation_8cpp_1a32812fe000700d7aa8988d74e59471c7" compoundref="simulation_8cpp" startline="12">oracle_pub</references>
         <references refid="simulation_8cpp_1a876a1245db85a2bb87c08ae086f1eafa" compoundref="simulation_8cpp" startline="43" endline="100">oracleCallback</references>
         <references refid="simulation_8cpp_1ae1a3f65d934a3c4a938e85d5071dfaa5" compoundref="simulation_8cpp" startline="37" endline="41">oracleService</references>
-        <references refid="_oracle_8rst_8txt_1a636972db0d9482f50e11146b2ccaf387" compoundref="_oracle_8rst_8txt" startline="41">service</references>
         <references refid="simulation_8cpp_1a37d4a0b625b8b9583adf9362f5aae971" compoundref="simulation_8cpp" startline="26">uIDs</references>
         <references refid="simulation_8cpp_1a90c5d03e068ddae91702223f47eff712" compoundref="simulation_8cpp" startline="27">winID</references>
       </memberdef>
@@ -437,7 +436,7 @@
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i&lt;<sp/>msg-&gt;name.size();<sp/>i++){</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(msg-&gt;name[i].find(</highlight><highlight class="stringliteral">&quot;cluedo_link&quot;</highlight><highlight class="normal">)!=<sp/>std::string::npos){</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j=0;<sp/>j&lt;4;j++){</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="simulation_8cpp_1a7e333af55a708cf53de07126dcd3006b" kindref="member">distfromtarget</ref>(msg-&gt;pose[i].position.x,<sp/>msg-&gt;pose[i].position.y,<sp/>msg-&gt;pose[i].position.z,<sp/><ref refid="simulation_8cpp_1a36b0204cd96e3dc326a2adfa3d1dceda" kindref="member">markx</ref>[j],<ref refid="simulation_8cpp_1a0bc4146f286fe42bd5e8fa1e53826447" kindref="member">marky</ref>[j],<ref refid="simulation_8cpp_1a8d90002e6a9c50028f184b22c380efc4" kindref="member">markz</ref>[j])&lt;0.25)<sp/>&amp;&amp;<sp/>((<ref refid="simulation_8cpp_1a412ed4d68a81f370cdcd20e3019db982" kindref="member">lastmarkx</ref><sp/>!=<ref refid="simulation_8cpp_1a36b0204cd96e3dc326a2adfa3d1dceda" kindref="member">markx</ref>[j])<sp/>||<sp/>(<ref refid="simulation_8cpp_1a174c0dfc727a92493b03f7b0573f4f3e" kindref="member">lastmarky</ref><sp/>!=<sp/><ref refid="simulation_8cpp_1a0bc4146f286fe42bd5e8fa1e53826447" kindref="member">marky</ref>[j]))){</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="simulation_8cpp_1a7e333af55a708cf53de07126dcd3006b" kindref="member">distfromtarget</ref>(msg-&gt;pose[i].position.x,<sp/>msg-&gt;pose[i].position.y,<sp/>msg-&gt;pose[i].position.z,<sp/><ref refid="simulation_8cpp_1a36b0204cd96e3dc326a2adfa3d1dceda" kindref="member">markx</ref>[j],<ref refid="simulation_8cpp_1a0bc4146f286fe42bd5e8fa1e53826447" kindref="member">marky</ref>[j],<ref refid="simulation_8cpp_1a8d90002e6a9c50028f184b22c380efc4" kindref="member">markz</ref>[j])&lt;0.5)<sp/>&amp;&amp;<sp/>((<ref refid="simulation_8cpp_1a412ed4d68a81f370cdcd20e3019db982" kindref="member">lastmarkx</ref><sp/>!=<ref refid="simulation_8cpp_1a36b0204cd96e3dc326a2adfa3d1dceda" kindref="member">markx</ref>[j])<sp/>||<sp/>(<ref refid="simulation_8cpp_1a174c0dfc727a92493b03f7b0573f4f3e" kindref="member">lastmarky</ref><sp/>!=<sp/><ref refid="simulation_8cpp_1a0bc4146f286fe42bd5e8fa1e53826447" kindref="member">marky</ref>[j]))){</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>erl2::ErlOracle<sp/>oracle_msg;</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>oracle_msg.ID<sp/>=<sp/>rand()<sp/>%<sp/>6;</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rand()%4==1){</highlight></codeline>
@@ -498,7 +497,7 @@
 <codeline lineno="106"><highlight class="normal">ros::NodeHandle<sp/>nh;</highlight></codeline>
 <codeline lineno="107"><highlight class="normal">ros::Publisher<sp/>vis_pub<sp/>=<sp/>nh.advertise&lt;visualization_msgs::MarkerArray&gt;(<sp/></highlight><highlight class="stringliteral">&quot;/visualization_marker&quot;</highlight><highlight class="normal">,<sp/>0<sp/>);</highlight></codeline>
 <codeline lineno="108"><highlight class="normal"><ref refid="simulation_8cpp_1a32812fe000700d7aa8988d74e59471c7" kindref="member">oracle_pub</ref><sp/>=<sp/>nh.advertise&lt;erl2::ErlOracle&gt;(<sp/></highlight><highlight class="stringliteral">&quot;/oracle_hint&quot;</highlight><highlight class="normal">,<sp/>0<sp/>);</highlight></codeline>
-<codeline lineno="109"><highlight class="normal">ros::ServiceServer<sp/><ref refid="_oracle_8rst_8txt_1a636972db0d9482f50e11146b2ccaf387" kindref="member">service</ref>=<sp/>nh.advertiseService(</highlight><highlight class="stringliteral">&quot;/oracle_solution&quot;</highlight><highlight class="normal">,<sp/><ref refid="simulation_8cpp_1ae1a3f65d934a3c4a938e85d5071dfaa5" kindref="member">oracleService</ref>);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">ros::ServiceServer<sp/>service=<sp/>nh.advertiseService(</highlight><highlight class="stringliteral">&quot;/oracle_solution&quot;</highlight><highlight class="normal">,<sp/><ref refid="simulation_8cpp_1ae1a3f65d934a3c4a938e85d5071dfaa5" kindref="member">oracleService</ref>);</highlight></codeline>
 <codeline lineno="110"><highlight class="normal">ros::Subscriber<sp/>sub<sp/>=<sp/>nh.subscribe(</highlight><highlight class="stringliteral">&quot;/gazebo/link_states&quot;</highlight><highlight class="normal">,<sp/>10,<sp/><ref refid="simulation_8cpp_1a876a1245db85a2bb87c08ae086f1eafa" kindref="member">oracleCallback</ref>);</highlight></codeline>
 <codeline lineno="111"><highlight class="normal">visualization_msgs::MarkerArray<sp/>markers;</highlight></codeline>
 <codeline lineno="112"><highlight class="normal">srand<sp/>(time(NULL));</highlight></codeline>
@@ -512,8 +511,8 @@
 <codeline lineno="120"><highlight class="normal">marker.id<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="121"><highlight class="normal">marker.type<sp/>=<sp/>visualization_msgs::Marker::SPHERE;</highlight></codeline>
 <codeline lineno="122"><highlight class="normal">marker.action<sp/>=<sp/>visualization_msgs::Marker::ADD;</highlight></codeline>
-<codeline lineno="123"><highlight class="normal">marker.pose.position.x<sp/>=<sp/>-3.0;</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><ref refid="simulation_8cpp_1a36b0204cd96e3dc326a2adfa3d1dceda" kindref="member">markx</ref>[0]=-3.0;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">marker.pose.position.x<sp/>=<sp/>-2.75;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><ref refid="simulation_8cpp_1a36b0204cd96e3dc326a2adfa3d1dceda" kindref="member">markx</ref>[0]=-2.75;</highlight></codeline>
 <codeline lineno="125"><highlight class="normal">marker.pose.position.y<sp/>=<sp/>0.0;</highlight></codeline>
 <codeline lineno="126"><highlight class="normal"><ref refid="simulation_8cpp_1a0bc4146f286fe42bd5e8fa1e53826447" kindref="member">marky</ref>[0]=0.0;</highlight></codeline>
 <codeline lineno="127"><highlight class="normal">RandIndex<sp/>=<sp/>rand()<sp/>%<sp/>2;</highlight></codeline>
@@ -533,8 +532,8 @@
 <codeline lineno="141"><highlight class="normal">markers.markers.push_back(marker);</highlight></codeline>
 <codeline lineno="142"><highlight class="normal"></highlight></codeline>
 <codeline lineno="143"><highlight class="normal">marker.id<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="144"><highlight class="normal">marker.pose.position.x<sp/>=<sp/>3.0;</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"><ref refid="simulation_8cpp_1a36b0204cd96e3dc326a2adfa3d1dceda" kindref="member">markx</ref>[1]=3.0;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">marker.pose.position.x<sp/>=<sp/>2.75;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><ref refid="simulation_8cpp_1a36b0204cd96e3dc326a2adfa3d1dceda" kindref="member">markx</ref>[1]=2.75;</highlight></codeline>
 <codeline lineno="146"><highlight class="normal">marker.pose.position.y<sp/>=<sp/>0.0;</highlight></codeline>
 <codeline lineno="147"><highlight class="normal"><ref refid="simulation_8cpp_1a0bc4146f286fe42bd5e8fa1e53826447" kindref="member">marky</ref>[1]=0.0;</highlight></codeline>
 <codeline lineno="148"><highlight class="normal">RandIndex<sp/>=<sp/>rand()<sp/>%<sp/>2;</highlight></codeline>
@@ -545,8 +544,8 @@
 <codeline lineno="153"><highlight class="normal">marker.id<sp/>=<sp/>2;</highlight></codeline>
 <codeline lineno="154"><highlight class="normal">marker.pose.position.x<sp/>=<sp/>0.0;</highlight></codeline>
 <codeline lineno="155"><highlight class="normal"><ref refid="simulation_8cpp_1a36b0204cd96e3dc326a2adfa3d1dceda" kindref="member">markx</ref>[2]=0.0;</highlight></codeline>
-<codeline lineno="156"><highlight class="normal">marker.pose.position.y<sp/>=<sp/>-3.0;</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><ref refid="simulation_8cpp_1a0bc4146f286fe42bd5e8fa1e53826447" kindref="member">marky</ref>[2]=-3.0;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">marker.pose.position.y<sp/>=<sp/>-2.75;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><ref refid="simulation_8cpp_1a0bc4146f286fe42bd5e8fa1e53826447" kindref="member">marky</ref>[2]=-2.75;</highlight></codeline>
 <codeline lineno="158"><highlight class="normal">RandIndex<sp/>=<sp/>rand()<sp/>%<sp/>2;</highlight></codeline>
 <codeline lineno="159"><highlight class="normal">marker.pose.position.z<sp/>=<sp/>zpos[RandIndex];</highlight></codeline>
 <codeline lineno="160"><highlight class="normal"><ref refid="simulation_8cpp_1a8d90002e6a9c50028f184b22c380efc4" kindref="member">markz</ref>[2]=marker.pose.position.z;</highlight></codeline>
@@ -555,8 +554,8 @@
 <codeline lineno="163"><highlight class="normal">marker.id<sp/>=<sp/>3;</highlight></codeline>
 <codeline lineno="164"><highlight class="normal">marker.pose.position.x<sp/>=<sp/>0.0;</highlight></codeline>
 <codeline lineno="165"><highlight class="normal"><ref refid="simulation_8cpp_1a36b0204cd96e3dc326a2adfa3d1dceda" kindref="member">markx</ref>[3]=0.0;</highlight></codeline>
-<codeline lineno="166"><highlight class="normal">marker.pose.position.y<sp/>=<sp/>3.0;</highlight></codeline>
-<codeline lineno="167"><highlight class="normal"><ref refid="simulation_8cpp_1a0bc4146f286fe42bd5e8fa1e53826447" kindref="member">marky</ref>[3]=3.0;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal">marker.pose.position.y<sp/>=<sp/>2.75;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><ref refid="simulation_8cpp_1a0bc4146f286fe42bd5e8fa1e53826447" kindref="member">marky</ref>[3]=2.75;</highlight></codeline>
 <codeline lineno="168"><highlight class="normal">RandIndex<sp/>=<sp/>rand()<sp/>%<sp/>2;</highlight></codeline>
 <codeline lineno="169"><highlight class="normal">marker.pose.position.z<sp/>=<sp/>zpos[RandIndex];</highlight></codeline>
 <codeline lineno="170"><highlight class="normal"><ref refid="simulation_8cpp_1a8d90002e6a9c50028f184b22c380efc4" kindref="member">markz</ref>[3]=marker.pose.position.z;</highlight></codeline>

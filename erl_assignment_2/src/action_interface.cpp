@@ -50,20 +50,20 @@ public:
 		wps["center"].y = 0.0;
 		
 		wps["wp1"] = geometry_msgs::Point( );
-		wps["wp1"].x = 3.0;
+		wps["wp1"].x = 2.75;
 		wps["wp1"].y = 0.0;
 		
 		wps["wp2"] = geometry_msgs::Point( );
 		wps["wp2"].x = 0.0;
-		wps["wp2"].y = 3.0;
+		wps["wp2"].y = 2.75;
 		
 		wps["wp3"] = geometry_msgs::Point( );
-		wps["wp3"].x = -3.0;
+		wps["wp3"].x = -2.75;
 		wps["wp3"].y = 0.0;
 		
 		wps["wp4"] = geometry_msgs::Point( );
 		wps["wp4"].x = 0.0;
-		wps["wp4"].y = -3.0;
+		wps["wp4"].y = -2.75;
 	}
 	
 	/** action callback */

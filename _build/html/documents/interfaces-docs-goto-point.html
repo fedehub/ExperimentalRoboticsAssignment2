@@ -58,6 +58,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="markdown-vs-rest.html">MarkDown Vs reStructured Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run-the-project.html">How to run the project</a></li>
 </ul>
 </li>
 </ul>
@@ -91,16 +92,16 @@
 <h1>Interfaces Documentation – node <em>go_to_point.py</em><a class="headerlink" href="#interfaces-documentation-node-go-to-point-py" title="Permalink to this headline"></a></h1>
 <div class="section" id="geometry-msgs-twist">
 <h2>geometry_msgs/Twist<a class="headerlink" href="#geometry-msgs-twist" title="Permalink to this headline"></a></h2>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>Vector3  linear
-Vector3  angular
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">Vector3</span>  <span class="n">linear</span>
+<span class="n">Vector3</span>  <span class="n">angular</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="geometry-msgs-vector3">
 <h2>geometry_msgs/Vector3<a class="headerlink" href="#geometry-msgs-vector3" title="Permalink to this headline"></a></h2>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>float64 x
-float64 y
-float64 z
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">float64</span> <span class="n">x</span>
+<span class="n">float64</span> <span class="n">y</span>
+<span class="n">float64</span> <span class="n">z</span>
 </pre></div>
 </div>
 </div>
@@ -115,69 +116,69 @@ float64 z
 </div>
 <div class="section" id="std-msgs-header">
 <h2>std_msgs/Header<a class="headerlink" href="#std-msgs-header" title="Permalink to this headline"></a></h2>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="c1"># Standard metadata for higher-level stamped data types.</span>
-<span class="c1"># This is generally used to communicate timestamped data </span>
-<span class="c1"># in a particular coordinate frame.</span>
-<span class="c1"># </span>
-<span class="c1"># sequence ID: consecutively increasing ID </span>
-<span class="n">uint32</span> <span class="n">seq</span>
-<span class="c1">#Two-integer timestamp that is expressed as:</span>
-<span class="c1"># * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called &#39;secs&#39;)</span>
-<span class="c1"># * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called &#39;nsecs&#39;)</span>
-<span class="c1"># time-handling sugar is provided by the client library</span>
-<span class="n">time</span> <span class="n">stamp</span>
-<span class="c1">#Frame this data is associated with</span>
-<span class="n">string</span> <span class="n">frame_id</span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span># <span class="nv">Standard</span> <span class="nv">metadata</span> <span class="k">for</span> <span class="nv">higher</span><span class="o">-</span><span class="nv">level</span> <span class="nv">stamped</span> <span class="nv">data</span> <span class="nv">types</span>.
+# <span class="nv">This</span> <span class="nv">is</span> <span class="nv">generally</span> <span class="nv">used</span> <span class="nv">to</span> <span class="nv">communicate</span> <span class="nv">timestamped</span> <span class="nv">data</span> 
+# <span class="nv">in</span> <span class="nv">a</span> <span class="nv">particular</span> <span class="nv">coordinate</span> <span class="nv">frame</span>.
+# 
+# <span class="nv">sequence</span> <span class="nv">ID</span>: <span class="nv">consecutively</span> <span class="nv">increasing</span> <span class="nv">ID</span> 
+<span class="nv">uint32</span> <span class="nv">seq</span>
+#<span class="nv">Two</span><span class="o">-</span><span class="nv">integer</span> <span class="nv">timestamp</span> <span class="nv">that</span> <span class="nv">is</span> <span class="nv">expressed</span> <span class="nv">as</span>:
+# <span class="o">*</span> <span class="nv">stamp</span>.<span class="nv">sec</span>: <span class="nv">seconds</span> <span class="ss">(</span><span class="nv">stamp_secs</span><span class="ss">)</span> <span class="nv">since</span> <span class="nv">epoch</span> <span class="ss">(</span><span class="nv">in</span> <span class="nv">Python</span> <span class="nv">the</span> <span class="nv">variable</span> <span class="nv">is</span> <span class="nv">called</span> <span class="s1">&#39;</span><span class="s">secs</span><span class="s1">&#39;</span><span class="ss">)</span>
+# <span class="o">*</span> <span class="nv">stamp</span>.<span class="nv">nsec</span>: <span class="nv">nanoseconds</span> <span class="nv">since</span> <span class="nv">stamp_secs</span> <span class="ss">(</span><span class="nv">in</span> <span class="nv">Python</span> <span class="nv">the</span> <span class="nv">variable</span> <span class="nv">is</span> <span class="nv">called</span> <span class="s1">&#39;</span><span class="s">nsecs</span><span class="s1">&#39;</span><span class="ss">)</span>
+# <span class="nv">time</span><span class="o">-</span><span class="nv">handling</span> <span class="nv">sugar</span> <span class="nv">is</span> <span class="nv">provided</span> <span class="nv">by</span> <span class="nv">the</span> <span class="nv">client</span> <span class="nv">library</span>
+<span class="nv">time</span> <span class="nv">stamp</span>
+#<span class="nv">Frame</span> <span class="nv">this</span> <span class="nv">data</span> <span class="nv">is</span> <span class="nv">associated</span> <span class="nv">with</span>
+<span class="nv">string</span> <span class="nv">frame_id</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="geometry-msgs-posewithcovariance">
 <h2>geometry_msgs/PoseWithCovariance<a class="headerlink" href="#geometry-msgs-posewithcovariance" title="Permalink to this headline"></a></h2>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="c1"># This represents a pose in free space with uncertainty.</span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="o">#</span> <span class="n">This</span> <span class="n">represents</span> <span class="n">a</span> <span class="n">pose</span> <span class="k">in</span> <span class="k">free</span> <span class="k">space</span> <span class="k">with</span> <span class="n">uncertainty</span><span class="p">.</span>
 <span class="n">Pose</span> <span class="n">pose</span>
 
-<span class="c1"># Row-major representation of the 6x6 covariance matrix</span>
-<span class="c1"># The orientation parameters use a fixed-axis representation.</span>
-<span class="c1"># In order, the parameters are:</span>
-<span class="c1"># (x, y, z, rotation about X axis, rotation about Y axis, rotation about Z axis)</span>
+<span class="o">#</span> <span class="k">Row</span><span class="o">-</span><span class="n">major</span> <span class="n">representation</span> <span class="k">of</span> <span class="n">the</span> <span class="mi">6</span><span class="n">x6</span> <span class="n">covariance</span> <span class="n">matrix</span>
+<span class="o">#</span> <span class="n">The</span> <span class="n">orientation</span> <span class="k">parameters</span> <span class="n">use</span> <span class="n">a</span> <span class="n">fixed</span><span class="o">-</span><span class="n">axis</span> <span class="n">representation</span><span class="p">.</span>
+<span class="o">#</span> <span class="k">In</span> <span class="k">order</span><span class="p">,</span> <span class="n">the</span> <span class="k">parameters</span> <span class="k">are</span><span class="p">:</span>
+<span class="o">#</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">rotation</span> <span class="n">about</span> <span class="n">X</span> <span class="n">axis</span><span class="p">,</span> <span class="n">rotation</span> <span class="n">about</span> <span class="n">Y</span> <span class="n">axis</span><span class="p">,</span> <span class="n">rotation</span> <span class="n">about</span> <span class="n">Z</span> <span class="n">axis</span><span class="p">)</span>
 <span class="n">float64</span><span class="p">[</span><span class="mi">36</span><span class="p">]</span> <span class="n">covariance</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="geometry-msgs-pose">
 <h2>geometry_msgs/Pose<a class="headerlink" href="#geometry-msgs-pose" title="Permalink to this headline"></a></h2>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>Point position
-Quaternion orientation
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">Point</span> <span class="k">position</span>
+<span class="n">Quaternion</span> <span class="n">orientation</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="geometry-msgs-point">
 <h2>geometry_msgs/Point<a class="headerlink" href="#geometry-msgs-point" title="Permalink to this headline"></a></h2>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span># This contains the position of a point in free space
-float64 x
-float64 y
-float64 z
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="o">#</span> <span class="n">This</span> <span class="k">contains</span> <span class="n">the</span> <span class="k">position</span> <span class="k">of</span> <span class="n">a</span> <span class="n">point</span> <span class="k">in</span> <span class="k">free</span> <span class="k">space</span>
+<span class="n">float64</span> <span class="n">x</span>
+<span class="n">float64</span> <span class="n">y</span>
+<span class="n">float64</span> <span class="n">z</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="geometry-msgs-quaternion">
 <h2>geometry_msgs/Quaternion<a class="headerlink" href="#geometry-msgs-quaternion" title="Permalink to this headline"></a></h2>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>float64 x
-float64 y
-float64 z
-float64 w
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">float64</span> <span class="n">x</span>
+<span class="n">float64</span> <span class="n">y</span>
+<span class="n">float64</span> <span class="n">z</span>
+<span class="n">float64</span> <span class="n">w</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="geometry-msgs-twistwithcovariance-message">
 <h2>geometry_msgs/TwistWithCovariance Message<a class="headerlink" href="#geometry-msgs-twistwithcovariance-message" title="Permalink to this headline"></a></h2>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="c1"># This expresses velocity in free space with uncertainty.</span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="o">#</span> <span class="n">This</span> <span class="n">expresses</span> <span class="n">velocity</span> <span class="k">in</span> <span class="k">free</span> <span class="k">space</span> <span class="k">with</span> <span class="n">uncertainty</span><span class="p">.</span>
 <span class="n">Twist</span> <span class="n">twist</span>
 
-<span class="c1"># Row-major representation of the 6x6 covariance matrix</span>
-<span class="c1"># The orientation parameters use a fixed-axis representation.</span>
-<span class="c1"># In order, the parameters are:</span>
-<span class="c1"># (x, y, z, rotation about X axis, rotation about Y axis, rotation about Z axis)</span>
+<span class="o">#</span> <span class="k">Row</span><span class="o">-</span><span class="n">major</span> <span class="n">representation</span> <span class="k">of</span> <span class="n">the</span> <span class="mi">6</span><span class="n">x6</span> <span class="n">covariance</span> <span class="n">matrix</span>
+<span class="o">#</span> <span class="n">The</span> <span class="n">orientation</span> <span class="k">parameters</span> <span class="n">use</span> <span class="n">a</span> <span class="n">fixed</span><span class="o">-</span><span class="n">axis</span> <span class="n">representation</span><span class="p">.</span>
+<span class="o">#</span> <span class="k">In</span> <span class="k">order</span><span class="p">,</span> <span class="n">the</span> <span class="k">parameters</span> <span class="k">are</span><span class="p">:</span>
+<span class="o">#</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">rotation</span> <span class="n">about</span> <span class="n">X</span> <span class="n">axis</span><span class="p">,</span> <span class="n">rotation</span> <span class="n">about</span> <span class="n">Y</span> <span class="n">axis</span><span class="p">,</span> <span class="n">rotation</span> <span class="n">about</span> <span class="n">Z</span> <span class="n">axis</span><span class="p">)</span>
 <span class="n">float64</span><span class="p">[</span><span class="mi">36</span><span class="p">]</span> <span class="n">covariance</span>
 </pre></div>
 </div>

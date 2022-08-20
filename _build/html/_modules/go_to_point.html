@@ -81,7 +81,7 @@
 
 <span class="kn">import</span> <span class="nn">math</span>
 
-<span class="n">active_</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">active_</span> <span class="o">=</span> <span class="bp">False</span>
 
 <span class="c1"># robot state variables</span>
 <span class="n">position_</span> <span class="o">=</span> <span class="n">Point</span><span class="p">()</span>
@@ -105,7 +105,7 @@
 <span class="n">ub_d</span> <span class="o">=</span> <span class="mf">0.6</span>
 
 <span class="c1"># publishers</span>
-<span class="n">pub</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">pub</span> <span class="o">=</span> <span class="bp">None</span>
 
 <span class="c1"># service callbacks</span>
 
@@ -127,7 +127,7 @@
 	<span class="k">global</span> <span class="n">active_</span>
 	<span class="n">active_</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">data</span>
 	<span class="n">res</span> <span class="o">=</span> <span class="n">SetBoolResponse</span><span class="p">()</span>
-	<span class="n">res</span><span class="o">.</span><span class="n">success</span> <span class="o">=</span> <span class="kc">True</span>
+	<span class="n">res</span><span class="o">.</span><span class="n">success</span> <span class="o">=</span> <span class="bp">True</span>
 	<span class="n">res</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;Done!&#39;</span>
 	<span class="k">return</span> <span class="n">res</span></div>
 
@@ -154,7 +154,7 @@
 <span class="k">def</span> <span class="nf">change_state</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
 	<span class="k">global</span> <span class="n">state_</span>
 	<span class="n">state_</span> <span class="o">=</span> <span class="n">state</span>
-	<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;State changed to [</span><span class="si">%s</span><span class="s1">]&#39;</span> <span class="o">%</span> <span class="n">state_</span><span class="p">)</span>
+	<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;State changed to [</span><span class="si">%s</span><span class="s1">]&#39;</span> <span class="o">%</span> <span class="n">state_</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">normalize_angle</span><span class="p">(</span><span class="n">angle</span><span class="p">):</span>
@@ -182,7 +182,7 @@
 
 	<span class="c1"># state change conditions</span>
 	<span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="n">err_yaw</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">yaw_precision_2_</span><span class="p">:</span>
-		<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Yaw error: [</span><span class="si">%s</span><span class="s1">]&#39;</span> <span class="o">%</span> <span class="n">err_yaw</span><span class="p">)</span>
+		<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;Yaw error: [</span><span class="si">%s</span><span class="s1">]&#39;</span> <span class="o">%</span> <span class="n">err_yaw</span><span class="p">)</span>
 		<span class="n">change_state</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
 
@@ -202,12 +202,12 @@
 		<span class="n">twist_msg</span><span class="o">.</span><span class="n">angular</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">kp_a</span><span class="o">*</span><span class="n">err_yaw</span>
 		<span class="n">pub</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="n">twist_msg</span><span class="p">)</span>
 	<span class="k">else</span><span class="p">:</span>
-		<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Position error: [</span><span class="si">%s</span><span class="s1">]&#39;</span> <span class="o">%</span> <span class="n">err_pos</span><span class="p">)</span>
+		<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;Position error: [</span><span class="si">%s</span><span class="s1">]&#39;</span> <span class="o">%</span> <span class="n">err_pos</span><span class="p">)</span>
 		<span class="n">change_state</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
 	<span class="c1"># state change conditions</span>
 	<span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="n">err_yaw</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">yaw_precision_</span><span class="p">:</span>
-		<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Yaw error: [</span><span class="si">%s</span><span class="s1">]&#39;</span> <span class="o">%</span> <span class="n">err_yaw</span><span class="p">)</span>
+		<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;Yaw error: [</span><span class="si">%s</span><span class="s1">]&#39;</span> <span class="o">%</span> <span class="n">err_yaw</span><span class="p">)</span>
 		<span class="n">change_state</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
 
@@ -222,6 +222,34 @@
 		<span class="n">change_state</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
 
+<span class="k">def</span> <span class="nf">go_to_point</span><span class="p">(</span> <span class="n">req</span> <span class="p">):</span>
+	
+	<span class="k">global</span> <span class="n">desired_position_</span><span class="p">,</span> <span class="n">state_</span>
+	
+	<span class="n">rate</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">Rate</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+	<span class="n">state_</span> <span class="o">=</span> <span class="mi">0</span>
+	
+	<span class="k">while</span> <span class="ow">not</span> <span class="n">rospy</span><span class="o">.</span><span class="n">is_shutdown</span><span class="p">():</span>
+		
+		<span class="n">desired_position_</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">get_param</span><span class="p">(</span><span class="s1">&#39;des_pos_x&#39;</span><span class="p">)</span>
+		<span class="n">desired_position_</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">get_param</span><span class="p">(</span><span class="s1">&#39;des_pos_y&#39;</span><span class="p">)</span>
+		
+		<span class="k">if</span> <span class="n">state_</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span> <span class="n">f</span><span class="s2">&quot;fix_yaw({desired_position_})&quot;</span> <span class="p">)</span>
+			<span class="n">fix_yaw</span><span class="p">(</span><span class="n">desired_position_</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="n">state_</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+			<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span> <span class="n">f</span><span class="s2">&quot;go_straight_ahead({desired_position_})&quot;</span> <span class="p">)</span>
+			<span class="n">go_straight_ahead</span><span class="p">(</span><span class="n">desired_position_</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="n">state_</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+			<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span> <span class="s2">&quot;done!&quot;</span> <span class="p">)</span>
+			<span class="n">done</span><span class="p">(</span><span class="n">desired_position_</span><span class="p">)</span>
+			<span class="k">return</span> <span class="n">SetBoolResponse</span><span class="p">(</span> <span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">rospy</span><span class="o">.</span><span class="n">logerr</span><span class="p">(</span><span class="s1">&#39;Unknown state!&#39;</span><span class="p">)</span>
+		
+		<span class="n">rate</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span> <span class="p">)</span>
+
+
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
 	<span class="k">global</span> <span class="n">pub</span><span class="p">,</span> <span class="n">active_</span><span class="p">,</span> <span class="n">desired_position_</span>
 	
@@ -231,25 +259,31 @@
 	
 	<span class="n">sub_odom</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">Subscriber</span><span class="p">(</span><span class="s1">&#39;/odom&#39;</span><span class="p">,</span> <span class="n">Odometry</span><span class="p">,</span> <span class="n">clbk_odom</span><span class="p">)</span>
 	
-	<span class="n">srv</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">Service</span><span class="p">(</span><span class="s1">&#39;go_to_point_switch&#39;</span><span class="p">,</span> <span class="n">SetBool</span><span class="p">,</span> <span class="n">go_to_point_switch</span><span class="p">)</span>
+	<span class="c1"># srv = rospy.Service(&#39;go_to_point_switch&#39;, SetBool, go_to_point_switch)</span>
 	
-	<span class="n">rate</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">Rate</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
-	<span class="k">while</span> <span class="ow">not</span> <span class="n">rospy</span><span class="o">.</span><span class="n">is_shutdown</span><span class="p">():</span>
-		<span class="n">desired_position_</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">get_param</span><span class="p">(</span><span class="s1">&#39;des_pos_x&#39;</span><span class="p">)</span>
-		<span class="n">desired_position_</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">get_param</span><span class="p">(</span><span class="s1">&#39;des_pos_y&#39;</span><span class="p">)</span>
-		<span class="k">if</span> <span class="ow">not</span> <span class="n">active_</span><span class="p">:</span>
-			<span class="k">continue</span>
-		<span class="k">else</span><span class="p">:</span>
-			<span class="k">if</span> <span class="n">state_</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-				<span class="n">fix_yaw</span><span class="p">(</span><span class="n">desired_position_</span><span class="p">)</span>
-			<span class="k">elif</span> <span class="n">state_</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-				<span class="n">go_straight_ahead</span><span class="p">(</span><span class="n">desired_position_</span><span class="p">)</span>
-			<span class="k">elif</span> <span class="n">state_</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-				<span class="n">done</span><span class="p">(</span><span class="n">desired_position_</span><span class="p">)</span>
-			<span class="k">else</span><span class="p">:</span>
-				<span class="n">rospy</span><span class="o">.</span><span class="n">logerr</span><span class="p">(</span><span class="s1">&#39;Unknown state!&#39;</span><span class="p">)</span>
+	<span class="n">srv</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">Service</span><span class="p">(</span><span class="s1">&#39;go_to_point&#39;</span><span class="p">,</span> <span class="n">SetBool</span><span class="p">,</span> <span class="n">go_to_point</span><span class="p">)</span>
+	
+	<span class="n">rospy</span><span class="o">.</span><span class="n">spin</span><span class="p">(</span> <span class="p">)</span>
+	
+	<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">	rate = rospy.Rate(20)</span>
+<span class="sd">	while not rospy.is_shutdown():</span>
+<span class="sd">		desired_position_.x = rospy.get_param(&#39;des_pos_x&#39;)</span>
+<span class="sd">		desired_position_.y = rospy.get_param(&#39;des_pos_y&#39;)</span>
+<span class="sd">		if not active_:</span>
+<span class="sd">			continue</span>
+<span class="sd">		else:</span>
+<span class="sd">			if state_ == 0:</span>
+<span class="sd">				fix_yaw(desired_position_)</span>
+<span class="sd">			elif state_ == 1:</span>
+<span class="sd">				go_straight_ahead(desired_position_)</span>
+<span class="sd">			elif state_ == 2:</span>
+<span class="sd">				done(desired_position_)</span>
+<span class="sd">			else:</span>
+<span class="sd">				rospy.logerr(&#39;Unknown state!&#39;)</span>
 
-		<span class="n">rate</span><span class="o">.</span><span class="n">sleep</span><span class="p">()</span>
+<span class="sd">		rate.sleep()</span>
+<span class="sd">	&#39;&#39;&#39;</span>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>

@@ -84,7 +84,13 @@ std_srvs
 erl2
 erl_assignment_2_msgs
 rosplan_planning_system
-diagnostic_msgs</p>
+diagnostic_msgs
+moveit_msgs
+moveit_core
+moveit_ros_perception
+moveit_ros_planning
+moveit_ros_planning_interface
+rosplan_dispatch_msgs</p>
 </div></blockquote>
 <p>)</p>
 <p>## System dependencies are found with CMake’s conventions
@@ -207,6 +213,9 @@ include_directories(
 <p>add_executable( action_interface src/action_interface.cpp )
 add_dependencies( action_interface ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} )
 target_link_libraries( action_interface ${catkin_LIBRARIES} )</p>
+<p>add_executable( manipulation src/manipulation.cpp )
+add_dependencies( manipulation ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} )
+target_link_libraries( manipulation ${catkin_LIBRARIES} )</p>
 </div>
 <div class="section" id="install">
 <h1>## Install ##<a class="headerlink" href="#install" title="Permalink to this headline"></a></h1>
@@ -218,6 +227,8 @@ catkin_install_python(PROGRAMS</p>
 <blockquote>
 <div><p>scripts/go_to_point.py
 scripts/cluedo_kb.py
+scripts/test_nav.py
+scripts/main.py
 DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}</p>
 </div></blockquote>
 <p>)</p>

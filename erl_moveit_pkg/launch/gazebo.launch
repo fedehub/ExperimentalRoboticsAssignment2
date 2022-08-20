@@ -6,9 +6,10 @@
 
   <!-- startup simulated world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" default="worlds/empty.world"/>
+    <!-- <arg name="world_name" default="worlds/empty.world"/> -->
     <arg name="paused" value="$(arg paused)"/>
     <arg name="gui" value="$(arg gazebo_gui)"/>
+    <arg name="world_name" value="$(find erl2)/world/my_world.world" />
   </include>
 
   <!-- send robot urdf to param server -->

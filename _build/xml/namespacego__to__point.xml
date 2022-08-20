@@ -85,7 +85,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="erl_assignment_2/scripts/go_to_point.py" line="22" column="1" bodyfile="erl_assignment_2/scripts/go_to_point.py" bodystart="22" bodyend="-1"/>
-        <referencedby refid="simulation_8cpp_1a7e333af55a708cf53de07126dcd3006b" compoundref="simulation_8cpp" startline="31" endline="35">distfromtarget</referencedby>
+        <referencedby refid="my__simulation_8cpp_1a7e333af55a708cf53de07126dcd3006b" compoundref="my__simulation_8cpp" startline="31" endline="35">distfromtarget</referencedby>
       </memberdef>
       <memberdef kind="variable" id="namespacego__to__point_1ac372e1a492f9aa66d29f365cc1c57d8c" prot="public" static="no" mutable="no">
         <type></type>
@@ -99,7 +99,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="erl_assignment_2/scripts/go_to_point.py" line="23" column="1" bodyfile="erl_assignment_2/scripts/go_to_point.py" bodystart="23" bodyend="-1"/>
-        <referencedby refid="simulation_8cpp_1a7e333af55a708cf53de07126dcd3006b" compoundref="simulation_8cpp" startline="31" endline="35">distfromtarget</referencedby>
+        <referencedby refid="my__simulation_8cpp_1a7e333af55a708cf53de07126dcd3006b" compoundref="my__simulation_8cpp" startline="31" endline="35">distfromtarget</referencedby>
       </memberdef>
       <memberdef kind="variable" id="namespacego__to__point_1a2fd68a76b8583598a4bceccdeae5d73b" prot="public" static="no" mutable="no">
         <type></type>
@@ -113,7 +113,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="erl_assignment_2/scripts/go_to_point.py" line="24" column="1" bodyfile="erl_assignment_2/scripts/go_to_point.py" bodystart="24" bodyend="-1"/>
-        <referencedby refid="simulation_8cpp_1a7e333af55a708cf53de07126dcd3006b" compoundref="simulation_8cpp" startline="31" endline="35">distfromtarget</referencedby>
+        <referencedby refid="my__simulation_8cpp_1a7e333af55a708cf53de07126dcd3006b" compoundref="my__simulation_8cpp" startline="31" endline="35">distfromtarget</referencedby>
       </memberdef>
       <memberdef kind="variable" id="namespacego__to__point_1a67f95834f0959feb3facd17bc7fa2b38" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -345,7 +345,7 @@ Returns:
         <location file="erl_assignment_2/scripts/go_to_point.py" line="95" column="1" bodyfile="erl_assignment_2/scripts/go_to_point.py" bodystart="95" bodyend="117"/>
         <references refid="namespacego__to__point_1a31ee48e5cae36821049b572a96b7c8be" compoundref="go__to__point_8py" startline="83" endline="88">change_state</references>
         <references refid="namespacego__to__point_1ac688bb56fa84763ea2edefc30cae032a" compoundref="go__to__point_8py" startline="89" endline="94">normalize_angle</references>
-        <referencedby refid="namespacego__to__point_1ab92bd6db1ec323a4d795ed6cb40aebe1" compoundref="go__to__point_8py" startline="154" endline="183">main</referencedby>
+        <referencedby refid="namespacego__to__point_1aa8c9e45da31814a8cd403b354dbd6ba4" compoundref="go__to__point_8py" startline="154" endline="181">go_to_point</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacego__to__point_1ac8579665c0fbf665f734476554fac37d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -364,7 +364,7 @@ Returns:
         </inbodydescription>
         <location file="erl_assignment_2/scripts/go_to_point.py" line="118" column="1" bodyfile="erl_assignment_2/scripts/go_to_point.py" bodystart="118" bodyend="142"/>
         <references refid="namespacego__to__point_1a31ee48e5cae36821049b572a96b7c8be" compoundref="go__to__point_8py" startline="83" endline="88">change_state</references>
-        <referencedby refid="namespacego__to__point_1ab92bd6db1ec323a4d795ed6cb40aebe1" compoundref="go__to__point_8py" startline="154" endline="183">main</referencedby>
+        <referencedby refid="namespacego__to__point_1aa8c9e45da31814a8cd403b354dbd6ba4" compoundref="go__to__point_8py" startline="154" endline="181">go_to_point</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacego__to__point_1a9bb3c726bc638ed49519d74277fce5a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -383,7 +383,27 @@ Returns:
         </inbodydescription>
         <location file="erl_assignment_2/scripts/go_to_point.py" line="143" column="1" bodyfile="erl_assignment_2/scripts/go_to_point.py" bodystart="143" bodyend="153"/>
         <references refid="namespacego__to__point_1a31ee48e5cae36821049b572a96b7c8be" compoundref="go__to__point_8py" startline="83" endline="88">change_state</references>
-        <referencedby refid="namespacego__to__point_1ab92bd6db1ec323a4d795ed6cb40aebe1" compoundref="go__to__point_8py" startline="154" endline="183">main</referencedby>
+        <referencedby refid="namespacego__to__point_1aa8c9e45da31814a8cd403b354dbd6ba4" compoundref="go__to__point_8py" startline="154" endline="181">go_to_point</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacego__to__point_1aa8c9e45da31814a8cd403b354dbd6ba4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def go_to_point.go_to_point</definition>
+        <argsstring>(req)</argsstring>
+        <name>go_to_point</name>
+        <param>
+          <type>req</type>
+          <defname>req</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_2/scripts/go_to_point.py" line="154" column="1" bodyfile="erl_assignment_2/scripts/go_to_point.py" bodystart="154" bodyend="181"/>
+        <references refid="namespacego__to__point_1a9bb3c726bc638ed49519d74277fce5a4" compoundref="go__to__point_8py" startline="143" endline="153">done</references>
+        <references refid="namespacego__to__point_1a9c3011a3065fcbefcc1c5ad8c9979669" compoundref="go__to__point_8py" startline="95" endline="117">fix_yaw</references>
+        <references refid="namespacego__to__point_1ac8579665c0fbf665f734476554fac37d" compoundref="go__to__point_8py" startline="118" endline="142">go_straight_ahead</references>
       </memberdef>
       <memberdef kind="function" id="namespacego__to__point_1ab92bd6db1ec323a4d795ed6cb40aebe1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -396,10 +416,7 @@ Returns:
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_2/scripts/go_to_point.py" line="154" column="1" bodyfile="erl_assignment_2/scripts/go_to_point.py" bodystart="154" bodyend="183"/>
-        <references refid="namespacego__to__point_1a9bb3c726bc638ed49519d74277fce5a4" compoundref="go__to__point_8py" startline="143" endline="153">done</references>
-        <references refid="namespacego__to__point_1a9c3011a3065fcbefcc1c5ad8c9979669" compoundref="go__to__point_8py" startline="95" endline="117">fix_yaw</references>
-        <references refid="namespacego__to__point_1ac8579665c0fbf665f734476554fac37d" compoundref="go__to__point_8py" startline="118" endline="142">go_straight_ahead</references>
+        <location file="erl_assignment_2/scripts/go_to_point.py" line="182" column="1" bodyfile="erl_assignment_2/scripts/go_to_point.py" bodystart="182" bodyend="217"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
