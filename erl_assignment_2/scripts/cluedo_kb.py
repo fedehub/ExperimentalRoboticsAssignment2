@@ -87,7 +87,7 @@ def add_hint( hint ):
 	else:
 		rospy.loginfo(f"received a unvalid hint with data (key={hint.key} , value={hint.value})")
 	
-	print_kb_content()
+	# print_kb_content()
 
 
 
@@ -171,7 +171,8 @@ def add_hint_to_list( hint ):
 		kb[hint.ID][is_complete] = False
 		
 		# delete that from the index list
-		kb_consistent.remove( hint.ID );
+		if hint.ID in kb_consistent:
+			kb_consistent.remove( hint.ID );
 	elif len(kb_consistent) == 0:
 		rospy.loginfo( f"nothing to discard (received a unconsistent ID={hint.ID})" )
 
@@ -269,7 +270,8 @@ def mark_wrong_id( req ):
 		kb[req.ID][is_active] = False
 		kb[req.ID][is_complete] = False
 		
-		kb_consistent.remove( req.ID )
+		if hint.ID in kb_consistent:
+			kb_consistent.remove( req.ID )
 		
 		rospy.loginfo( f"(mark_wrong_id) discarded ID={req.ID}" )
 
