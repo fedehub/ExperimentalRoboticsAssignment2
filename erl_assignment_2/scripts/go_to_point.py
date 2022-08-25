@@ -151,7 +151,7 @@ def done(des_pos):
 		change_state(0)
 
 
-def go_to_point( req ):
+def go_to_point(req):
 	
 	global desired_position_, state_
 	
@@ -188,6 +188,7 @@ def main():
 	
 	sub_odom = rospy.Subscriber('/odom', Odometry, clbk_odom)
 	
+	# testing server 
 	# srv = rospy.Service('go_to_point_switch', SetBool, go_to_point_switch)
 	
 	srv = rospy.Service('go_to_point', SetBool, go_to_point)

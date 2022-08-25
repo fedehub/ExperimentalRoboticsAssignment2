@@ -14,17 +14,17 @@ def reach_pos( cl_nav, x, y ):
 	'''
 	
 	rospy.loginfo( f"position ({x}, {y})" )
-	r = rospy.Rate( 1 )
+	r = rospy.Rate(1)
 	
 	rospy.set_param( "des_pos_x", x )
 	rospy.set_param( "des_pos_y", y )
 	
-	cmd = SetBoolRequest( )
+	cmd = SetBoolRequest()
 	cmd.data = True
-	cl_nav( cmd )
+	cl_nav(cmd)
 	
 	rospy.loginfo( "waiting" )
-	r.sleep( )
+	r.sleep()
 	rospy.loginfo( "done." )
 
 if __name__ == '__main__':
@@ -32,18 +32,18 @@ if __name__ == '__main__':
 	
 	cl = rospy.ServiceProxy( "/go_to_point", SetBool )
 	
-	r = rospy.Rate( 0.25 )
-	reach_pos( cl, 0, 3 );
-	reach_pos( cl, 0, 0 );
+	r = rospy.Rate(0.25)
+	reach_pos(cl, 0, 3);
+	reach_pos(cl, 0, 0);
 	
-	reach_pos( cl, 0, 0 );
-	reach_pos( cl, 0, 0 );
+	reach_pos(cl, 0, 0);
+	reach_pos(cl, 0, 0);
 	
-	reach_pos( cl, 3, 0 );
-	reach_pos( cl, 0, 0 );
+	reach_pos(cl, 3, 0);
+	reach_pos(cl, 0, 0);
 	
-	reach_pos( cl, 0, -3 );
-	reach_pos( cl, 0, 0 );
+	reach_pos(cl, 0, -3);
+	reach_pos( cl, 0, 0);
 	
-	reach_pos( cl, -3, 0 );
-	reach_pos( cl, 0, 0 );
+	reach_pos(cl, -3, 0);
+	reach_pos(cl, 0, 0);

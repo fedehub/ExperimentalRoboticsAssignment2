@@ -36,11 +36,14 @@ ros::ServiceServer srv_manip;
  *
  * \return  void
  */
-void move_arm( bool gather_hint )
+void move_arm(bool gather_hint)
 {
-	if( gather_hint )
+	if(gather_hint)
 	{
 		// gather_hint
+		/**
+ 		* @brief   manipulation Service server 
+ 		*/
 		move_group_interface->setNamedTarget( "gather_hint" );
 	}
 	else
@@ -74,9 +77,9 @@ void move_arm( bool gather_hint )
  *
  * \return  void
  */
-bool cbk_manip( std_srvs::SetBool::Request& req, std_srvs::SetBool::Response& res )
+bool cbk_manip(std_srvs::SetBool::Request& req, std_srvs::SetBool::Response& res)
 {
-	move_arm( req.data );
+	move_arm(req.data);
 	
 	res.success = true;
 	return true;
@@ -84,9 +87,9 @@ bool cbk_manip( std_srvs::SetBool::Request& req, std_srvs::SetBool::Response& re
 
 
 /// main function
-int main( int argc, char* argv[] )
+int main(int argc, char* argv[])
 {
-	ros::init( argc, argv, "manipulation" );
+	ros::init(argc, argv, "manipulation");
 	ros::NodeHandle nh;
 	
 	ros::AsyncSpinner spinner(2);
@@ -97,10 +100,13 @@ int main( int argc, char* argv[] )
 	move_group_interface = &move_group_interfacei;
 	move_group_interface->setPlanningTime(10.0);
 	
-	// before starting, move the robot in the init pose
-	move_arm( false );
 	
-	srv_manip = nh.advertiseService( "/manipulation", cbk_manip );
+	/**
+	* @brief   before starting, move the robot in the init pose
+	*/
+	move_arm(false);
+	
+	srv_manip = nh.advertiseService("/manipulation", cbk_manip);
 	
 	ros::waitForShutdown( );
 	
