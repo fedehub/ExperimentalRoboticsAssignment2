@@ -22,7 +22,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/fedehub/expTest">
+  <a href="https://github.com/fedehub/ExperimentalRoboticsAssignment2">
     <img src="media/miscellaneous/logo-black.png" alt="Logo" width="200" height="100">
   </a>
 
@@ -31,14 +31,14 @@
   <p align="center">
     First assignment for the Experimental Robotics laboratory course 
     <br />
-    <a href="https://github.com/fedehub/expTest/doc"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/fedehub/ExperimentalRoboticsAssignment2/doc"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/fedehub/expTest/demo">View Demo</a>
+    <a href="https://github.com/fedehub/ExperimentalRoboticsAssignment2/demo">View Demo</a>
     ·
-    <a href="https://github.com/fedehub/expTest/issues">Report Bug</a>
+    <a href="https://github.com/fedehub/ExperimentalRoboticsAssignment2/issues">Report Bug</a>
     ·
-    <a href="https://github.com/fedehub/expTest/issues">Request Feature</a>
+    <a href="https://github.com/fedehub/ExperimentalRoboticsAssignment2/issues">Request Feature</a>
   </p>
 </div>
 
@@ -153,31 +153,43 @@ ID4_4: ['where', 'Diningoom']
 ### ROS node description
 
 Within the scripts folder, the following nodes are listed:  
-- [Nodo1.py][5]:              <!-- PLEASE INSERT HERE -->
 
-- [robotcontroller.py][6]:    <!-- PLEASE INSERT HERE -->
+- [cluedo_kb.py][20]:              <!-- PLEASE INSERT HERE -->
 
-  
-- [navigation.py][7]:         <!-- PLEASE INSERT HERE -->
+- [go_to_point.py][21]:            <!-- PLEASE INSERT HERE -->
 
+- [main.py][22]:                   <!-- PLEASE INSERT HERE -->
 
-- [oracle.py][8]:             <!-- PLEASE INSERT HERE -->
+- [test_nav.py][23]:               <!-- PLEASE INSERT HERE -->
 
+In the src folder instead, there are the here listed cpp nodes:
+
+- [action_interface.cpp][20]:      <!-- PLEASE INSERT HERE -->
+
+- [manipulation.cpp][21]:          <!-- PLEASE INSERT HERE -->
+
+- [main.py][22]:                   <!-- PLEASE INSERT HERE -->
+
+- [test_nav.py][23]:               <!-- PLEASE INSERT HERE -->
+
+Concerning the node we were provided, it belongs to the `erl2` package:
+
+- [my_simulation.cpp][26]
 
 ### rossrv 
 
-- **query_oracle**: <!-- PLEASE INSERT HERE -->
+- **get_id**: <!-- PLEASE INSERT HERE -->
 
     
   > msg type:       <!-- PLEASE INSERT HERE -->
 
   
-- **ask_for_hint**: <!-- PLEASE INSERT HERE -->
+- **mark_wrong_id**: <!-- PLEASE INSERT HERE -->
 
   > msg type:       <!-- PLEASE INSERT HERE -->
 
 
-- **detectiBotSwitch**:     <!-- PLEASE INSERT HERE -->
+- **oracle_solution**:     <!-- PLEASE INSERT HERE -->
 
   > msg type                <!-- PLEASE INSERT HERE -->
 
@@ -362,13 +374,13 @@ type here ...
 Then,
 
 ```sh
-rosrun expTest oracle.py
+rosrun ExperimentalRoboticsAssignment2 oracle.py
 
 ```
 It follows,
 
 ```sh
-rosrun expTest navigation.py
+rosrun ExperimentalRoboticsAssignment2 navigation.py
 
 ```
 
@@ -376,14 +388,14 @@ then,
 
 
 ```sh
-rosrun expTest detectiBot.py
+rosrun ExperimentalRoboticsAssignment2 detectiBot.py
 
 ```
 
 and finally,
 
 ```sh
-rosrun expTest robotController.py
+rosrun ExperimentalRoboticsAssignment2 robotController.py
 
 ```
 
@@ -435,8 +447,8 @@ type here ...
 
 - [x] Complete the introduction of the template 
 - [ ] Describe the software architechture
-  - [ ] Component diagram (*not mandatory*)
-  - [ ] Temporal diagram + comments
+  - [x] Component diagram (*not mandatory*)
+  - [x] Temporal diagram + comments
   - [ ] States diagrams, whether applicable + comments
   - [ ] Create a list describing ROS messages and parameters 
 - [ ] Describe the installation steps and the running procedures
@@ -453,7 +465,7 @@ type here ...
  
     
 
-See the [open issues](https://github.com/fedehub/expTest/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/fedehub/ExperimentalRoboticsAssignment2/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -488,7 +500,7 @@ Distributed under none License.
 
 Federico Civetta - s4194543@studenti.unige.it
 
-Project Link: [https://github.com/fedehub/expTest](https://github.com/fedehub/expTest)
+Project Link: [https://github.com/fedehub/ExperimentalRoboticsAssignment2](https://github.com/fedehub/ExperimentalRoboticsAssignment2)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -518,12 +530,11 @@ Project Link: [https://github.com/fedehub/expTest](https://github.com/fedehub/ex
 [stars-shield]: 	https://img.shields.io/github/stars/fedehub/ExperimentalRoboticsAssignment2
 [stars-url]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/stargazers
 [issues-shield]: 	https://img.shields.io/github/issues/fedehub/ExperimentalRoboticsAssignment2
-[issues-url]: https://github.com/fedehub/expTest/issues
+[issues-url]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/issues
 [license-shield]: https://img.shields.io/github/license/fedehub/ExperimentalRoboticsAssignment2
 
-
+<!-- general resources -->
 [1]: http://wiki.ros.org/smach
-[2]: https://github.com/EmaroLab/armor
 [3]: http://wiki.ros.org/smach/Tutorials/Smach%20Viewer
 [4]: http://wiki.ros.org
 [5]: <sherlbotH_holes.py>
@@ -542,10 +553,49 @@ Project Link: [https://github.com/fedehub/expTest](https://github.com/fedehub/ex
 [18]: https://docs.python.org/3/library/queue.html
 [19]: https://protege.stanford.edu
 
-[100]: https://github.com/fedehub/expTest/blob/main/media/componentDiagram/componentDiagram.jpg
-[101]: https://github.com/fedehub/expTest/blob/main/media/rqt/rosgraph.svg
-[102]: https://github.com/fedehub/expTest/blob/main/media/sequenceDiagram/sequenceDiagram.jpg
-[103]: https://github.com/fedehub/expTest/blob/main/media/stateDiagram/stateDiagram.jpg
-[104]: https://github.com/fedehub/expTest/blob/main/media/entity_graph.jpg
-[105]: <youTubeVideo>
-[106]: https://github.com/fedehub/expTest/blob/main/media/gifs/smach.gif
+<!-- Nodes -->
+[20]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/erl_assignment_2/scripts/cluedo_kb.py
+[21]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/erl_assignment_2/scripts/go_to_point.py
+[22]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/erl_assignment_2/scripts/main.py
+[23]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/erl_assignment_2/scripts/test_nav.py
+[24]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/erl_assignment_2/src/action_interface.cpp
+[25]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/erl_assignment_2/src/manipulation.cpp
+[26]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/erl2/src/my_simulation.cpp
+[27]:https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/erl2/src/simulation.cpp
+
+
+<!-- Launchers -->
+[28]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/erl_assignment_2/launch/run_detectibot_actions.launch
+[29]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/erl_assignment_2/launch/run_rosplan.launch
+[30]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/erl_assignment_2/launch/run_simulated_actions.launch
+[31]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/erl_assignment_2/launch/test_plan_and_sim_actions.sh
+
+<!-- srvs -->
+[32]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/erl_assignment_2_msgs/srv/GetId.srv
+[33]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/erl_assignment_2_msgs/srv/MarkWrongId.srv
+[34]:https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/erl2/srv/Oracle.srv
+
+
+<!-- Component diagrams  -->
+[100]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/component_diagram.jpg
+[101]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v2/erl_assignment_2_action_interface_cpp_v2.jpg
+[102]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl2_my_simulation_cpp.jpg
+[103]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_2_cluedo_kb_py.jpg
+[104]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_2_main_py.jpg
+[105]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_2_manipulation_cpp.jpg
+[106]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_2_test_nav_py.jpg
+[107]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_go_to_point_py.jpg
+
+<!-- rqt graphs -->
+[108]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/tree/main/media/rqt/rosgraph_nodes_only.png
+[109]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/tree/main/media/rqt/rosgraph_nodes_topics_active.png
+[110]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/tree/main/media/rqt/rosgraph_nodes_topics_all.png
+
+<!-- state diagram -->
+[111]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/tree/main/media/state_diagrams/Diagrams_erl_img.jpg
+
+
+<!-- MoveIt -->
+[112]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/tree/main/erl_moveit_pkg/launch
+[113]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/tree/main/erl_moveit_pkg/config
+[114]:
