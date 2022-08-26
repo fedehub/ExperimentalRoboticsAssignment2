@@ -5,10 +5,6 @@
 
 <!-- PROJECT SHIELDS -->
 <!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 [![Forks][forks-shield]][forks-url]
@@ -92,8 +88,62 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<!-- PLEASE INSERT HERE -->
+This project consists in building a simulation where our detectibot takes on the appereance of a real robot, roaming into a phisical environment (differentlwy from what occured in the first project ) containing hints.
 
+There are four different positions in the environment (x,y,z respectively) that contains hints:
+If the *cluedo_link* of the robot is reasonably close, this will trigger the oracle for the generation of a hint 
+
+> **REMARK** x and y coordinates where known a priori as shown in the table below   
+
+  | room  | x,y coordinates  | z coordinate |
+  |--|--|--|
+  | FirstMarkerPosition | ( -3,0 ) | 0.75 v 1.25 |
+  | SecondMarkerPosition | ( +3,0 ) | 0.75 v 1.25 |
+  | ThirdMarkerPosition | ( 0,-3 ) | 0.75 v 1.25 |
+  | FourthMarkerPosition | ( 0, +3 ) | 0.75 v 1.25 |
+ 
+Having differen values for z, it is needed that detectibot reaches both quotes with its cluedo_link
+
+Concerining the simulation environment, there are small walls around the robot aimed at impeding the movements of its mobile base 
+
+Hence the robot moves from one «hint» coordinate to another one, while receiving hints. This holds until it has a complete
+and consistent hypothesis
+
+<!-- Note about  consistent huèothesis -->
+
+ Please consider that **consistent hypothesis** have been defined as COMPLETED but NOT INCONSISTENT 
+
+> *REMARK* A consistent hypothesis is  defined as *completed* when there occurs one role for each class (i.e., one occourence of what, one occourence for who, one occourence for where ). 
+A straightforward example of such hypothesis is [ID2][12], whose definition is here below reported
+
+```txt
+ID2_1: ['where', 'Study']
+ID2_2: ['who', 'Col.Mustard']
+ID2_3: ['what', 'Rope']
+```
+
+> *REMARK* An hypothesis, is defined as *inconsistent* when there occurs more than one role for each class (i.e. 2 or more occourences of who, where, what) 
+
+A clear example of such hypothesis is ID4  whose definition is here below reported
+
+```txt
+ID4_1: ['where', 'Library']
+ID4_2: ['who', 'Mrs.White']
+ID4_3: ['what', 'LeadPipe']
+ID4_4: ['where', 'Diningroom']
+```
+### Assignment's prerequisites
+
+As in the first assignment:
+- only one ID source is the trustable one. 
+- Whenever a robot gets a complete hypothesis, it should go in the center of the arena 
+- Once the center has been reached, it should «tell» its solution (as in the first assignment). 
+- If the solution is the **correct one**, the game ends
+- it is strictly required to use ROSPlan here, to plan the behaviour of your
+robot. 
+- create a pddl domain, problem and a set of actions 
+- the robot of the model has no limitations, meaning that it can be modelled in whatever fashion 
+- 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -103,10 +153,10 @@
 
 <!-- PLEASE INSERT HERE -->
 
-
-* [Smach][1]
-* [Armor][2]
 * [ROS][4]
+* [ROSPlan Framework][5]
+* [MoveIt Frameowrk][6]
+<!-- *[move_base][7] -->
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -123,28 +173,9 @@ Under the following sections, the software architecture is briefly introduced, a
 <!-- how to make a ref to a specific section 
 the **rqt_graph** <a href="#rqt_graph">section</a>
 -->
- Please consider that **consistent hypothesis** have been defined as COMPLETED but NOT INCONSISTENT 
+<img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/component_diagram.jpg" width= 350 height=350>
 
-> *REMARK* A consistent hypothesis is  defined as *completed* when there occurs one role for each class (i.e., one occourence of what, one occourence for who, one occourence for where ). 
-A straightforward example of such hypothesis is [ID2][12], whose definition is here below reported
 
-```
-ID2_1: ['where', 'Study']
-ID2_2: ['who', 'Col.Mustard']
-ID2_3: ['what', 'Rope']
-```
-
-> *REMARK* An hypothesis, is defined as *inconsistent* when there occurs more than one role for each class (i.e. 2 or more occourences of who, where, what) 
-
-A clear example of such hypothesis is [ID4][12], whose definition is here below reported
-
-```
-ID4_1: ['where', 'Library']
-ID4_2: ['who', 'Mrs.White']
-ID4_3: ['what', 'LeadPipe']
-ID4_4: ['where', 'Diningoom']
-```
-<!-- PLEASE INSERT HERE -->
 
 
 
@@ -168,46 +199,105 @@ In the src folder instead, there are the here listed cpp nodes:
 
 - [manipulation.cpp][21]:          <!-- PLEASE INSERT HERE -->
 
-- [main.py][22]:                   <!-- PLEASE INSERT HERE -->
-
-- [test_nav.py][23]:               <!-- PLEASE INSERT HERE -->
 
 Concerning the node we were provided, it belongs to the `erl2` package:
 
 - [my_simulation.cpp][26]
 
+Let's start from the `go_to_point.py` node
+
+<img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_go_to_point_py.jpg" width= 350 height=350>
+
+Let's now talk about the `main.py` node:
+
+<img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_2_main_py.jpg" width= 350 height=350>
+
+Concerning the `cluedo_kb.py` node:
+
+<img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_2_cluedo_kb_py.jpg" width= 350 height=350>
+
+Concerning the `action_interface.cpp` node:
+
+<img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v2/erl_assignment_2_action_interface_cpp_v2.jpg" width= 350 height=350>
+
+Concerning the `manipulation_cpp` node:
+
+<img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_2_manipulation_cpp.jpg" width= 350 height=350>
+
+Concerning the `my_simulation.cpp` node: 
+
+<img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl2_my_simulation_cpp.jpg" width= 350 height=350>
+
+
+
 ### rossrv 
 
-- **get_id**: <!-- PLEASE INSERT HERE -->
+- **/get_id**: <!-- rossrv description -->
 
     
-  > msg type:       <!-- PLEASE INSERT HERE -->
-
+  > msg type:  `erl_assignment_2_msgs/GetId`
   
-- **mark_wrong_id**: <!-- PLEASE INSERT HERE -->
+- **/mark_wrong_id**: <!-- rossrv description -->
 
-  > msg type:       <!-- PLEASE INSERT HERE -->
+  > msg type:  `erl_assignment_2_msgs/MarkWrongId`
 
+- **/oracle_solution**: <!-- rossrv description -->
 
-- **oracle_solution**:     <!-- PLEASE INSERT HERE -->
-
-  > msg type                <!-- PLEASE INSERT HERE -->
+  > msg type    `erl2/Oracle`       
 
 
 ### rosmsg
 
 <!-- PLEASE INSERT HERE -->
+Within the `erl2` package, a cusom message is defined. For the sake of completeness, its structure is here below mentioned
 
+```plain txt
+int32 ID
+string key
+string value
+```
 
 ### rostopic
 
-The aforementioned message type use the `/robotPose` topic. It presents as:
+The `/oracle_hint` topic shows, as::
 - **Publishers:**
-  - [/navigation][7]
-  - [/controller][6] 
+  - [/cluedo_kb][20]
+  
 - **Subscribers:**
-  - [/navigation][7]
+  - [/my_simulation][26]
 
+The `/cmd_vel` topic shows, as:
+- **Publishers:**
+  - [/gazebo][6] 
+  
+- **Subscribers:**
+  - [/go_to_point][21]
+ 
+The `/odom` topic shows, as:
+- **Publishers:**
+  - [/go_to_point][21]
+
+- **Subscribers:**
+  - /gadzebo
+ 
+The `/tf` topic shows, as:
+- **Publishers:**
+  - [/manipulation][25]
+  - /rviz
+  - /move_group
+- **Subscribers:**
+  - /robot_state_publisher
+  - /gazebo
+ 
+The `/move_group` topic shows, as:
+- **Publishers:**
+  - [/manipulation][7]
+  - /rviz
+  - /gazebo 
+- **Subscribers:**
+  - /manipulation
+  - /rviz
+  - /gazebo
 
 
 ### rosparameters 
@@ -223,6 +313,10 @@ rosrun rqt_graph rqt_graph
 ```
 
 In the figure below, circles represent nodes and squares represent topic messages. The arrow instead, indicates the transmission of the message!
+
+[!image][106]
+
+
 
 <!-- PLEASE INSERT HERE -->
 
@@ -537,9 +631,9 @@ Project Link: [https://github.com/fedehub/ExperimentalRoboticsAssignment2](https
 [1]: http://wiki.ros.org/smach
 [3]: http://wiki.ros.org/smach/Tutorials/Smach%20Viewer
 [4]: http://wiki.ros.org
-[5]: <sherlbotH_holes.py>
-[6]: <robotcontrolelr>
-[7]: <navigation>
+[5]: https://github.com/KCL-Planning/ROSPlan
+[6]: https://moveit.ros.org/
+[7]: http://wiki.ros.org/move_base
 [8]: <oracle>
 [9]: <HypoID_Msg>
 [10]: <Hint_Msg>
@@ -598,4 +692,6 @@ Project Link: [https://github.com/fedehub/ExperimentalRoboticsAssignment2](https
 <!-- MoveIt -->
 [112]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/tree/main/erl_moveit_pkg/launch
 [113]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/tree/main/erl_moveit_pkg/config
-[114]:
+
+<!-- Previous project links -->
+[114]: https://github.com/fedehub/expTest
