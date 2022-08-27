@@ -1,5 +1,27 @@
 #! /usr/bin/env python
 
+
+"""
+.. module:: go_to_point
+	:platform: Unix
+	:synopsis: Python module for piloting the robot to the target
+
+.. moduleauthor:: Federico fedeunivers@gmail.com
+
+ROS node for driving a robot to a specific point within a simulated
+environment, given a certain orientation.
+
+Subscribes to:
+	/odom topic where the simulator publishes the robot position
+
+Publishes to:
+	/cmd_vel the desired robot position
+
+Service :
+	/go_to_point to start the robot motion.
+
+"""
+
 # import ros stuff
 import rospy
 from sensor_msgs.msg import LaserScan
@@ -11,21 +33,42 @@ from std_srvs.srv import *
 import math
 
 active_ = False
+"""Bool: Service activity flag
+"""
 
 # robot state variables
 position_ = Point()
+"""Point: current robot position
+"""
+
 yaw_ = 0
+"""Pose: current robot orientation
+"""
 # machine state
 state_ = 0
-# goal
+"""Int: current state of the server
+"""
+
 desired_position_ = Point()
+"""Point: ctarget robot position
+"""
+
 desired_position_.x = rospy.get_param('des_pos_x')
 desired_position_.y = rospy.get_param('des_pos_y')
 desired_position_.z = 0
+
 # parameters
 yaw_precision_ = math.pi / 9  # +/- 20 degree allowed
+"""Float: yaw acc +/- 20 deg allowed
+"""
+
 yaw_precision_2_ = math.pi / 90  # +/- 2 degree allowed
+"""Float: tight yaw acc +/- 2
+"""
+
 dist_precision_ = 0.3
+"""Float: linear distance allowed
+"""
 
 kp_a = 3.0  # In ROS Noetic, it may be necessary to change the sign of this proportional controller
 kp_d = 0.2
@@ -40,7 +83,7 @@ pub = None
 
 
 def go_to_point_switch(req):
-	'''SERVICE IMPLEMENTATION OF /go_to_point
+	''' SERVICE IMPLEMENTATION OF /go_to_point_switch
 	
 	the service sets the value of the activity flag.
 	
@@ -51,6 +94,7 @@ def go_to_point_switch(req):
 	
 	Returns:
 		(std_srvs/SetBoolResponse) success is always true
+	
 	'''
 	
 	global active_
@@ -64,6 +108,19 @@ def go_to_point_switch(req):
 
 
 def clbk_odom(msg):
+	'''Description of the callback:
+	
+	This function retrieves the current robot position for saving
+	it within the *position_* global variable and is responsible for
+	transforming the orientation from quaternion angles to Euler ones
+	
+	Args:
+		msg(Twist): data retrieved by */cmd_vel* topic
+	
+	Returns:
+		None
+
+	'''	
 	global position_
 	global yaw_
 
@@ -81,18 +138,49 @@ def clbk_odom(msg):
 
 
 def change_state(state):
+	''' Description of the change_state function:
+	
+	This value retrieve and assigns the current state to the
+	global one (*state_*)
+	
+	Args:
+		state(int): the state of the robot
+	
+	Returns:
+		None
+	'''
 	global state_
 	state_ = state
 	print ('State changed to [%s]' % state_)
 
 
 def normalize_angle(angle):
+	''' Function for normalizing the angle between -pi and pi.
+	
+	Args:
+		angle(Float): the input angle
+	
+	Returns:
+		angle(Float): the normalized angle.
+	'''
+
 	if(math.fabs(angle) > math.pi):
 		angle = angle - (2 * math.pi * angle) / (math.fabs(angle))
 	return angle
 
 
 def fix_yaw(des_pos):
+	''' Description of the fix_yaw function:
+	
+	This function computes the robot orientation among x and y 
+	coordinates and sets the angular velocity needed for achieving
+	the desired robot position. 
+		
+	Args:
+		des_pos(Point):  the expected x and y coordinates
+	Returns:
+		None
+	'''	
 	global yaw_, pub, yaw_precision_2_, state_
 	desired_yaw = math.atan2(des_pos.y - position_.y, des_pos.x - position_.x)
 	err_yaw = normalize_angle(desired_yaw - yaw_)
@@ -116,6 +204,23 @@ def fix_yaw(des_pos):
 
 
 def go_straight_ahead(des_pos):
+	''' Description of the go_straight_ahead function:
+
+	This function computes the robot orientation among x and y 
+	coordinates necessary to reach the x,y target point. Once the
+	linear velocities have been set, an angular velocity is defined
+	by means of an error. It is proportional to this latter and it 
+	allows a correction of the trajectory, by checking a treshold
+	over a distance
+		
+		
+	Args:
+		des_pos(Point): the expected x and y coordinates
+	Returns:
+		None
+
+	'''
+
 	global yaw_, pub, yaw_precision_, state_
 	desired_yaw = math.atan2(des_pos.y - position_.y, des_pos.x - position_.x)
 	err_yaw = desired_yaw - yaw_
@@ -141,6 +246,18 @@ def go_straight_ahead(des_pos):
 
 
 def done(des_pos):
+	""" Description of done function:
+		
+	This function marks the goal target as succeeded, once all the
+	linear and angular velocities are set to zero  
+
+	Args :
+		None
+
+	Returns :
+		None
+		
+	"""
 	twist_msg = Twist()
 	twist_msg.linear.x = 0
 	twist_msg.angular.z = 0
@@ -152,7 +269,19 @@ def done(des_pos):
 
 
 def go_to_point(req):
-	
+	""" SERVICE IMPLEMENTATION OF /go_to_point
+		
+	This function retrieves the ROS params from the ROS
+	parameter server. Secondly, it truggers a different 
+	robot behaviour, depending on the state's value 
+
+	Args :
+		None
+
+	Returns :
+		None
+		
+	"""	
 	global desired_position_, state_
 	
 	rate = rospy.Rate(20)
@@ -195,25 +324,6 @@ def main():
 	
 	rospy.spin( )
 	
-	'''
-	rate = rospy.Rate(20)
-	while not rospy.is_shutdown():
-		desired_position_.x = rospy.get_param('des_pos_x')
-		desired_position_.y = rospy.get_param('des_pos_y')
-		if not active_:
-			continue
-		else:
-			if state_ == 0:
-				fix_yaw(desired_position_)
-			elif state_ == 1:
-				go_straight_ahead(desired_position_)
-			elif state_ == 2:
-				done(desired_position_)
-			else:
-				rospy.logerr('Unknown state!')
-
-		rate.sleep()
-	'''
 
 
 if __name__ == '__main__':

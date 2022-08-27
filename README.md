@@ -173,9 +173,7 @@ Under the following sections, the software architecture is briefly introduced, a
 <!-- how to make a ref to a specific section 
 the **rqt_graph** <a href="#rqt_graph">section</a>
 -->
-<img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/component_diagram.jpg" width= 350 height=350>
-
-
+<img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/component_diagram.jpg" width= 500 height=500>
 
 
 
@@ -204,10 +202,12 @@ Concerning the node we were provided, it belongs to the `erl2` package:
 
 - [my_simulation.cpp][26]
 
-Let's start from the `go_to_point.py` node
+Let's start with the `go_to_point.py` node
 
 <img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_go_to_point_py.jpg" width= 350 height=350>
 
+It implements a ROS service, whose purpose is that of piloting the robot toward a specific target by following a straight line. As it is shown by the component diagram here reported, it subscribes to the `/odom` topic for retrieving the current robot position and once the robot orientation among x and y coordinates has been computed with respect to the target position (obtained by means of the ros parameter server), it publishes on the `/cmd_vel` topic
+ 
 Let's now talk about the `main.py` node:
 
 <img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_2_main_py.jpg" width= 350 height=350>
