@@ -1,5 +1,29 @@
 #!/bin/bash
 
+"""
+.. module:: main
+	:platform: Unix
+	:synopsis: Core python module, interfacing with Rosplan
+
+.. moduleauthor:: Federico fedeunivers@gmail.com
+
+ROS node representing the core of the overall architechture. Initially,
+it updates the RosPlan Knowledge Base. Secondly, it generates the plan
+with RosPlan. Thirdly, it waits that it gets completed.  Then, if the plam
+does not end up in a final solution, it repeats the aformentioned steps.
+
+Subscribes to:
+	/rosout [rosgraph_msgs/Log]
+	/clock [rosgraph_msgs/Clock]
+Publishes to:
+	/rosout [rosgraph_msgs/Log]
+
+Service :
+	None
+
+"""
+
+
 import rospy
 from std_srvs.srv import Empty, EmptyRequest, EmptyResponse
 from rosplan_dispatch_msgs.srv import DispatchService, DispatchServiceRequest, DispatchServiceResponse
@@ -7,6 +31,8 @@ from rosplan_knowledge_msgs.srv import KnowledgeUpdateService, KnowledgeUpdateSe
 from diagnostic_msgs.msg import KeyValue
 
 cl_update_kb = None
+"""None: Variable needed for updating the Knowledge base 
+"""
 
 ADD_KNOWLEDGE = 0
 DEL_KNOWLEDGE = 2
@@ -15,6 +41,15 @@ KB_KTYPE_FLUENT = 2
 KB_KTYPE_PREDICATE = 1
 
 def replan_setup_kb( ):
+	''' Description of the replan_setup_kb function
+	
+	This function allows to "reset" the ontology predicates' values,
+	by setting all the wayoints as "  yet to be visited ", all the 
+	hints as " yet to be gathered " and the consistent hypothesis
+	as "yet to be collected ".
+	
+	
+	'''
 	set_pred( "has_been_at", [["wp", "wp1"]], False )
 	set_pred( "has_been_at", [["wp", "wp2"]], False )
 	set_pred( "has_been_at", [["wp", "wp3"]], False )
@@ -39,9 +74,16 @@ def replan_setup_kb( ):
 
 
 def set_pred( predicate, params, value ):
+	'''Description of the set_pred function
+
+	This function allows to set the predicates and
+	populate a request accordingly 
+
+	Note:
+
+		params: [ ... , [key, value], ... ]
 	'''
-	params: [ ... , [key, value], ... ]
-	'''
+	
 	req = KnowledgeUpdateServiceRequest( )
 	
 	req.knowledge.attribute_name = predicate
@@ -56,9 +98,9 @@ def set_pred( predicate, params, value ):
 		kv = KeyValue( )
 		kv.key = ls[0]
 		kv.value = ls[1]
-		req.knowledge.values.append( kv )
+		req.knowledge.values.append(kv)
 	
-	cl_update_kb( req )
+	cl_update_kb(req)
 
 
 if __name__ == "__main__":
@@ -67,6 +109,7 @@ if __name__ == "__main__":
 	em = Empty( )
 	dis = DispatchServiceResponse( )
 	
+	# kb updater
 	cl_update_kb = rospy.ServiceProxy( "/rosplan_knowledge_base/update", KnowledgeUpdateService )
 	
 	# planning triggers
@@ -76,6 +119,8 @@ if __name__ == "__main__":
 	cl_plan_dispatcher = rospy.ServiceProxy( "/rosplan_plan_dispatcher/dispatch_plan", DispatchService )
 	
 	solved = False
+	"""Bool: Variable used as flag to notice whenever the mistery gets solved 
+	"""
 	
 	while not solved:
 		rospy.loginfo( "replanning..." )

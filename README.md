@@ -204,30 +204,52 @@ Concerning the node we were provided, it belongs to the `erl2` package:
 
 Let's start with the `go_to_point.py` node
 
+<p align="center">
 <img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_go_to_point_py.jpg" width= 350 height=350>
+</p>
 
 It implements a ROS service, whose purpose is that of piloting the robot toward a specific target by following a straight line. As it is shown by the component diagram here reported, it subscribes to the `/odom` topic for retrieving the current robot position and once the robot orientation among x and y coordinates has been computed with respect to the target position (obtained by means of the ros parameter server), it publishes on the `/cmd_vel` topic
- 
+
 Let's now talk about the `main.py` node:
 
+<p align="center">
 <img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_2_main_py.jpg" width= 350 height=350>
+</p>
+
+This node represents three core structures, even the "brain" of our achitechture. Being ROSPlan a framework  that owns a variety of nodes which encapsulate planning, problem generation and plan execution, a set of clients have been initialised to, subsequently:
+
+- generate a problem: a [pddl problem][115] is published on a topic 
+- establish a plan: a planner is called for  publishing the plan to a topic 
+- parse a plan: At this stage the PDDL plan is converted into ROS messages, ready to be executed
+- dispatch a plan:  for being then executed 
+
+There is also the possibility to update the Knowledge base (being it the main responsible for the PDDL domain model amd current problem istance stroage)
+
+Indeed, if detectibot is not able to solve the mistery at the first round, it is possible to count on a "replanning phase", after which it starts roaming around the environment for gathering hints held by the markers
 
 Concerning the `cluedo_kb.py` node:
 
+<p align="center">
 <img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_2_cluedo_kb_py.jpg" width= 350 height=350>
+</p>
 
 Concerning the `action_interface.cpp` node:
 
+<p align="center">
 <img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v2/erl_assignment_2_action_interface_cpp_v2.jpg" width= 350 height=350>
+</p>
 
 Concerning the `manipulation_cpp` node:
 
+<p align="center">
 <img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_2_manipulation_cpp.jpg" width= 350 height=350>
+</p>
 
 Concerning the `my_simulation.cpp` node: 
 
+<p align="center">
 <img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl2_my_simulation_cpp.jpg" width= 350 height=350>
-
+</p>
 
 
 ### rossrv 
@@ -695,3 +717,6 @@ Project Link: [https://github.com/fedehub/ExperimentalRoboticsAssignment2](https
 
 <!-- Previous project links -->
 [114]: https://github.com/fedehub/expTest
+
+<!-- pddl -->
+[115]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/tree/main/erl_assignment_2/pddl
