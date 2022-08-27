@@ -1,19 +1,30 @@
+#! /usr/bin/env python
 
-'''file cluedo_kb node
+"""
+.. module:: main
+	:platform: Unix
+	:synopsis: Python module aimed at implementong the Reasoning & AI side
 
-rostopic pub --once /oracle_hint erl2/ErlOracle 
+.. moduleauthor:: Federico fedeunivers@gmail.com
 
-rostopic pub --once /oracle_hint erl2/ErlOracle "ID: 0
-key: 'who'
-value: 'ciao'" 
-rostopic pub --once /oracle_hint erl2/ErlOracle "ID: 0
-key: 'where'
-value: 'ciao'" 
-rostopic pub --once /oracle_hint erl2/ErlOracle "ID: 0
-key: 'what'
-value: 'ciao'" 
+ROS node working as " ontology ", employed for providing a reaoning/processing system.
+This latter allows for storing hints, elaborate hypothesis based on the last information
+added, finding new possible solutions for the case, getting rid of some hypothesis. 
+Moreover there is no need of an explicit request, whenever the KB adds a message to the 
+ontology. since the KB keeps listening to the Oracle topic 
 
-'''
+Subscribes to:
+	/oracle_hint [erl2/ErlOracle]
+	
+
+Publishes to:
+	/rosout [rosgraph_msgs/Log]
+
+Service :
+	/get_id 
+	/mark_wrong_id
+
+"""
 
 import rospy
 from erl2.msg import ErlOracle
@@ -153,9 +164,11 @@ def add_hint_to_list( hint ):
 	else:
 		rospy.logwarn( f"(cluedo_kb -> add_hint_to_list) received a unknown hint.key : {hint.key}" )
 	
+	# --- --- --- --- --- --- --- ---  Testing --- --- --- --- --- --- --- 
 	# rospy.loginfo(f"empty WHO? {kb[hint.ID][record_who] == ''}")
 	# rospy.loginfo(f"empty WHERE? {kb[hint.ID][record_where] == ''}")
 	# rospy.loginfo(f"empty WHAT? {kb[hint.ID][record_what] == ''}")
+	
 	if (kb[hint.ID][record_where] != "") and (kb[hint.ID][record_what] != "") and (kb[hint.ID][record_who] != ""):
 		# rospy.loginfo(f"ID{hint.ID} is complete")
 		kb[hint.ID][is_complete] = True 
@@ -220,7 +233,7 @@ def get_id( req ):
 		still available IDs. 
 	
 	Note:
-		the service coulf return also (true, -1) in a situation in which
+		the service could return also (true, -1) in a situation in which
 		there are some active ID, but none of them is complete. 
 	
 	'''

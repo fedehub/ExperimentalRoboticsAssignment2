@@ -143,7 +143,7 @@ As in the first assignment:
 robot. 
 - create a pddl domain, problem and a set of actions 
 - the robot of the model has no limitations, meaning that it can be modelled in whatever fashion 
-- 
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -181,21 +181,21 @@ the **rqt_graph** <a href="#rqt_graph">section</a>
 
 ### ROS node description
 
-Within the scripts folder, the following nodes are listed:  
+Within the scripts folder, inside the `erl_assignment_2` pkg the following nodes are listed:  
 
-- [cluedo_kb.py][20]:              <!-- PLEASE INSERT HERE -->
+- [cluedo_kb.py][20]              <!-- PLEASE INSERT HERE -->
 
-- [go_to_point.py][21]:            <!-- PLEASE INSERT HERE -->
+- [go_to_point.py][21]            <!-- PLEASE INSERT HERE -->
 
-- [main.py][22]:                   <!-- PLEASE INSERT HERE -->
+- [main.py][22]                   <!-- PLEASE INSERT HERE -->
 
-- [test_nav.py][23]:               <!-- PLEASE INSERT HERE -->
+- [test_nav.py][23]               <!-- PLEASE INSERT HERE -->
 
 In the src folder instead, there are the here listed cpp nodes:
 
-- [action_interface.cpp][20]:      <!-- PLEASE INSERT HERE -->
+- [action_interface.cpp][20]      <!-- PLEASE INSERT HERE -->
 
-- [manipulation.cpp][21]:          <!-- PLEASE INSERT HERE -->
+- [manipulation.cpp][21]          <!-- PLEASE INSERT HERE -->
 
 
 Concerning the node we were provided, it belongs to the `erl2` package:
@@ -232,6 +232,17 @@ Concerning the `cluedo_kb.py` node:
 <p align="center">
 <img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_2_cluedo_kb_py.jpg" width= 350 height=350>
 </p>
+
+cluedo_KB is a node that acts as a dedicated ontology for the problem under investigation; it provides a processing/reasoning system that provides the functionalities of:
+
+- registering the clues
+- building and processing hypotheses based on the added information
+- finding possible solutions to the case
+- rejecting hypotheses
+- 
+  > ***REMARK*** the KB listens in on the oracle's topic and as soon as the oracle transmits the clue, the KB adds the message to the ontology without the need for an explicit request
+
+Translated with www.DeepL.com/Translator (free version)
 
 Concerning the `action_interface.cpp` node:
 

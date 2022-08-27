@@ -13,8 +13,8 @@ with RosPlan. Thirdly, it waits that it gets completed.  Then, if the plam
 does not end up in a final solution, it repeats the aformentioned steps.
 
 Subscribes to:
-	/rosout [rosgraph_msgs/Log]
 	/clock [rosgraph_msgs/Clock]
+
 Publishes to:
 	/rosout [rosgraph_msgs/Log]
 
