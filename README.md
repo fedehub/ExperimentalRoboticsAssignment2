@@ -155,7 +155,7 @@ robot.
 
 
 
-### Built With
+### Built With 🏗️
 
 <!-- PLEASE INSERT HERE -->
 
@@ -185,7 +185,7 @@ the **rqt_graph** <a href="#rqt_graph">section</a>
 
 <!-- Software architecture, temporal diagram and states diagrams (if applicable). Each diagram should be commented with a paragraph, plus a list describing ROS messages and parameters. -->
 
-### ROS node description: An overview
+### ROS node description: An overview 
 
 Within the scripts folder, inside the `erl_assignment_2` pkg the following nodes are listed:  
 
@@ -210,7 +210,7 @@ Concerning the node we were provided, it belongs to the `erl2` package:
 
 > :warning: For testing purposes two nodes have been employed. The first one is the my_simulation.cpp and the second one is the test_nav.py. Be aware that the test_nav.py does not represent any relevant part of the software architechture, its purpose was just that of verifying the robustness of the navigation module. Instead, my_simulation.cpp belongs to the official SOFAR and it is needed for the project to correctly work
 
-### ROS node description: the go_to_point.py node
+### ROS node description: the go_to_point.py node  🪢
 
 Let's start with the `go_to_point.py` node
 
@@ -220,7 +220,7 @@ Let's start with the `go_to_point.py` node
 
 It implements a ROS service, whose purpose is that of piloting the robot toward a specific target by following a straight line. As it is shown by the component diagram here reported, it subscribes to the `/odom` topic for retrieving the current robot position and once the robot orientation among x and y coordinates has been computed with respect to the target position (obtained by means of the ros parameter server), it publishes on the `/cmd_vel` topic
 
-### ROS node description: the main.py node 
+### ROS node description: the main.py node 🪢
 
 <p align="center">
 <img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_2_main_py.jpg" width= 500 height=500>
@@ -237,7 +237,7 @@ There is also the possibility to update the Knowledge base (being it the main re
 
 Indeed, if detectibot is not able to solve the mistery at the first round, it is possible to count on a "replanning phase", after which it starts roaming around the environment for gathering hints held by the markers
 
-### ROS node description: the cluedo_kb.py node 
+### ROS node description: the cluedo_kb.py node 🪢
 
 Concerning the `cluedo_kb.py` node:
 
@@ -255,7 +255,7 @@ cluedo_KB is a node that acts as a dedicated ontology for the problem under inve
 > ***REMARK*** the KB listens in on the oracle's topic and as soon as the oracle transmits the clue, the KB adds the message to the ontology without the need for an explicit request
 
 
-### ROS node description: the action_interface.cpp node  
+### ROS node description: the action_interface.cpp node  🪢
 
 Concerning the `action_interface.cpp` node:
 
@@ -303,7 +303,7 @@ here below it is possible to see the conntent of the soultion found. If you wamt
 13.013: (query_hypo tp)  [1.000]
 ```
 
-### ROS node description: the manipulation.cpp node 
+### ROS node description: the manipulation.cpp node 🪢
 
 Concerning the `manipulation_cpp` node:
 
@@ -314,7 +314,7 @@ Concerning the `manipulation_cpp` node:
 This node is simply devoted to control the Detectibot's manipulator by directly interacting with the MoveIt! framework
 
 
-### ROS node description: my_simulation.cpp node 
+### ROS node description: my_simulation.cpp node 🪢
 
 <p align="center">
 <img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl2_my_simulation_cpp.jpg" width= 500 height=500>
@@ -408,8 +408,7 @@ rosrun rqt_graph rqt_graph
 
 In the figure below, circles represent nodes and squares represent topic messages. The arrow instead, indicates the transmission of the message!
 
-[image prev ][110]
-
+<img src= "https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/rqt/rosgraph_nodes_topics_all.png" />
 
 
 <!-- PLEASE INSERT HERE -->
