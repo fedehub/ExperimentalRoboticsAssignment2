@@ -418,186 +418,104 @@ In the figure below, circles represent nodes and squares represent topic message
 
 ### Installation procedure
 
-## The fastest way
-
-1. Clone the repo
+> :warning: To avoid further issues, please use this docker image provided by our professors 
 
 ```sh
-   git clone https://github.com/fedehub/ExperimentalRoboticsAssignment.git
+docker run -it -p 6080:80 -p 5900:5900 --name MyDockerContainer carms84/exproblab
+
 ```
-2. Move to the directory and enable permissions
+Also remember to update and upgrade the container
 
 ```sh
-   cd <!-- PLEASE INSERT HERE -->
-
-   chmod +x "./compile,sh
+sudo apt get update
+sudo apt get upgrade
 ```
-3. launch the `compile.sh` file
-
-```sh
-   <!-- PLEASE INSERT HERE -->
-
-```
-4. launch the project simulation
-
-```sh
-   <!-- PLEASE INSERT HERE -->
-
-```
-
-5. pub a message from terminal, when prompted
-
-```python
-<!-- PLEASE INSERT HERE -->
-
-```
-## step by step 
-
-
-- type here ...
-
-```sh
-docker pull carms84/exproblab
-```
-
-- type here ...
-
-```sh
-docker run -it --name exprob -p 6080:80 -p 5900:5900 carms84/exproblab
-```
-
-- type here ...
-
-```sh
-cd ros_ws/src 
-```
-
-- type here ...
-
-```sh
-git clone https://github.com/fedehub/ExperimentalRoboticsAssignment.git
-```
-
-- type here ...
-
-```sh
-
-```
-
-- type here ...
- 
-```sh
-
-```
-
-- type here ...
-
-```sh
-
-```
-- type here ...
-
-```sh
-
-```
-
-- type here ...
-
-```sh
-
-```
-
-### further changes ...
-
-<!-- PLEASE INSERT HERE -->
-
-                  
-
-## Workspace building e launch
-
-- type here ...
+Then run `catkin_make` on your workspace; in my case 
 
 ```sh
 cd /home/ros_ws/
 catkin_make
-```
-
-- type here ...
-
-```python
-
 
 ```
+You can now download the repository inside the `src` folder 
 
-- type here ...
+```sh 
+cd /home/ros_ws/src
+git clone https://github.com/fedehub/ExperimentalRoboticsAssignment2
+```
+Also download `MoveIt 1.1.5` 
+```sh
+git clone https://github.com/ros-planning/moveit.git
+cd moveit
+git checkout 2b881e5e3c4fd900d4d4310f4b12f9c4a63eb5dd
+cd ..
+git clone https://github.com/ros-planning/moveit_resources.git
+cd moveit_resources
+git checkout f6a7d161e224b9909afaaf621822daddf61b6f52
+cd ..
+git clone https://github.com/ros-planning/srdfdom.git
+cd srdfdom
+git checkout b1d67a14e45133928f9793e9ee143998219760fd
+cd ..
+apt-get install -y ros-noetic-rosparam-shortcuts
+cd ..
+catkin_make
+catkin_make
+catkin_make
+```
 
-```python
+## Workspace building e launch
+
+Navigate to you workspace
+
+```sh
+cd /home/ros_ws/
+
+```
+
+- clone the repository
+
+```sh
+https://github.com/fedehub/ExperimentalRoboticsAssignment2
+
+```
+
+- source your workspace by typing
+
+```sh
+source devel/setup.bash
 
 ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Running procedure
+
 <!-- including all the steps to display the robot's behavior -->
-To appreciate the robot's behaviour, first of all:
 
+To test the project, first of all:
+
+- Open a shell and run:
+  
 ```sh
-roslaunch ...
-
-```
-Alternatively, it is also possible to launch each node, sequentially, after having started the `roscore`:
-
-
-```sh
-roscore &
+roslaunch erl_moveit_pkg run_detectibot.launch 2>/dev/null
 
 ```
 
-type here ...
+- Open a second shell and run 
 
 ```sh
-
+roslaunch erl_assignment_2 run_rosplan.launch
 
 ```
 
-Then,
+- Open a third shell and type:
 
 ```sh
-rosrun ExperimentalRoboticsAssignment2 oracle.py
+rosrun erl_assignment_2 main.py
+
 
 ```
-It follows,
-
-```sh
-rosrun ExperimentalRoboticsAssignment2 navigation.py
-
-```
-
-then, 
-
-
-```sh
-rosrun ExperimentalRoboticsAssignment2 detectiBot.py
-
-```
-
-and finally,
-
-```sh
-rosrun ExperimentalRoboticsAssignment2 robotController.py
-
-```
-
-By starting the smach_viewer node
-
-
-```sh
-rosrun smach_viewer smach_viewer.py
-
-```
-
-it is possible to see how the logic is implemented and how the transitions take place
-
 
 
 <!-- USAGE EXAMPLES -->
