@@ -539,7 +539,11 @@ https://user-images.githubusercontent.com/61761835/187249845-1b03e627-d32e-4464-
 
 ## Working hypothesis and environment 
 
-The  architecture  is designed for providing a raw simplification of the Cluedo Game. Hints are set a-priori, as well as true hypothesis that leads to the game’s end, once collected. 
+The  architecture  is designed for providing a raw simplification of the Cluedo Game. Hints are set a-priori and the True hipothesis is  randomly chosen before starting the game. 
+
+Detectibot (the robot involved in the investigation), moves in a obstacle-free environment charachterised by a perfectly flat floor (without irregularities), within a square-shaped indoor environment 
+
+Concerning the markers we can say that they are positioned in such  a way that the arm can reach them 
 
 All choices were made with the aim of making the system as modular and flexible as possible. Despite this, certain limitations make the system quite unrealistic but functional.
 
