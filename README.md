@@ -239,10 +239,9 @@ cluedo_KB is a node that acts as a dedicated ontology for the problem under inve
 - building and processing hypotheses based on the added information
 - finding possible solutions to the case
 - rejecting hypotheses
-- 
-  > ***REMARK*** the KB listens in on the oracle's topic and as soon as the oracle transmits the clue, the KB adds the message to the ontology without the need for an explicit request
 
-Translated with www.DeepL.com/Translator (free version)
+> ***REMARK*** the KB listens in on the oracle's topic and as soon as the oracle transmits the clue, the KB adds the message to the ontology without the need for an explicit request
+
 
 Concerning the `action_interface.cpp` node:
 
@@ -250,11 +249,59 @@ Concerning the `action_interface.cpp` node:
 <img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v2/erl_assignment_2_action_interface_cpp_v2.jpg" width= 350 height=350>
 </p>
 
+action_interface.cpp implements all rosplan actions in a single ROS node, moreover:
+
+- the same node can be run replicated for all actions specified in the pddl (please)
+- topics and services only get allocated when the action is called for the first time via the rosplan action dispatcher
+- the node interacts with the navigation and manipulation systems to move the robot and the arm
+- The node also interacts with the KB and the oracle for clue and hypothesis processing operations
+
+Regarding the pddl, it is possible to see their logical implementation within the domain file, inside the [detectibot_pddl][116] folder. There you can find both the predicates and seven actions, namely:
+
+1. leave_temple
+2. shift_gripper
+3. gather_hint
+4. go_to_wp
+5. reach_temple
+6. check_consistent_hypo
+7. query_hypo
+
+here below it is possible to see the conntent of the soultion found. If you wamt to take a look at the file itself, just [click here][117] 
+
+``` Plain txt
+; States evaluated: 54
+; Cost: 14.013
+; Time 0.00
+0.000: (leave_temple tp wp1)  [1.000]
+1.001: (shift_gripper wp1)  [1.000]
+2.002: (gather_hint wp1)  [1.000]
+3.003: (go_to_wp wp1 wp2)  [1.000]
+4.004: (shift_gripper wp2)  [1.000]
+5.005: (gather_hint wp2)  [1.000]
+6.006: (go_to_wp wp2 wp3)  [1.000]
+7.007: (shift_gripper wp3)  [1.000]
+8.008: (gather_hint wp3)  [1.000]
+9.009: (go_to_wp wp3 wp4)  [1.000]
+10.010: (shift_gripper wp4)  [1.000]
+11.011: (gather_hint wp4)  [1.000]
+12.012: (reach_temple wp4 tp)  [1.000]
+12.012: (check_consistent_hypo wp1)  [1.000]
+13.013: (query_hypo tp)  [1.000]
+```
+
+
 Concerning the `manipulation_cpp` node:
 
 <p align="center">
 <img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_2_manipulation_cpp.jpg" width= 350 height=350>
 </p>
+
+This node is simply devoted to control the Detectibot's manipulator by directly interacting with the MoveIt! framework
+
+
+--- 
+
+> :warning: For testing purposes two nodes have been employed. The first one is the my_simulation.cpp and the second one is the test_nav.py. Be aware that the test_nav.py does not represent any relevant part of the software architechture, its purpose was just that of verifying the robustness of the navigation module. Instead, my_simulation.cpp belongs to the official SOFAR and it is needed for the project to correctly work
 
 Concerning the `my_simulation.cpp` node: 
 
@@ -262,6 +309,7 @@ Concerning the `my_simulation.cpp` node:
 <img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl2_my_simulation_cpp.jpg" width= 350 height=350>
 </p>
 
+This is the node provided by professor with some simplification in orderr to make the siumulation run faster and test wheter the detectibot would have carry out the investigation entirely. 
 
 ### rossrv 
 
@@ -731,3 +779,5 @@ Project Link: [https://github.com/fedehub/ExperimentalRoboticsAssignment2](https
 
 <!-- pddl -->
 [115]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/tree/main/erl_assignment_2/pddl
+[116]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/tree/main/erl_assignment_2/pddl/detectibot_pddl
+[117]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/erl_assignment_2/pddl/detectibot_pddl/solution.txt

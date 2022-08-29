@@ -1,3 +1,63 @@
+
+/** @ package erl_assignment_2
+* 
+*	@file manipulation.cpp
+*	@brief This node directly interacts with moveIT for moving the arm
+*
+*	@author Federico Civetta
+*	@version 1.0.0
+*   
+*	Subscribes to: <BR>
+* 		/clock 							[rosgraph_msgs/Clock]
+* 		/execute_trajectory/feedback	[moveit_msgs/ExecuteTrajectoryActionFeedback]
+* 		/execute_trajectory/result 		[moveit_msgs/ExecuteTrajectoryActionResult]
+* 		/execute_trajectory/status 		[actionlib_msgs/GoalStatusArray]
+* 		/move_group/feedback 			[moveit_msgs/MoveGroupActionFeedback]
+* 		/move_group/result 				[moveit_msgs/MoveGroupActionResult]
+* 		/move_group/status 				[actionlib_msgs/GoalStatusArray]
+* 		/pickup/feedback 				[moveit_msgs/PickupActionFeedback]
+* 		/pickup/result 					[moveit_msgs/PickupActionResult]
+* 		/pickup/status 					[actionlib_msgs/GoalStatusArray]
+* 		/place/feedback 				[moveit_msgs/PlaceActionFeedback]
+* 		/place/result 					[moveit_msgs/PlaceActionResult]
+* 		/place/status 					[actionlib_msgs/GoalStatusArray]
+* 		/tf 							[tf2_msgs/TFMessage]
+* 		/tf_static 						[tf2_msgs/TFMessage]
+*
+*	Publishes to: <BR>
+*		/attached_collision_object 		[moveit_msgs/AttachedCollisionObject]
+* 		/execute_trajectory/cancel 		[actionlib_msgs/GoalID]
+*		/execute_trajectory/goal		[moveit_msgs/ExecuteTrajectoryActionGoal]
+*		/move_group/cancel 				[actionlib_msgs/GoalID]
+* 		/move_group/goal 				[moveit_msgs/MoveGroupActionGoal]
+* 		/pickup/cancel 					[actionlib_msgs/GoalID]
+* 		/pickup/goal 					[moveit_msgs/PickupActionGoal]
+* 		/place/cancel 					[actionlib_msgs/GoalID]
+* 		/place/goal 					[moveit_msgs/PlaceActionGoal]
+* 		/rosout 						[rosgraph_msgs/Log]
+* 		/trajectory_execution_event 	[std_msgs/String]
+
+*	Services: <BR>
+*   	/manipulation
+* 
+*	Client Services: <BR>
+*   	/go_to_point		[std_srvs/SetBool]
+*    	/manipulation		[std_srvs/SetBool]
+*		/get_id				[erl_assignment_2_msgs/GetId]
+*		/oracle_solution	[erl2/Oracle]
+*		/mark_wrong_id		[erl_assignment_2_msgs/MarkWrongId]
+]
+*
+*	Action Services: <BR>
+*    	None
+*
+*	Description: <BR>
+*		This node implements the /manipulation service and provides 
+*		all the functionalitites needed for  controlling the manupulator itself 
+*
+*
+*
+*/
 #include "ros/ros.h"
 #include "std_srvs/SetBool.h"
 
@@ -94,10 +154,13 @@ int main(int argc, char* argv[])
 	
 	ros::AsyncSpinner spinner(2);
 	spinner.start( );
-	
+
+	// define the robot pkanning group 
 	static const std::string PLANNING_GROUP = "arm";
 	moveit::planning_interface::MoveGroupInterface move_group_interfacei( PLANNING_GROUP );
 	move_group_interface = &move_group_interfacei;
+
+	// set planning time 
 	move_group_interface->setPlanningTime(10.0);
 	
 	
@@ -106,6 +169,7 @@ int main(int argc, char* argv[])
 	*/
 	move_arm(false);
 	
+	// srv for /manipulation service 
 	srv_manip = nh.advertiseService("/manipulation", cbk_manip);
 	
 	ros::waitForShutdown( );

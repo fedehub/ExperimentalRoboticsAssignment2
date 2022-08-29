@@ -1,4 +1,42 @@
 
+/** @ package erl_assignment_2
+* 
+*	@file action_interface.cpp
+*	@brief This node implements all the rosplan actions in a single node 
+*
+*	@author Federico Civetta
+*	@version 1.0.0
+*   
+*	Subscribes to: <BR>
+*		/rosplan_plan_dispatcher/action_dispatch 		[rosplan_dispatch_msgs/ActionDispatch]
+*
+*	Publishes to: <BR>
+*		/rosplan_knowledge_base/pddl_action_parameters 	[rosplan_knowledge_msgs/DomainFormula]
+* 		/rosplan_plan_dispatcher/action_feedback 		[rosplan_dispatch_msgs/ActionFeedback]
+*
+*	Services: <BR>
+*   	None
+* 
+*	Client Services: <BR>
+*   	/go_to_point		[std_srvs/SetBool]
+*    	/manipulation		[std_srvs/SetBool]
+*		/get_id				[erl_assignment_2_msgs/GetId]
+*		/oracle_solution	[erl2/Oracle]
+*		/mark_wrong_id		[erl_assignment_2_msgs/MarkWrongId]
+]
+*
+*	Action Services: <BR>
+*    	None
+*
+*	Description: <BR>
+*		This node implements the rosplan actions declared inside the 
+*		pddl domain. For optimisation reasons, topics and services 
+* 		gets allocated only once the action gets called for the first
+*		time through the rosplan action dispatcher 
+*
+*
+*
+*/
 #include "ros/ros.h"
 #include "std_srvs/SetBool.h"
 #include "rosplan_action_interface/RPActionInterface.h"
@@ -160,7 +198,20 @@ private:
 	
 	// === leave_temple === // 
 	
-	/** setup action leave_temple */
+
+	/**
+	 * \brief   setup action leave_temple
+	 *
+	 * \details This function allows the robot to leave the starting position
+	 * 			to reach the following waypoint 
+	 *
+	 * \note    For "starting position" we refer to the starting position of 
+	 * 			the robot (where it is spawned), coinciding with the temple
+	 * 			location. 
+	 *
+	 *
+	 * \return  void
+	 */
 	void leave_temple_setup( )
 	{
 		// (client) /go_to_point : std_srvs/SetBool
@@ -168,9 +219,9 @@ private:
 	}
 	
 	/** leave temple execution */
-	bool leave_temple_action( const rosplan_dispatch_msgs::ActionDispatch::ConstPtr& msg )
+	bool leave_temple_action(const rosplan_dispatch_msgs::ActionDispatch::ConstPtr& msg)
 	{
-		ROS_INFO_STREAM( action_to_string( msg ) );
+		ROS_INFO_STREAM(action_to_string( msg ));
 		
 		// target waypoint
 		std::string wp_to = msg->parameters[0].value;
@@ -190,26 +241,49 @@ private:
 	
 	// === go_to_wp === //
 	
-	/** setup action go_to_wp */
+	/**
+	 * \brief   action go_to_point setup
+	 *
+	 * \details this function is devoted to the initialisation of the 
+	 * 			service clients 
+	 *
+	 * \note    For "starting position" we refer to the starting position of 
+	 * 			the robot (where it is spawned), coinciding with the temple
+	 * 			location. 
+	 *
+	 *
+	 * \return  void
+	 */
+
 	void go_to_wp_setup( )
 	{
 		// (client) /go_to_point : std_srvs/SetBool
-		cl_nav = nh.serviceClient<std_srvs::SetBool>( "/go_to_point" );
+		cl_nav = nh.serviceClient<std_srvs::SetBool>("/go_to_point");
 	}
 	
-	/** go_to_wp execution */
-	bool go_to_wp_action( const rosplan_dispatch_msgs::ActionDispatch::ConstPtr& msg )
+	/**
+	 * \brief	go_to_wp action execution
+	 *
+	 * \details	once the target waypoint has been assigned, it allows detectibot
+	 * 			to move from the current waypoint (less meaningful) toward the
+	 * 			next waypoint (more meaningful). Then it retrieves the coordinates
+	 * 			associated to the waypoint. It sets the ROS parameters des_pos_x 
+	 * 			and des_pos_y. It then call the service  
+	 *
+	 * \param[in]	msg [rosplan_dispatch_msgs/ActionDispatch] it is the action 
+	 * 					dispath message, defined by a name, a specific identifier
+	 * 					a plan identifier and other fields 
+	 *
+	 * \return  Bool True value 
+	 */
+	bool go_to_wp_action(const rosplan_dispatch_msgs::ActionDispatch::ConstPtr& msg)
 	{
-		ROS_INFO_STREAM( action_to_string( msg ) );
+		ROS_INFO_STREAM(action_to_string( msg ));
 		
 		// target waypoint
 		std::string wp_to = msg->parameters[0].value;
 		
-		// dal waypoint attuale (poco interessante) dirigiti al prossimo wp (molto interessante)
-		//    trova le coordinate associate al wp
-		//    setta i parametri des_pos_x e des_pos_y
-		//    chiamata a servizio
-		
+		// call to the navigate_to function 
 		navigate_to( wp_to );
 		
 		return true;
@@ -220,24 +294,45 @@ private:
 	
 	// === shift_gripper === //
 	
-	/** setup action shift_gripper */
+	/**
+	 * \brief   action shift_gripper setup 
+	 *
+	 * \details this function is devoted to the initialisation of the 
+	 * 			service clients 
+	 *
+	 * \return  void
+	 */
 	void shift_gripper_setup( )
 	{
 		// (client) /manipulation : std_srvs/SetBool
 		cl_manip = nh.serviceClient<std_srvs::SetBool>( "/manipulation" );
 	}
 	
-	/** shift_gripper execution */
+	/**
+	 * \brief	shift_gripper action execution
+	 *
+	 * \details	this function allows the detectibot's gripper to move close to the
+	 * 			marker so that cluedo_kb node can retrieve the hint via topic. 
+	 * 			Then, the boolean message field "data" indicating the fulfillment of the 
+	 * 			action (i.e. the activation of the gripper) is set to True and a service
+	 * 			call takes place 
+	 *
+	 * \param[in]	msg [rosplan_dispatch_msgs/ActionDispatch] it is the action 
+	 * 					dispath message, defined by a name, a specific identifier
+	 * 					a plan identifier and other fields 
+	 *
+	 * \return  Bool True value 
+	 */
 	bool shift_gripper_action( const rosplan_dispatch_msgs::ActionDispatch::ConstPtr& msg )
 	{
-		ROS_INFO_STREAM( action_to_string( msg ) );
+		ROS_INFO_STREAM(action_to_string( msg ));
 		
-		// avvicina il gripper al marker in modo che cluedo_kb possa ricevere l'hint via topic
-		//    prepara il messaggio SetBool con data=true
-		//    chiamata a servizio
 		
+		// prepare the message 
 		std_srvs::SetBool cmd;
 		cmd.request.data = true;
+
+		// client call to /manipulation service server 
 		cl_manip.call( cmd );
 		
 		return true;
@@ -248,22 +343,42 @@ private:
 	
 	// === gather_hint === //
 	
-	/** setup action gather_hint */
+	/**
+	 * \brief   action gather_hint setup 
+	 *
+	 * \details this function is devoted to the initialisation of the 
+	 * 			service clients 
+	 *
+	 * \return  void
+	 */
 	void gather_hint_setup( )
 	{
 		// (client) /manipulation : std_srvs/SetBool
 		cl_manip = nh.serviceClient<std_srvs::SetBool>( "/manipulation" );
 	}
 	
-	/** gather_hint execution */
+	/**
+	 * \brief	gather_hint action execution
+	 *
+	 * \details	this function pull backs the robot's gripper. In the meantime,
+	 * 			cluedo_kb receoves the hint. Hence the SetBool message field data
+	 * 			is set to "false" and a service call takes place 
+	 *
+	 *  \note	the service employed for this action is the same employed for
+	 * 			the " shift_gripper "  	one. The only differemce is that the data message 
+	 * 			field is set to "false"
+	 *
+	 * \param[in]	msg [rosplan_dispatch_msgs/ActionDispatch] it is the action 
+	 * 					dispath message, defined by a name, a specific identifier
+	 * 					a plan identifier and other fields 
+	 *
+	 * \return  Bool True value 
+	 */
 	bool gather_hint_action( const rosplan_dispatch_msgs::ActionDispatch::ConstPtr& msg )
 	{
 		ROS_INFO_STREAM( action_to_string( msg ) );
 		
-		// tira indietro il braccio (cluedo_kb ha ricevuto l'hint)
-		//    prepara il messaggio con setbool data=false
-		//    chiamata a servizio
-		
+		// prepare the message 
 		std_srvs::SetBool cmd;
 		cmd.request.data = false;
 		cl_manip.call( cmd );
@@ -276,14 +391,39 @@ private:
 	
 	// === reach_temple === //
 	
-	/** setup action reach_temple */
+	/**
+	 * \brief   action reach_temple setup 
+	 *
+	 * \details this function is devoted to the initialisation of the 
+	 * 			service clients 
+	 *
+	 * \return  void
+	 */
 	void reach_temple_setup( )
 	{
 		// (client) /go_to_point : std_srvs/SetBool
 		cl_nav = nh.serviceClient<std_srvs::SetBool>( "/go_to_point" );
 	}
 	
-	/** reach_temple execution **/
+
+	
+	/**
+	 * \brief	reaach_temple action execution
+	 *
+	 * \details	once the target waypoint has been assigned, it allows detectibot
+	 * 			to move from the current waypoint (less meaningful) toward the temple. Then it retrieves the coordinates
+	 * 			associated to the waypoint. It sets the ROS parameters des_pos_x 
+	 * 			and des_pos_y aaccordingly. Hence, a service call takes place 
+	 * 
+	 * \note	the temple coordomates correspond to the "center" of the sceme (where)
+	 * 			our robot get spawned, initially 
+	 *
+	 * \param[in]	msg [rosplan_dispatch_msgs/ActionDispatch] it is the action 
+	 * 					dispath message, defined by a name, a specific identifier
+	 * 					a plan identifier and other fields 
+	 *
+	 * \return  Bool True value 
+	 */
 	bool reach_temple_action( const rosplan_dispatch_msgs::ActionDispatch::ConstPtr& msg )
 	{
 		ROS_INFO_STREAM( action_to_string( msg ) );
@@ -302,7 +442,14 @@ private:
 	
 	// === check_consistent_hypo === //
 	
-	/** setup action check_consistent_hypo */
+	/**
+	 * \brief   action check_consistency setup 
+	 *
+	 * \details this function is devoted to the initialisation of the 
+	 * 			service clients 
+	 *
+	 * \return  void
+	 */
 	void check_consistent_hypo_setup( )
 	{
 		// ... 
@@ -321,7 +468,14 @@ private:
 	
 	// === query_hypo === //
 	
-	/** setup action check_consistent_hypo */
+	/**
+	 * \brief   action query_hypo setup 
+	 *
+	 * \details this function is devoted to the initialisation of the 
+	 * 			service clients 
+	 *
+	 * \return  void
+	 */
 	void query_hypo_setup( )
 	{
 		// (client) /get_id : erl_assignment_2_msgs/GetId
@@ -334,20 +488,33 @@ private:
 		cl_mark = nh.serviceClient<erl_assignment_2_msgs::MarkWrongId>( "/mark_wrong_id" );
 	}
 	
-	/** check_consistent_hypo execution **/
+	/**
+	 * \brief	query_hypo action execution
+	 *
+	 * \details	this function allows Detectibot to ask for some consistent hypothesis.
+	 * 			If they do not exist yet, it returns "false" otherwise a client call to the
+	 * 			get_id server takes place. Hence, a check to understand whether or not the 
+	 * 			ID is compatible with the one provided by the oracle, is performed. 
+	 * 			-	If they are not compatible, a service call to report the 
+	 * 				wrongness of the ID is made and a replan occurs. 
+	 * 			-	If they results compatible instead, signal that True ID has been found
+	 * 				and the game ends
+	 * 
+	 *
+	 *  \note	the service employed for this action is the same employed for
+	 * 			the " shift_gripper "  	one. The only differemce is that the data message 
+	 * 			field is set to "false"
+	 *
+	 * \param[in]	msg [rosplan_dispatch_msgs/ActionDispatch] it is the action 
+	 * 					dispath message, defined by a name, a specific identifier
+	 * 					a plan identifier and other fields 
+	 *
+	 * \return  Bool True value 
+	 */
 	bool query_hypo_action( const rosplan_dispatch_msgs::ActionDispatch::ConstPtr& msg )
 	{
 		ROS_INFO_STREAM( action_to_string( msg ) );
 		
-		// chiamata a servizio : chiedi se ci sono ipotesi consistenti
-		//    se non ce ne sono, return false
-		// chiamata a servizio
-		// verifica se l'id scelto è compatibile con quello ritornato dall'oracolo
-		//    (se no), chiamata a servizio : segnala l'ID come errato
-		//    e replan
-		//    return false
-		// altrimenti c'hai azzeccato!
-		//    return true
 		
 		// get one consistent hint (if any)
 		erl_assignment_2_msgs::GetId id_srv;
@@ -364,7 +531,6 @@ private:
 		{
 			ROS_WARN_STREAM( "(no complete hypotheses to propose) NEED FOR REPLAN." );
 			
-			/// @todo replan strategy
 			
 			return false;
 		}
@@ -379,7 +545,6 @@ private:
 		{
 			ROS_WARN_STREAM( "(wrong ID) NEED FOR REPLAN." );
 			
-			/// @todo replan strategy
 			
 			return false;
 		}
@@ -407,7 +572,21 @@ private:
 		return ss;
 	}
 	
-	/** navigation command */
+	// ===  	navigation command 	 === //
+	/**
+	 * \brief   pilot the robot toward a certain position
+	 *
+	 * \details it retrieves the waypoint coordinates and it sets the
+	 * 			target ones within the rosparameter server. 
+	 *
+	 * \note    (0,0) are the coordinates for the temple's location  
+	 *
+	 * \param[in]     wp    String value that holds the target point 
+	 * 
+	 * 
+	 *
+	 * \return  void
+	 */
 	void navigate_to( std::string wp )
 	{
 		// coordinates
