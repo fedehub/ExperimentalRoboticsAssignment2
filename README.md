@@ -524,7 +524,11 @@ rosrun erl_assignment_2 main.py
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-The most relevant aspects of the project and a brief video tutorial on how to launch the simulation can be found [here][105]
+The most relevant aspects of the project and a brief video tutorial on how to launch the simulation can be found here below
+
+
+https://user-images.githubusercontent.com/61761835/187249845-1b03e627-d32e-4464-b7d3-0f172419d2f9.mp4
+
 
 <!-- A commented small video, a GIF or screenshots showing the relevant parts of the running code. -->
 
