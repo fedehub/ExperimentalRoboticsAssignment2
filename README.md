@@ -344,9 +344,11 @@ This is the node provided by professor with some simplification in orderr to mak
 Within the `erl2` package, a cusom message is defined. For the sake of completeness, its structure is here below mentioned
 
 ```plain txt
+
 int32 ID
 string key
 string value
+
 ```
 
 ### rostopic
@@ -427,13 +429,17 @@ Also remember to update and upgrade the container
 sudo apt get update
 sudo apt get upgrade
 ```
-Then run `catkin_make` on your workspace; in my case 
+Then run `catkin_make` on your workspace; in my case:
 
-```sh
-cd /home/ros_ws/
-catkin_make
+- Navigate to your ROS workspace
+  ```sh
+  cd /home/ros_ws/
+  ```
+- Run catkin
+  ```sh
+  catkin_make
+  ```
 
-```
 You can now download the repository inside the `src` folder 
 
 ```sh 
