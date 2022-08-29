@@ -54,13 +54,13 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#software-architechture">Software architechture</a></li>
-        <li><a href="#ros-node-description:-an-overview">ROS node description: an Overview</a></li>
-        <li><a href="#ros-node-description:-the-go_to_point.py-node">ROS node description: the go_to_point.py node</a></li>
-        <li><a href="#ros-node-description:-the-main.py-node ">ROS node description:-the main.py node</a></li>
-        <li><a href="#ros-node-description:-the-cluedo_kb.py-node ">ROS node description: the cluedo_kb.py node</a></li>
-        <li><a href="#ros-node-description::-the-action_interface.cpp-node">ROS node description: he action_interface.cpp node</a></li>
-        <li><a href="#ros-node-description:-the-manipulation.cpp-node ">ROS node description: the manipulation.cpp node</a></li>
-        <li><a href="#ros-node-description:-my_simulation.cpp-node ">ROS node description:my_simulation.cpp node </a></li>
+        <li><a href="#ros-node-description-an-overview">ROS node description: an Overview</a></li>
+        <li><a href="#ros-node-description-the-go_to_point.py-node">ROS node description: the go_to_point.py node</a></li>
+        <li><a href="#ros-node-description-the-main.py-node ">ROS node description:-the main.py node</a></li>
+        <li><a href="#ros-node-description-the-cluedo_kb.py-node ">ROS node description: the cluedo_kb.py node</a></li>
+        <li><a href="#ros-node-description-the-action_interface.cpp-node">ROS node description: he action_interface.cpp node</a></li>
+        <li><a href="#ros-node-description-the-manipulation.cpp-node ">ROS node description: the manipulation.cpp node</a></li>
+        <li><a href="#ros-node-description-my_simulation.cpp-node ">ROS node description:my_simulation.cpp node </a></li>
           <ul>
             <li><a href=#rossrv>rossrv</a></li>
             <li><a href=#rosmsg>rosmsg</a></li>
