@@ -860,7 +860,7 @@ Project Link: [https://github.com/fedehub/ExperimentalRoboticsAssignment2](https
 
 <!-- diagrams  -->
 [100]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v3/component_diagram.jpg
-[101]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v2/erl_assignment_2_action_interface_cpp_v2.jpg
+[101]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v3/erl_assignment_2_action_interface_cpp.jpg
 [102]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl2_my_simulation_cpp.jpg
 [103]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_2_cluedo_kb_py.jpg
 [104]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_2_main_py.jpg
