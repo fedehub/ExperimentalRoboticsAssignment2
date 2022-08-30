@@ -310,7 +310,7 @@ https://user-images.githubusercontent.com/61761835/187249845-1b03e627-d32e-4464-
 
 Here there is the UML components diagram of the project
 
-<img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/component_diagram.jpg" >
+<img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v3/component_diagram.jpg" >
 
 Some remarks about the aformentioned components diagram:
 - The main node simply keeps replanning until the mistery gets solved
