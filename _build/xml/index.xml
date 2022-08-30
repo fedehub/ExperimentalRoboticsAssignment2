@@ -121,6 +121,66 @@
     <member refid="namespacetest__nav_1ac8dba86057ac1bb880a7199da7fd62bb" kind="variable"><name>r</name></member>
     <member refid="namespacetest__nav_1a06341778072dc1f7e1e38044d3a05a15" kind="function"><name>reach_pos</name></member>
   </compound>
+  <compound refid="action__interface_8rst_8txt" kind="file"><name>action_interface.rst.txt</name>
+  </compound>
+  <compound refid="cluedo__kb_8rst_8txt" kind="file"><name>cluedo_kb.rst.txt</name>
+    <member refid="cluedo__kb_8rst_8txt_1a8d2121454b5e4877448ee7554505c162" kind="variable"><name>done</name></member>
+    <member refid="cluedo__kb_8rst_8txt_1ad2ffc6b36811c7cdf7d7f8591260704f" kind="variable"><name>response</name></member>
+  </compound>
+  <compound refid="go__to__point_8rst_8txt" kind="file"><name>go_to_point.rst.txt</name>
+  </compound>
+  <compound refid="code__documentation_2index_8md_8txt" kind="file"><name>index.md.txt</name>
+  </compound>
+  <compound refid="documents_2index_8md_8txt" kind="file"><name>index.md.txt</name>
+  </compound>
+  <compound refid="_oracle_8rst_8txt" kind="file"><name>Oracle.rst.txt</name>
+    <member refid="_oracle_8rst_8txt_1a9082c3d01dfdff845db35ba873e06318" kind="variable"><name>contain</name></member>
+    <member refid="_oracle_8rst_8txt_1a1ad3cdea492e406da7a9b2a26eda4783" kind="variable"><name>mystery</name></member>
+    <member refid="_oracle_8rst_8txt_1a9107981f4bf5ab9f24785a661dddb14a" kind="variable"><name>service</name></member>
+    <member refid="_oracle_8rst_8txt_1a7aaa8766803123d5cd0be6497569795f" kind="variable"><name>where</name></member>
+    <member refid="_oracle_8rst_8txt_1ace87468ba086db5aa9b64bcdaaa9c142" kind="variable"><name>particular</name></member>
+    <member refid="_oracle_8rst_8txt_1ad813c08dc0807c51674c4a77b732a8c8" kind="variable"><name>is</name></member>
+  </compound>
+  <compound refid="interfaces-docs-goto-point_8md_8txt" kind="file"><name>interfaces-docs-goto-point.md.txt</name>
+  </compound>
+  <compound refid="markdown-vs-rest_8md_8txt" kind="file"><name>markdown-vs-rest.md.txt</name>
+  </compound>
+  <compound refid="run-the-project_8md_8txt" kind="file"><name>run-the-project.md.txt</name>
+  </compound>
+  <compound refid="__build_2html_2__sources_2erl2_2_c_make_lists_8txt" kind="file"><name>CMakeLists.txt</name>
+  </compound>
+  <compound refid="__build_2html_2__sources_2erl__assignment__2_2_c_make_lists_8txt" kind="file"><name>CMakeLists.txt</name>
+  </compound>
+  <compound refid="__build_2html_2__sources_2erl__assignment__2__msgs_2_c_make_lists_8txt" kind="file"><name>CMakeLists.txt</name>
+  </compound>
+  <compound refid="__build_2html_2__sources_2erl__moveit__pkg_2_c_make_lists_8txt" kind="file"><name>CMakeLists.txt</name>
+    <member refid="__build_2html_2__sources_2erl__moveit__pkg_2_c_make_lists_8txt_1a49dc3793aeb2c8092741520d6352500e" kind="function"><name>cmake_minimum_required</name></member>
+  </compound>
+  <compound refid="erl2_2_c_make_lists_8txt" kind="file"><name>CMakeLists.txt</name>
+  </compound>
+  <compound refid="erl__assignment__2_2_c_make_lists_8txt" kind="file"><name>CMakeLists.txt</name>
+  </compound>
+  <compound refid="erl__assignment__2__msgs_2_c_make_lists_8txt" kind="file"><name>CMakeLists.txt</name>
+  </compound>
+  <compound refid="erl__moveit__pkg_2_c_make_lists_8txt" kind="file"><name>CMakeLists.txt</name>
+    <member refid="erl__moveit__pkg_2_c_make_lists_8txt_1a49dc3793aeb2c8092741520d6352500e" kind="function"><name>cmake_minimum_required</name></member>
+  </compound>
+  <compound refid="erl2_2_r_e_a_d_m_e_8md_8txt" kind="file"><name>README.md.txt</name>
+  </compound>
+  <compound refid="_r_e_a_d_m_e_8md_8txt" kind="file"><name>README.md.txt</name>
+  </compound>
+  <compound refid="__build_2html_2__sources_2erl__assignment__2_2pddl_2detectibot__pddl_2solution_8txt" kind="file"><name>solution.txt</name>
+    <member refid="__build_2html_2__sources_2erl__assignment__2_2pddl_2detectibot__pddl_2solution_8txt_1a9bc6fd77a51cf5ed077132bd42c3abcc" kind="variable"><name>literals</name></member>
+    <member refid="__build_2html_2__sources_2erl__assignment__2_2pddl_2detectibot__pddl_2solution_8txt_1a0fe54b7d3b0b4981b00a577753feb775" kind="variable"><name>found</name></member>
+  </compound>
+  <compound refid="erl__assignment__2_2pddl_2detectibot__pddl_2solution_8txt" kind="file"><name>solution.txt</name>
+    <member refid="erl__assignment__2_2pddl_2detectibot__pddl_2solution_8txt_1a9bc6fd77a51cf5ed077132bd42c3abcc" kind="variable"><name>literals</name></member>
+    <member refid="erl__assignment__2_2pddl_2detectibot__pddl_2solution_8txt_1a0fe54b7d3b0b4981b00a577753feb775" kind="variable"><name>found</name></member>
+  </compound>
+  <compound refid="index_8rst_8txt" kind="file"><name>index.rst.txt</name>
+    <member refid="index_8rst_8txt_1ae5bb300954830ede9da67440dcb4b2b5" kind="variable"><name>file</name></member>
+    <member refid="index_8rst_8txt_1aef3f652165d0d9f09dbe82f3ac90933a" kind="variable"><name>Jul</name></member>
+  </compound>
   <compound refid="code__documentation_2index_8md" kind="file"><name>index.md</name>
   </compound>
   <compound refid="documents_2index_8md" kind="file"><name>index.md</name>
@@ -132,19 +192,6 @@
   <compound refid="markdown-vs-rest_8md" kind="file"><name>markdown-vs-rest.md</name>
   </compound>
   <compound refid="run-the-project_8md" kind="file"><name>run-the-project.md</name>
-  </compound>
-  <compound refid="erl2_2_c_make_lists_8txt" kind="file"><name>CMakeLists.txt</name>
-  </compound>
-  <compound refid="erl__assignment__2_2_c_make_lists_8txt" kind="file"><name>CMakeLists.txt</name>
-  </compound>
-  <compound refid="erl__assignment__2__msgs_2_c_make_lists_8txt" kind="file"><name>CMakeLists.txt</name>
-  </compound>
-  <compound refid="erl__moveit__pkg_2_c_make_lists_8txt" kind="file"><name>CMakeLists.txt</name>
-    <member refid="erl__moveit__pkg_2_c_make_lists_8txt_1a49dc3793aeb2c8092741520d6352500e" kind="function"><name>cmake_minimum_required</name></member>
-  </compound>
-  <compound refid="erl2_2_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
-  </compound>
-  <compound refid="_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
   </compound>
   <compound refid="my__simulation_8cpp" kind="file"><name>my_simulation.cpp</name>
     <member refid="my__simulation_8cpp_1a32812fe000700d7aa8988d74e59471c7" kind="variable"><name>oracle_pub</name></member>
@@ -184,10 +231,6 @@
     <member refid="simulation_8cpp_1a876a1245db85a2bb87c08ae086f1eafa" kind="function"><name>oracleCallback</name></member>
     <member refid="simulation_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" kind="function"><name>main</name></member>
   </compound>
-  <compound refid="solution_8txt" kind="file"><name>solution.txt</name>
-    <member refid="solution_8txt_1a9bc6fd77a51cf5ed077132bd42c3abcc" kind="variable"><name>literals</name></member>
-    <member refid="solution_8txt_1a0fe54b7d3b0b4981b00a577753feb775" kind="variable"><name>found</name></member>
-  </compound>
   <compound refid="cluedo__kb_8py" kind="file"><name>cluedo_kb.py</name>
   </compound>
   <compound refid="go__to__point_8py" kind="file"><name>go_to_point.py</name>
@@ -213,6 +256,8 @@
     <member refid="manipulation_8cpp_1aefdb9958bc4650484824e4cbd42dcf65" kind="function"><name>cbk_manip</name></member>
     <member refid="manipulation_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
   </compound>
+  <compound refid="_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
+  </compound>
   <compound refid="md_code_documentation_index" kind="page"><name>md_code_documentation_index</name>
   </compound>
   <compound refid="md_documents_index" kind="page"><name>md_documents_index</name>
@@ -223,30 +268,50 @@
   </compound>
   <compound refid="md_documents_run-the-project" kind="page"><name>md_documents_run-the-project</name>
   </compound>
-  <compound refid="md_erl2__r_e_a_d_m_e" kind="page"><name>md_erl2_README</name>
-  </compound>
   <compound refid="md__r_e_a_d_m_e" kind="page"><name>md_README</name>
+  </compound>
+  <compound refid="dir_45b9293d3daaa82c00b5908f14ebb805" kind="dir"><name>_build</name>
+  </compound>
+  <compound refid="dir_02bdb4005edb5055ba0ef39c3e2b4a3d" kind="dir"><name>_build/html/_sources</name>
+  </compound>
+  <compound refid="dir_19d2a84171ad5410f35a5a0a65c9e77a" kind="dir"><name>_build/html/_sources/code_documentation</name>
   </compound>
   <compound refid="dir_dc965ea0807d6e8790d6607c44bea479" kind="dir"><name>code_documentation</name>
   </compound>
   <compound refid="dir_d2989f31502a29e933d4502cb5d40a99" kind="dir"><name>erl_assignment_2/pddl/detectibot_pddl</name>
   </compound>
+  <compound refid="dir_4c38237d9b4fa0c1d1887cf4d4f363ec" kind="dir"><name>_build/html/_sources/erl_assignment_2/pddl/detectibot_pddl</name>
+  </compound>
   <compound refid="dir_8dd08f2658aa08180a5d08d0b206f839" kind="dir"><name>documents</name>
+  </compound>
+  <compound refid="dir_38e8b9ed5b7b9416573615062e91436d" kind="dir"><name>_build/html/_sources/documents</name>
   </compound>
   <compound refid="dir_8856e980821a611535096e59d7a85e0c" kind="dir"><name>erl2</name>
   </compound>
+  <compound refid="dir_09f276876714b9b6bcda51e45892d10b" kind="dir"><name>_build/html/_sources/erl2</name>
+  </compound>
   <compound refid="dir_b930f76dc92bdcca0a0f99df67331e55" kind="dir"><name>erl_assignment_2</name>
+  </compound>
+  <compound refid="dir_7684bd246eff0ed87f8fd9e8ddb2ccaa" kind="dir"><name>_build/html/_sources/erl_assignment_2</name>
+  </compound>
+  <compound refid="dir_4890977724b27fbf3fc711a5ddc05eb5" kind="dir"><name>_build/html/_sources/erl_assignment_2_msgs</name>
   </compound>
   <compound refid="dir_eefb14575556cea8c8edda92b08ebe6f" kind="dir"><name>erl_assignment_2_msgs</name>
   </compound>
   <compound refid="dir_45ec1bfde743b2654ea33aa86d3495a4" kind="dir"><name>erl_moveit_pkg</name>
   </compound>
+  <compound refid="dir_e96af6232cfc1eb3b875f3cac2b8bc58" kind="dir"><name>_build/html/_sources/erl_moveit_pkg</name>
+  </compound>
+  <compound refid="dir_63358181ce567149a79d24bdd45b3e93" kind="dir"><name>_build/html</name>
+  </compound>
   <compound refid="dir_ffbedad2841d703e2d166fd609a893cf" kind="dir"><name>erl_assignment_2/pddl</name>
+  </compound>
+  <compound refid="dir_9d7ac93d5eedbcfa49bb62b56a3c0003" kind="dir"><name>_build/html/_sources/erl_assignment_2/pddl</name>
   </compound>
   <compound refid="dir_e5f6a432fdab201ad870d7689d2a031e" kind="dir"><name>erl_assignment_2/scripts</name>
   </compound>
-  <compound refid="dir_31508095010e70e9f76cbbf3db9bce1e" kind="dir"><name>erl_assignment_2/src</name>
-  </compound>
   <compound refid="dir_07aec606a6715acfc4b32b8a919bf5e7" kind="dir"><name>erl2/src</name>
+  </compound>
+  <compound refid="dir_31508095010e70e9f76cbbf3db9bce1e" kind="dir"><name>erl_assignment_2/src</name>
   </compound>
 </doxygenindex>

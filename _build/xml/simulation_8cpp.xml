@@ -24,21 +24,6 @@
       <node id="10">
         <label>vector</label>
       </node>
-      <node id="2">
-        <label>ros/ros.h</label>
-      </node>
-      <node id="9">
-        <label>time.h</label>
-      </node>
-      <node id="7">
-        <label>iostream</label>
-      </node>
-      <node id="6">
-        <label>erl2/Oracle.h</label>
-      </node>
-      <node id="3">
-        <label>gazebo_msgs/LinkStates.h</label>
-      </node>
       <node id="1">
         <label>erl2/src/simulation.cpp</label>
         <link refid="simulation_8cpp"/>
@@ -60,6 +45,21 @@
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
+      </node>
+      <node id="2">
+        <label>ros/ros.h</label>
+      </node>
+      <node id="9">
+        <label>time.h</label>
+      </node>
+      <node id="7">
+        <label>iostream</label>
+      </node>
+      <node id="6">
+        <label>erl2/Oracle.h</label>
+      </node>
+      <node id="3">
+        <label>gazebo_msgs/LinkStates.h</label>
       </node>
     </incdepgraph>
       <sectiondef kind="var">
@@ -158,7 +158,7 @@
         <definition>const std::string key[3]</definition>
         <argsstring>[3]</argsstring>
         <name>key</name>
-        <initializer>= {&quot;who&quot;, &quot;what&quot;, &quot;where&quot;}</initializer>
+        <initializer>= {&quot;who&quot;, &quot;what&quot;, &quot;<ref refid="_oracle_8rst_8txt_1a7aaa8766803123d5cd0be6497569795f" kindref="member">where</ref>&quot;}</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -296,9 +296,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="erl2/src/simulation.cpp" line="31" column="8" bodyfile="erl2/src/simulation.cpp" bodystart="31" bodyend="35"/>
-        <references refid="namespacego__to__point_1a328c9a3bb9322f150f2e67371cd73306" compoundref="go__to__point_8py" startline="22">go_to_point.x</references>
-        <references refid="namespacego__to__point_1ac372e1a492f9aa66d29f365cc1c57d8c" compoundref="go__to__point_8py" startline="23">go_to_point.y</references>
-        <references refid="namespacego__to__point_1a2fd68a76b8583598a4bceccdeae5d73b" compoundref="go__to__point_8py" startline="24">go_to_point.z</references>
+        <references refid="namespacego__to__point_1a328c9a3bb9322f150f2e67371cd73306" compoundref="go__to__point_8py" startline="56">go_to_point.x</references>
+        <references refid="namespacego__to__point_1ac372e1a492f9aa66d29f365cc1c57d8c" compoundref="go__to__point_8py" startline="57">go_to_point.y</references>
+        <references refid="namespacego__to__point_1a2fd68a76b8583598a4bceccdeae5d73b" compoundref="go__to__point_8py" startline="58">go_to_point.z</references>
         <referencedby refid="simulation_8cpp_1a876a1245db85a2bb87c08ae086f1eafa" compoundref="simulation_8cpp" startline="43" endline="100">oracleCallback</referencedby>
       </memberdef>
       <memberdef kind="function" id="simulation_8cpp_1ae1a3f65d934a3c4a938e85d5071dfaa5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -380,6 +380,7 @@
         <references refid="simulation_8cpp_1a32812fe000700d7aa8988d74e59471c7" compoundref="simulation_8cpp" startline="12">oracle_pub</references>
         <references refid="simulation_8cpp_1a876a1245db85a2bb87c08ae086f1eafa" compoundref="simulation_8cpp" startline="43" endline="100">oracleCallback</references>
         <references refid="simulation_8cpp_1ae1a3f65d934a3c4a938e85d5071dfaa5" compoundref="simulation_8cpp" startline="37" endline="41">oracleService</references>
+        <references refid="_oracle_8rst_8txt_1a9107981f4bf5ab9f24785a661dddb14a" compoundref="_oracle_8rst_8txt" startline="41">service</references>
         <references refid="simulation_8cpp_1a37d4a0b625b8b9583adf9362f5aae971" compoundref="simulation_8cpp" startline="26">uIDs</references>
         <references refid="simulation_8cpp_1a90c5d03e068ddae91702223f47eff712" compoundref="simulation_8cpp" startline="27">winID</references>
       </memberdef>
@@ -497,7 +498,7 @@
 <codeline lineno="106"><highlight class="normal">ros::NodeHandle<sp/>nh;</highlight></codeline>
 <codeline lineno="107"><highlight class="normal">ros::Publisher<sp/>vis_pub<sp/>=<sp/>nh.advertise&lt;visualization_msgs::MarkerArray&gt;(<sp/></highlight><highlight class="stringliteral">&quot;/visualization_marker&quot;</highlight><highlight class="normal">,<sp/>0<sp/>);</highlight></codeline>
 <codeline lineno="108"><highlight class="normal"><ref refid="simulation_8cpp_1a32812fe000700d7aa8988d74e59471c7" kindref="member">oracle_pub</ref><sp/>=<sp/>nh.advertise&lt;erl2::ErlOracle&gt;(<sp/></highlight><highlight class="stringliteral">&quot;/oracle_hint&quot;</highlight><highlight class="normal">,<sp/>0<sp/>);</highlight></codeline>
-<codeline lineno="109"><highlight class="normal">ros::ServiceServer<sp/>service=<sp/>nh.advertiseService(</highlight><highlight class="stringliteral">&quot;/oracle_solution&quot;</highlight><highlight class="normal">,<sp/><ref refid="simulation_8cpp_1ae1a3f65d934a3c4a938e85d5071dfaa5" kindref="member">oracleService</ref>);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">ros::ServiceServer<sp/><ref refid="_oracle_8rst_8txt_1a9107981f4bf5ab9f24785a661dddb14a" kindref="member">service</ref>=<sp/>nh.advertiseService(</highlight><highlight class="stringliteral">&quot;/oracle_solution&quot;</highlight><highlight class="normal">,<sp/><ref refid="simulation_8cpp_1ae1a3f65d934a3c4a938e85d5071dfaa5" kindref="member">oracleService</ref>);</highlight></codeline>
 <codeline lineno="110"><highlight class="normal">ros::Subscriber<sp/>sub<sp/>=<sp/>nh.subscribe(</highlight><highlight class="stringliteral">&quot;/gazebo/link_states&quot;</highlight><highlight class="normal">,<sp/>10,<sp/><ref refid="simulation_8cpp_1a876a1245db85a2bb87c08ae086f1eafa" kindref="member">oracleCallback</ref>);</highlight></codeline>
 <codeline lineno="111"><highlight class="normal">visualization_msgs::MarkerArray<sp/>markers;</highlight></codeline>
 <codeline lineno="112"><highlight class="normal">srand<sp/>(time(NULL));</highlight></codeline>

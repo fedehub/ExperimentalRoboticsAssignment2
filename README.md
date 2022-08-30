@@ -174,246 +174,6 @@ robot.
 
 Under the following sections, the software architecture is briefly introduced, along with the prerequisites and installation procedures. Then, a quick video demonstration showing the overall functioning is provided and system’s limitations are discussed
 
-### Software architechture
-
-<!-- how to make a ref to a specific section 
-the **rqt_graph** <a href="#rqt_graph">section</a>
--->
-<img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/component_diagram.jpg" >
-
-
-
-<!-- Software architecture, temporal diagram and states diagrams (if applicable). Each diagram should be commented with a paragraph, plus a list describing ROS messages and parameters. -->
-
-### ROS node description: An overview 
-
-Within the scripts folder, inside the `erl_assignment_2` pkg the following nodes are listed:  
-
-- [cluedo_kb.py][20]              <!-- PLEASE INSERT HERE -->
-
-- [go_to_point.py][21]            <!-- PLEASE INSERT HERE -->
-
-- [main.py][22]                   <!-- PLEASE INSERT HERE -->
-
-- [test_nav.py][23]               <!-- PLEASE INSERT HERE -->
-
-In the src folder instead, there are the here listed cpp nodes:
-
-- [action_interface.cpp][20]      <!-- PLEASE INSERT HERE -->
-
-- [manipulation.cpp][21]          <!-- PLEASE INSERT HERE -->
-
-
-Concerning the node we were provided, it belongs to the `erl2` package:
-
-- [my_simulation.cpp][26]
-
-> :warning: For testing purposes two nodes have been employed. The first one is the my_simulation.cpp and the second one is the test_nav.py. Be aware that the test_nav.py does not represent any relevant part of the software architechture, its purpose was just that of verifying the robustness of the navigation module. Instead, my_simulation.cpp belongs to the official SOFAR and it is needed for the project to correctly work
-
-### ROS node description: the go_to_point.py node  🪢
-
-Let's start with the `go_to_point.py` node
-
-<p align="center">
-<img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_go_to_point_py.jpg" width= 500 height=500>
-</p>
-
-It implements a ROS service, whose purpose is that of piloting the robot toward a specific target by following a straight line. As it is shown by the component diagram here reported, it subscribes to the `/odom` topic for retrieving the current robot position and once the robot orientation among x and y coordinates has been computed with respect to the target position (obtained by means of the ros parameter server), it publishes on the `/cmd_vel` topic
-
-### ROS node description: the main.py node 🪢
-
-<p align="center">
-<img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_2_main_py.jpg" width= 500 height=500>
-</p>
-
-This node represents three core structures, even the "brain" of our achitechture. Being ROSPlan a framework  that owns a variety of nodes which encapsulate planning, problem generation and plan execution, a set of clients have been initialised to, subsequently:
-
-- generate a problem: a [pddl problem][115] is published on a topic 
-- establish a plan: a planner is called for  publishing the plan to a topic 
-- parse a plan: At this stage the PDDL plan is converted into ROS messages, ready to be executed
-- dispatch a plan:  for being then executed 
-
-There is also the possibility to update the Knowledge base (being it the main responsible for the PDDL domain model amd current problem istance stroage)
-
-Indeed, if detectibot is not able to solve the mistery at the first round, it is possible to count on a "replanning phase", after which it starts roaming around the environment for gathering hints held by the markers
-
-### ROS node description: the cluedo_kb.py node 🪢
-
-Concerning the `cluedo_kb.py` node:
-
-<p align="center">
-<img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_2_cluedo_kb_py.jpg" width= 500 height=500>
-</p>
-
-cluedo_KB is a node that acts as a dedicated ontology for the problem under investigation; it provides a processing/reasoning system that provides the functionalities of:
-
-- registering the clues
-- building and processing hypotheses based on the added information
-- finding possible solutions to the case
-- rejecting hypotheses
-
-> ***REMARK*** the KB listens in on the oracle's topic and as soon as the oracle transmits the clue, the KB adds the message to the ontology without the need for an explicit request
-
-
-### ROS node description: the action_interface.cpp node  🪢
-
-Concerning the `action_interface.cpp` node:
-
-<p align="center">
-<img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v2/erl_assignment_2_action_interface_cpp_v2.jpg" width= 500 height=500>
-</p>
-
-action_interface.cpp implements all rosplan actions in a single ROS node, moreover:
-
-- the same node can be run replicated for all actions specified in the pddl (please)
-- topics and services only get allocated when the action is called for the first time via the rosplan action dispatcher
-- the node interacts with the navigation and manipulation systems to move the robot and the arm
-- The node also interacts with the KB and the oracle for clue and hypothesis processing operations
-
-Regarding the pddl, it is possible to see their logical implementation within the domain file, inside the [detectibot_pddl][116] folder. There you can find both the predicates and seven actions, namely:
-
-1. leave_temple
-2. shift_gripper
-3. gather_hint
-4. go_to_wp
-5. reach_temple
-6. check_consistent_hypo
-7. query_hypo
-
-here below it is possible to see the conntent of the soultion found. If you wamt to take a look at the file itself, just [click here][117] 
-
-``` Plain txt
-; States evaluated: 54
-; Cost: 14.013
-; Time 0.00
-0.000: (leave_temple tp wp1)  [1.000]
-1.001: (shift_gripper wp1)  [1.000]
-2.002: (gather_hint wp1)  [1.000]
-3.003: (go_to_wp wp1 wp2)  [1.000]
-4.004: (shift_gripper wp2)  [1.000]
-5.005: (gather_hint wp2)  [1.000]
-6.006: (go_to_wp wp2 wp3)  [1.000]
-7.007: (shift_gripper wp3)  [1.000]
-8.008: (gather_hint wp3)  [1.000]
-9.009: (go_to_wp wp3 wp4)  [1.000]
-10.010: (shift_gripper wp4)  [1.000]
-11.011: (gather_hint wp4)  [1.000]
-12.012: (reach_temple wp4 tp)  [1.000]
-12.012: (check_consistent_hypo wp1)  [1.000]
-13.013: (query_hypo tp)  [1.000]
-```
-
-### ROS node description: the manipulation.cpp node 🪢
-
-Concerning the `manipulation_cpp` node:
-
-<p align="center">
-<img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_2_manipulation_cpp.jpg" width= 500 height=500>
-</p>
-
-This node is simply devoted to control the Detectibot's manipulator by directly interacting with the MoveIt! framework
-
-
-### ROS node description: my_simulation.cpp node 🪢
-
-<p align="center">
-<img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl2_my_simulation_cpp.jpg" width= 500 height=500>
-</p>
-
-This is the node provided by professor with some simplification in orderr to make the siumulation run faster and test wheter the detectibot would have carry out the investigation entirely. 
-
-### rossrv 
-
-- **/get_id**: <!-- rossrv description -->
-
-    
-  > msg type:  `erl_assignment_2_msgs/GetId`
-  
-- **/mark_wrong_id**: <!-- rossrv description -->
-
-  > msg type:  `erl_assignment_2_msgs/MarkWrongId`
-
-- **/oracle_solution**: <!-- rossrv description -->
-
-  > msg type    `erl2/Oracle`       
-
-
-### rosmsg
-
-<!-- PLEASE INSERT HERE -->
-Within the `erl2` package, a cusom message is defined. For the sake of completeness, its structure is here below mentioned
-
-```plain txt
-
-int32 ID
-string key
-string value
-
-```
-
-### rostopic
-
-The `/oracle_hint` topic shows, as::
-- **Publishers:**
-  - [/cluedo_kb][20]
-  
-- **Subscribers:**
-  - [/my_simulation][26]
-
-The `/cmd_vel` topic shows, as:
-- **Publishers:**
-  - [/gazebo][6] 
-  
-- **Subscribers:**
-  - [/go_to_point][21]
- 
-The `/odom` topic shows, as:
-- **Publishers:**
-  - [/go_to_point][21]
-
-- **Subscribers:**
-  - /gadzebo
- 
-The `/tf` topic shows, as:
-- **Publishers:**
-  - [/manipulation][25]
-  - /rviz
-  - /move_group
-- **Subscribers:**
-  - /robot_state_publisher
-  - /gazebo
- 
-The `/move_group` topic shows, as:
-- **Publishers:**
-  - [/manipulation][7]
-  - /rviz
-  - /gazebo 
-- **Subscribers:**
-  - /manipulation
-  - /rviz
-  - /gazebo
-
-
-### rosparameters 
-
-`des_pos_x` and `des_pos_y` are two parameters used for keeping track  of the target goal to be assigned to the robot. 
-
-
-### rqt_graph
-The *rqt_graph* is a tool that shows the correlation among active nodes and messages being transmitted on the ROS network as a diagram. After executing all nodes (or after launching the roslaunch file), launch the **rqt_graph** through 
-
-```
-rosrun rqt_graph rqt_graph
-```
-
-In the figure below, circles represent nodes and squares represent topic messages. The arrow instead, indicates the transmission of the message!
-
-<img src= "https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/rqt/rosgraph_nodes_topics_all.png" />
-
-
-<!-- PLEASE INSERT HERE -->
-
-
 ### Installation procedure
 
 > :warning: To avoid further issues, please use this docker image provided by our professors 
@@ -537,6 +297,203 @@ https://user-images.githubusercontent.com/61761835/187249845-1b03e627-d32e-4464-
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## ROS node description: An overview 
+
+Here there is the UML components diagram of the project
+
+<img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/component_diagram.jpg" >
+
+Some remarks about the aformentioned components diagram:
+- The main node simply keeps replanning until the mistery gets solved
+- The rosplan block represents a set of nodes provided by the Rosplan framework
+- The component action_interface represents a moltitude of nodes, each implementing one pddl action 
+
+As shown in the above component diagram, this software architechture relies on the synergy of varius modules: 
+
+
+
+- [cluedo_kb.py][20]              <!-- PLEASE INSERT HERE -->
+
+- [go_to_point.py][21]            <!-- PLEASE INSERT HERE -->
+
+- [main.py][22]                   <!-- PLEASE INSERT HERE -->
+
+- [action_interface.cpp][20]      <!-- PLEASE INSERT HERE -->
+
+- [manipulation.cpp][21]          <!-- PLEASE INSERT HERE -->
+
+
+Here below we can find the nodes devoted for testing purposes 
+
+- [my_simulation.cpp][26]
+- [test_nav.py][23]               
+  
+
+### ROS node description: the go_to_point.py node  🪢
+
+Let's start with the `go_to_point.py` node
+
+<p align="center">
+<img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_go_to_point_py.jpg" width= 500 height=500>
+</p>
+
+It implements a ROS service, whose purpose is that of piloting the robot toward a specific target by following a straight line. As it is shown by the component diagram here reported, it subscribes to the `/odom` topic for retrieving the current robot position and once the robot orientation among x and y coordinates has been computed with respect to the target position (obtained by means of the ros parameter server), it publishes on the `/cmd_vel` topic
+
+Concerning the ros parameters:
+`des_pos_x` and `des_pos_y` are used for keeping track of the target goal to be assigned to the robot in the go_to_point.py node 
+
+Node interfaces: 
+```Plain txt
+Node [/go_to_point]
+Publications: 
+ * /cmd_vel [geometry_msgs/Twist]
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /odom [nav_msgs/Odometry]
+
+Services: 
+ * /go_to_point
+ * /go_to_point/get_loggers
+ * /go_to_point/set_logger_level
+
+```
+### ROS node description: the main.py node 🪢
+
+<p align="center">
+<img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_2_main_py.jpg" width= 500 height=500>
+</p>
+
+This node represents three core structures, even the "brain" of our achitechture. Being ROSPlan a framework  that owns a variety of nodes which encapsulate planning, problem generation and plan execution, a set of clients have been initialised to, subsequently:
+
+- generate a problem: a [pddl problem][115] is published on a topic 
+- establish a plan: a planner is called for  publishing the plan to a topic 
+- parse a plan: At this stage the PDDL plan is converted into ROS messages, ready to be executed
+- dispatch a plan:  for being then executed 
+
+There is also the possibility to update the Knowledge base (being it the main responsible for the PDDL domain model amd current problem istance stroage)
+
+Indeed, if detectibot is not able to solve the mistery at the first round, it is possible to count on a "replanning phase", after which it starts roaming around the environment for gathering hints held by the markers
+
+Node Interfaces:
+```Plain txt 
+
+```
+### ROS node description: the cluedo_kb.py node 🪢
+
+Concerning the `cluedo_kb.py` node:
+
+<p align="center">
+<img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_2_cluedo_kb_py.jpg" width= 500 height=500>
+</p>
+
+cluedo_KB is a node that acts as a dedicated ontology for the problem under investigation; it provides a processing/reasoning system that provides the functionalities of:
+
+- registering the clues
+- building and processing hypotheses based on the added information
+- finding possible solutions to the case
+- rejecting hypotheses
+
+> ***REMARK*** the KB listens in on the oracle's topic and as soon as the oracle transmits the clue, the KB adds the message to the ontology without the need for an explicit request
+
+Node interfaces:
+```Plain txt
+```
+
+### ROS node description: the action_interface.cpp node  🪢
+
+Concerning the `action_interface.cpp` node:
+
+<p align="center">
+<img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v2/erl_assignment_2_action_interface_cpp_v2.jpg" width= 500 height=500>
+</p>
+
+action_interface.cpp implements all rosplan actions in a single ROS node, moreover:
+
+- the same node can be run replicated for all actions specified in the pddl
+- topics and services only get allocated when the action is called for the first time via the rosplan action dispatcher
+- the node interacts with the navigation and manipulation systems to move the robot and the arm
+- The node also interacts with the KB and the oracle for clue and hypothesis processing operations
+
+Regarding the pddl, it is possible to see their logical implementation within the domain file, inside the [detectibot_pddl][116] folder. There you can find both the predicates and seven actions, namely:
+
+1. leave_temple
+2. shift_gripper
+3. gather_hint
+4. go_to_wp
+5. reach_temple
+6. check_consistent_hypo
+7. query_hypo
+
+here below it is possible to see the conntent of the soultion found. If you wamt to take a look at the file itself, just [click here][117] 
+
+``` Plain txt
+; States evaluated: 54
+; Cost: 14.013
+; Time 0.00
+0.000: (leave_temple tp wp1)  [1.000]
+1.001: (shift_gripper wp1)  [1.000]
+2.002: (gather_hint wp1)  [1.000]
+3.003: (go_to_wp wp1 wp2)  [1.000]
+4.004: (shift_gripper wp2)  [1.000]
+5.005: (gather_hint wp2)  [1.000]
+6.006: (go_to_wp wp2 wp3)  [1.000]
+7.007: (shift_gripper wp3)  [1.000]
+8.008: (gather_hint wp3)  [1.000]
+9.009: (go_to_wp wp3 wp4)  [1.000]
+10.010: (shift_gripper wp4)  [1.000]
+11.011: (gather_hint wp4)  [1.000]
+12.012: (reach_temple wp4 tp)  [1.000]
+12.012: (check_consistent_hypo wp1)  [1.000]
+13.013: (query_hypo tp)  [1.000]
+```
+
+Node interfaces:
+```Plain txt
+```
+
+### ROS node description: the manipulation.cpp node 🪢
+
+Concerning the `manipulation_cpp` node:
+
+<p align="center">
+<img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_2_manipulation_cpp.jpg" width= 500 height=500>
+</p>
+
+This node is simply devoted to control the Detectibot's manipulator by directly interacting with the MoveIt! framework
+
+
+Node interfaces:
+```Plain txt
+```
+### ROS node description: my_simulation.cpp node 🪢
+
+<p align="center">
+<img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl2_my_simulation_cpp.jpg" width= 500 height=500>
+</p>
+
+This is the node provided by professor with some simplification in orderr to make the siumulation run faster and test wheter the detectibot would have carry out the investigation entirely. 
+
+Node interfaces:
+```Plain txt
+```
+
+
+
+### rqt_graph
+
+In the figure below, circles represent nodes and squares represent topic messages. The arrow instead, indicates the transmission of the message!
+
+<img src= "https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/rqt/rosgraph_nodes_topics_all.png" />
+
+### UML temporal diagram
+
+<img src= "https://github.com/fedehub/ExperimentalRoboticsAssignment2/tree/main/media/state_diagrams/Diagrams_erl_img.jpg" />
+
+
+
+
 ## Working hypothesis and environment 
 
 The  architecture  is designed for providing a raw simplification of the Cluedo Game. Hints are set a-priori and the True hipothesis is  randomly chosen before starting the game. 
@@ -549,15 +506,39 @@ All choices were made with the aim of making the system as modular and flexible 
 
 ### System's features
 
-Most of them have been already discussed in the Software architecture’s section. The most relevant one is that of having a robot capable of exploiting an ontology to solve  a problem.
+Most of them have been already discussed in the Software architecture’s section. 
+
+The project implements the robot behaviour so that it can keep roaming around, looking for clues. This serves for solving the case. 
+
+Indeed, while it navigates through the environment it tries to combine them in order to find a solution. This is where the reasoning & AI module, represented by the [cluedo_kb.py][20], comes imto play
+
+Concerning the architecture, it is centralised and designed in such a way that individual components can be replaced as long as they meet the same required interface 
 
 ### System's limitations
 
-type here ...
+Here below, some of the major system limitations are listed:
+
+- the navigation module is not suitable for environments with obstacles as it needs to make a straight line between the starting point and the target.
+- since there is no unit that deals explicitly with the marker topology, changing such a topology requires the modification of several parts of the architecture including:
+  - the main node that takes into account the topology for being able to do replanning
+  - the pddl models, in particular the problem file
+  - the oracle, represented by the simulation.cpp node, having hard-coded markers, must be modified to support a new topology
+- the architecture could also be executed in a distributed manner by dividing the components over various devices. However, this possibility was not considered during the design of the system. It is therefore necessary to identify possible criticalities in the communication protocol (i.e. to better manage service calls that fail based on the quality of the connection) and to treat them appropriately
 
 ### Possible technical Improvements
 
-type here ...
+As for the system limitations, some of the most relevant potential techincal improvements:
+
+- The current KB can be modified to implement the same functionalities on a different ontology system (i.e. Armor); the component can be extended for more accurate  hypotheses processing or for providing, for instance, a ontology backup feature
+  
+- The current navigation system is rather poor; it should be replaced with a more elaborate navigation system. In particular, the new navigation system should make it possible to achieve a certain orientation as well as a final position.
+  
+- The manipulation could be replaced with a more advanced node that performs a finer (more precise) control on moveit
+  
+- The current robot model is quite unstable. It should be adjusted so that it does not oscillate during its movments
+  
+- the robot needs a lot of manoeuvring space to move; There should be the need of seeking an appropriate navigation algorithm to reduce the necessary manoeuvring space
+
 
 <!-- ROADMAP -->
 ## Roadmap
@@ -566,18 +547,18 @@ type here ...
 - [ ] Describe the software architechture
   - [x] Component diagram (*not mandatory*)
   - [x] Temporal diagram + comments
-  - [ ] States diagrams, whether applicable + comments
-  - [ ] Create a list describing ROS messages and parameters 
-- [ ] Describe the installation steps and the running procedures
-    - [ ] Create a dedicated paragraph
-    - [ ] Include all the steps to display the robot's behaviour
+  - [x] States diagrams, whether applicable + comments
+  - [x] Create a list describing ROS messages and parameters 
+- [x] Describe the installation steps and the running procedures
+    - [x] Create a dedicated paragraph
+    - [x] Include all the steps to display the robot's behaviour
 - [ ] Show in the "usage" section the running code
-  - [ ] Create a small video tutorial of the launch
+  - [x] Create a small video tutorial of the launch
   - [ ] Create a small animated gif of the terminal while running code
-- [ ] Describe the Working hypothesis and environment
-  - [ ] Dedicated section for System's features
-  - [ ] Dedicated section for System's limitations
-  - [ ] Dedicated section for Possible technical improvements
+- [x] Describe the Working hypothesis and environment
+  - [x] Dedicated section for System's features
+  - [x] Dedicated section for System's limitations
+  - [x] Dedicated section for Possible technical improvements
 
  
     

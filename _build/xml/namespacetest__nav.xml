@@ -22,7 +22,7 @@
         <definition>test_nav.r</definition>
         <argsstring></argsstring>
         <name>r</name>
-        <initializer>=  rospy.Rate( 0.25 )</initializer>
+        <initializer>=  rospy.Rate(0.25)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
