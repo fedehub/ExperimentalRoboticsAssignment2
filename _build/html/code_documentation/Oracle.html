@@ -14,6 +14,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -49,6 +50,10 @@
 <li class="toctree-l2"><a class="reference internal" href="action_interface.html">Code docs – <em>action_interface</em></a></li>
 <li class="toctree-l2"><a class="reference internal" href="cluedo_kb.html">Code docs – <em>cluedo_kb</em></a></li>
 <li class="toctree-l2"><a class="reference internal" href="go_to_point.html">Code docs – <em>go_to_point.py</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html">Code docs – <em>main</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulation.html">Code docs – <em>manipulation</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="simulation.html">Code docs – <em>simulation</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="test_nav.html">Code docs – <em>test_nav</em></a></li>
 </ul>
 </li>
 </ul>
@@ -83,13 +88,13 @@
            <div itemprop="articleBody">
              
   <div class="section" id="code-docs-simulation-cpp">
-<h1>Code docs – <em>simulation.cpp</em><a class="headerlink" href="#code-docs-simulation-cpp" title="Permalink to this headline"></a></h1>
+<h1>Code docs – <em>simulation.cpp</em><a class="headerlink" href="#code-docs-simulation-cpp" title="Permalink to this heading"></a></h1>
 <div class="section" id="how-to-receive-a-hint">
-<h2>How to receive a hint<a class="headerlink" href="#how-to-receive-a-hint" title="Permalink to this headline"></a></h2>
+<h2>How to receive a hint<a class="headerlink" href="#how-to-receive-a-hint" title="Permalink to this heading"></a></h2>
 <p>the node publishes the hint (message <em>erl2/ErlOracle</em>) through the topic <em>/oracle_hint</em>. Here’s the message prototype:</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">int32</span> <span class="n">ID</span>
-<span class="n">string</span> <span class="k">key</span>
-<span class="n">string</span> <span class="n">value</span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>int32 ID
+string key
+string value
 </pre></div>
 </div>
 <p>the hint is sent each time the <em>cluedo_link</em> is near enough to a marker.</p>
@@ -104,15 +109,15 @@
 </div>
 </div>
 <div class="section" id="how-to-check-if-the-hint-is-valid">
-<h2>How to check if the hint is valid<a class="headerlink" href="#how-to-check-if-the-hint-is-valid" title="Permalink to this headline"></a></h2>
+<h2>How to check if the hint is valid<a class="headerlink" href="#how-to-check-if-the-hint-is-valid" title="Permalink to this heading"></a></h2>
 <p>to check whether a specific ID is the solution of the mystery, call the service <em>/oracle_solution</em> of type <code class="docutils literal notranslate"><span class="pre">erl2/Oracle</span></code>. Here’s the prototype of the service:</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="c1">---</span>
-<span class="n">int32</span> <span class="n">ID</span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>---
+int32 ID
 </pre></div>
 </div>
 </div>
 <div class="section" id="hints-generation">
-<h2>Hints generation<a class="headerlink" href="#hints-generation" title="Permalink to this headline"></a></h2>
+<h2>Hints generation<a class="headerlink" href="#hints-generation" title="Permalink to this heading"></a></h2>
 <p>referring to the code,</p>
 <ul class="simple">
 <li><p>the ID of the hint is from 0 to 5</p></li>

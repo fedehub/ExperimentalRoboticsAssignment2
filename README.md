@@ -47,45 +47,54 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+        <li><a href="#assignments-prerequisites">Assignment's prerequisites</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#software-architechture">Software architechture</a></li>
-        <li><a href="#ros-node-description-an-overview">ROS node description: an Overview</a></li>
-        <li><a href="#ros-node-description-the-go_to_point.py-node">ROS node description: the go_to_point.py node</a></li>
-        <li><a href="#ros-node-description-the-main.py-node ">ROS node description:-the main.py node</a></li>
-        <li><a href="#ros-node-description-the-cluedo_kb.py-node ">ROS node description: the cluedo_kb.py node</a></li>
-        <li><a href="#ros-node-description-the-action_interface.cpp-node">ROS node description: he action_interface.cpp node</a></li>
-        <li><a href="#ros-node-description-the-manipulation.cpp-node ">ROS node description: the manipulation.cpp node</a></li>
-        <li><a href="#ros-node-description-my_simulation.cpp-node ">ROS node description:my_simulation.cpp node </a></li>
-          <ul>
-            <li><a href=#rossrv>rossrv</a></li>
-            <li><a href=#rosmsg>rosmsg</a></li>
-            <li><a href=#rostopic>rostopic</a></li>
-            <li><a href=#rosparam>rosparam</a></li>
-          </ul>
-        <li><a href="#rqt_graph">rqt_graph</a></li>
-        <li><a href="#installation">Installation</a></li>
-        <li><a href="#running procedure">Running procedure</a></li>
+        <li><a href="#installation-procedure">Installation procedure</a></li>
+        <li><a href="#workspace-building-and-launch">Workspace building and launch</a></li>
+        <li><a href="#running-pocedure">Running procedure</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li>
-      <a href="#Working-hypothesis-and-environment">Working hypothesis and environment</a>
+      <a href="#usage">Usage</a>
+    </li>
+    <li>
+      <a href="#ros-node-description-an-overview">ROS node description: An overview</a>
+      <ul>
+        <li><a href="#the-main.py-node ">the main.py node</a></li>
+        <li><a href="#the-cluedo_kb.py-node ">the cluedo_kb.py node</a></li>
+        <li><a href="#the-action_interface.cpp-node">the action_interface.cpp node</a></li>
+        <li><a href="#the-manipulation.cpp-node ">the manipulation.cpp node</a></li>
+        <li><a href="#the-my_simulation.cpp-node ">the my_simulation.cpp node </a></li>
+        <li><a href="#rqt_graph">rqt_graph</a></li>
+      </ul>
+    <li>
+        <a href="#Working-hypothesis-and-environment">Working hypothesis and environment</a>
+    </li>
       <ul>
         <li><a href="#System's features">System's features</a></li>
         <li><a href="#System's limitations">System's limitations</a></li>
         <li><a href="#Possible technical Improvements">Possible technical Improvements</a></li>
       </ul>
+    <li>
+      <a href="#roadmap">Roadmap</a>
     </li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li>
+      <a href="#contributing">Contributing</a>
+    </li>
+    <li>
+      <a href="#license">License</a>
+    </li>
+    <li>
+      <a href="#contact">Contact</a>
+    </li>
+    <li>
+      <a href="#acknowledgments">Acknowledgments</a>
+    </li>
   </ol>
 </details>
 
@@ -329,7 +338,7 @@ Here below we can find the nodes devoted for testing purposes
 - [test_nav.py][23]               
   
 
-### ROS node description: the go_to_point.py node  🪢
+### the go_to_point.py node  🪢
 
 Let's start with the `go_to_point.py` node
 
@@ -359,7 +368,7 @@ Services:
  * /go_to_point/set_logger_level
 
 ```
-### ROS node description: the main.py node 🪢
+### the main.py node 🪢
 
 <p align="center">
 <img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_2_main_py.jpg" width= 500 height=500>
@@ -378,9 +387,19 @@ Indeed, if detectibot is not able to solve the mistery at the first round, it is
 
 Node Interfaces:
 ```Plain txt 
+Node [/main]
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+
+Services: 
+ * /main/get_loggers
+ * /main/set_logger_level
 
 ```
-### ROS node description: the cluedo_kb.py node 🪢
+### the cluedo_kb.py node 🪢
 
 Concerning the `cluedo_kb.py` node:
 
@@ -399,9 +418,21 @@ cluedo_KB is a node that acts as a dedicated ontology for the problem under inve
 
 Node interfaces:
 ```Plain txt
+Node [/cluedo_kb]
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /oracle_hint [erl2/ErlOracle]
+
+Services: 
+ * /cluedo_kb/get_loggers
+ * /cluedo_kb/set_logger_level
+ * /get_id
+ * /mark_wrong_id
 ```
 
-### ROS node description: the action_interface.cpp node  🪢
+### the action_interface.cpp node  🪢
 
 Concerning the `action_interface.cpp` node:
 
@@ -426,7 +457,7 @@ Regarding the pddl, it is possible to see their logical implementation within th
 6. check_consistent_hypo
 7. query_hypo
 
-here below it is possible to see the conntent of the soultion found. If you wamt to take a look at the file itself, just [click here][117] 
+here below it is possible to see the conntent of the soultion found. If you want to take a look at the file itself, just [click here][117] 
 
 ``` Plain txt
 ; States evaluated: 54
@@ -451,9 +482,113 @@ here below it is possible to see the conntent of the soultion found. If you wamt
 
 Node interfaces:
 ```Plain txt
+Node [/rpi_leave_temple]
+Publications: 
+ * /rosout                                         [rosgraph_msgs/Log]
+ * /rosplan_knowledge_base/pddl_action_parameters  [rosplan_knowledge_msgs/DomainFormula]
+ * /rosplan_plan_dispatcher/action_feedback        [rosplan_dispatch_msgs/ActionFeedback]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /rosplan_plan_dispatcher/action_dispatch [rosplan_dispatch_msgs/ActionDispatch]
+
+Services: 
+ * /rpi_leave_temple/get_loggers
+ * /rpi_leave_temple/set_logger_level
+
+--------------------------------------------------------------------------------
+Node [/rpi_shift_gripper]
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+ * /rosplan_knowledge_base/pddl_action_parameters  [rosplan_knowledge_msgs/DomainFormula]
+ * /rosplan_plan_dispatcher/action_feedback        [rosplan_dispatch_msgs/ActionFeedback]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /rosplan_plan_dispatcher/action_dispatch        [rosplan_dispatch_msgs/ActionDispatch]
+
+Services: 
+ * /rpi_shift_gripper/get_loggers
+ * /rpi_shift_gripper/set_logger_level
+
+--------------------------------------------------------------------------------
+Node [/rpi_gather_hint]
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+ * /rosplan_knowledge_base/pddl_action_parameters  [rosplan_knowledge_msgs/DomainFormula]
+ * /rosplan_plan_dispatcher/action_feedback        [rosplan_dispatch_msgs/ActionFeedback]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /rosplan_plan_dispatcher/action_dispatch        [rosplan_dispatch_msgs/ActionDispatch]
+
+Services: 
+ * /rpi_gather_hint/get_loggers
+ * /rpi_gather_hint/set_logger_level
+
+--------------------------------------------------------------------------------
+Node [/rpi_go_to_wp]
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+ * /rosplan_knowledge_base/pddl_action_parameters [rosplan_knowledge_msgs/DomainFormula]
+ * /rosplan_plan_dispatcher/action_feedback       [rosplan_dispatch_msgs/ActionFeedback]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /rosplan_plan_dispatcher/action_dispatch       [rosplan_dispatch_msgs/ActionDispatch]
+
+Services: 
+ * /rpi_go_to_wp/get_loggers
+ * /rpi_go_to_wp/set_logger_level
+
+--------------------------------------------------------------------------------
+Node [/rpi_reach_temple]
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+ * /rosplan_knowledge_base/pddl_action_parameters [rosplan_knowledge_msgs/DomainFormula]
+ * /rosplan_plan_dispatcher/action_feedback       [rosplan_dispatch_msgs/ActionFeedback]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /rosplan_plan_dispatcher/action_dispatch       [rosplan_dispatch_msgs/ActionDispatch]
+
+Services: 
+ * /rpi_reach_temple/get_loggers
+ * /rpi_reach_temple/set_logger_level
+
+--------------------------------------------------------------------------------
+Node [/rpi_check_consistent_hypo]
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+ * /rosplan_knowledge_base/pddl_action_parameters  [rosplan_knowledge_msgs/DomainFormula]
+ * /rosplan_plan_dispatcher/action_feedback        [rosplan_dispatch_msgs/ActionFeedback]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /rosplan_plan_dispatcher/action_dispatch        [rosplan_dispatch_msgs/ActionDispatch]
+
+Services: 
+ * /rpi_check_consistent_hypo/get_loggers
+ * /rpi_check_consistent_hypo/set_logger_level
+
+--------------------------------------------------------------------------------
+Node [/rpi_query_hypo]
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+ * /rosplan_knowledge_base/pddl_action_parameters [rosplan_knowledge_msgs/DomainFormula]
+ * /rosplan_plan_dispatcher/action_feedback       [rosplan_dispatch_msgs/ActionFeedback]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /rosplan_plan_dispatcher/action_dispatch       [rosplan_dispatch_msgs/ActionDispatch]
+
+Services: 
+ * /rpi_query_hypo/get_loggers
+ * /rpi_query_hypo/set_logger_level
+
 ```
 
-### ROS node description: the manipulation.cpp node 🪢
+### the manipulation.cpp node 🪢
 
 Concerning the `manipulation_cpp` node:
 
@@ -466,17 +601,66 @@ This node is simply devoted to control the Detectibot's manipulator by directly 
 
 Node interfaces:
 ```Plain txt
+Node [/manipulation]
+Publications: 
+ * /attached_collision_object [moveit_msgs/AttachedCollisionObject]
+ * /execute_trajectory/cancel [actionlib_msgs/GoalID]
+ * /execute_trajectory/goal [moveit_msgs/ExecuteTrajectoryActionGoal]
+ * /move_group/cancel [actionlib_msgs/GoalID]
+ * /move_group/goal [moveit_msgs/MoveGroupActionGoal]
+ * /pickup/cancel [actionlib_msgs/GoalID]
+ * /pickup/goal [moveit_msgs/PickupActionGoal]
+ * /place/cancel [actionlib_msgs/GoalID]
+ * /place/goal [moveit_msgs/PlaceActionGoal]
+ * /rosout [rosgraph_msgs/Log]
+ * /trajectory_execution_event [std_msgs/String]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /execute_trajectory/feedback [moveit_msgs/ExecuteTrajectoryActionFeedback]
+ * /execute_trajectory/result [moveit_msgs/ExecuteTrajectoryActionResult]
+ * /execute_trajectory/status [actionlib_msgs/GoalStatusArray]
+ * /move_group/feedback [moveit_msgs/MoveGroupActionFeedback]
+ * /move_group/result [moveit_msgs/MoveGroupActionResult]
+ * /move_group/status [actionlib_msgs/GoalStatusArray]
+ * /pickup/feedback [moveit_msgs/PickupActionFeedback]
+ * /pickup/result [moveit_msgs/PickupActionResult]
+ * /pickup/status [actionlib_msgs/GoalStatusArray]
+ * /place/feedback [moveit_msgs/PlaceActionFeedback]
+ * /place/result [moveit_msgs/PlaceActionResult]
+ * /place/status [actionlib_msgs/GoalStatusArray]
+ * /tf [tf2_msgs/TFMessage]
+ * /tf_static [tf2_msgs/TFMessage]
+
+Services: 
+ * /manipulation
+ * /manipulation/get_loggers
+ * /manipulation/set_logger_level
 ```
-### ROS node description: my_simulation.cpp node 🪢
+### my_simulation.cpp node 🪢
 
 <p align="center">
 <img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl2_my_simulation_cpp.jpg" width= 500 height=500>
 </p>
 
-This is the node provided by professor with some simplification in orderr to make the siumulation run faster and test wheter the detectibot would have carry out the investigation entirely. 
+This is the node provided by professor with some simplification in order to make the siumulation run faster and test wheter the detectibot would have carry out the investigation entirely. 
 
 Node interfaces:
 ```Plain txt
+Node [/my_simulation]
+Publications: 
+ * /oracle_hint [erl2/ErlOracle]
+ * /rosout [rosgraph_msgs/Log]
+ * /visualization_marker [visualization_msgs/MarkerArray]
+
+Subscriptions: 
+ * /gazebo/link_states [gazebo_msgs/LinkStates]
+
+Services: 
+ * /my_simulation/get_loggers
+ * /my_simulation/set_logger_level
+ * /oracle_solution
+
 ```
 
 
@@ -489,7 +673,7 @@ In the figure below, circles represent nodes and squares represent topic message
 
 ### UML temporal diagram
 
-<img src= "https://github.com/fedehub/ExperimentalRoboticsAssignment2/tree/main/media/state_diagrams/Diagrams_erl_img.jpg" />
+<img src= "https://github.com/fedehub/ExperimentalRoboticsAssignment2/tree/main/media/temporal_diagrams/Diagrams_erl_img.jpg" />
 
 
 
@@ -544,7 +728,7 @@ As for the system limitations, some of the most relevant potential techincal imp
 ## Roadmap
 
 - [x] Complete the introduction of the template 
-- [ ] Describe the software architechture
+- [x] Describe the software architechture
   - [x] Component diagram (*not mandatory*)
   - [x] Temporal diagram + comments
   - [x] States diagrams, whether applicable + comments
@@ -552,9 +736,9 @@ As for the system limitations, some of the most relevant potential techincal imp
 - [x] Describe the installation steps and the running procedures
     - [x] Create a dedicated paragraph
     - [x] Include all the steps to display the robot's behaviour
-- [ ] Show in the "usage" section the running code
+- [x] Show in the "usage" section the running code
   - [x] Create a small video tutorial of the launch
-  - [ ] Create a small animated gif of the terminal while running code
+  - [x] Create a small animated gif of the terminal while running code
 - [x] Describe the Working hypothesis and environment
   - [x] Dedicated section for System's features
   - [x] Dedicated section for System's limitations
@@ -674,8 +858,8 @@ Project Link: [https://github.com/fedehub/ExperimentalRoboticsAssignment2](https
 [34]:https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/erl2/srv/Oracle.srv
 
 
-<!-- Component diagrams  -->
-[100]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/component_diagram.jpg
+<!-- diagrams  -->
+[100]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v3/component_diagram.jpg
 [101]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v2/erl_assignment_2_action_interface_cpp_v2.jpg
 [102]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl2_my_simulation_cpp.jpg
 [103]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v1/erl_assignment_2_cluedo_kb_py.jpg
@@ -689,8 +873,8 @@ Project Link: [https://github.com/fedehub/ExperimentalRoboticsAssignment2](https
 [109]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/tree/main/media/rqt/rosgraph_nodes_topics_active.png
 [110]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/tree/main/media/rqt/rosgraph_nodes_topics_all.png
 
-<!-- state diagram -->
-[111]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/tree/main/media/state_diagrams/Diagrams_erl_img.jpg
+<!-- temporal diagram -->
+[111]: https://github.com/fedehub/ExperimentalRoboticsAssignment2/tree/main/media/temporal_diagrams/Diagrams_erl_img.jpg
 
 
 <!-- MoveIt -->

@@ -14,6 +14,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -46,10 +47,14 @@
 <li class="toctree-l3"><a class="reference internal" href="#how-to-store-a-hint">How to store a hint</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#how-to-get-a-valid-hint">How to get a valid hint</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#how-to-discard-a-hint-id-from-the-system">How to discard a hint ID from the system</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#code-reference">Code Reference</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-main">Code Reference</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="go_to_point.html">Code docs – <em>go_to_point.py</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html">Code docs – <em>main</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulation.html">Code docs – <em>manipulation</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="simulation.html">Code docs – <em>simulation</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="test_nav.html">Code docs – <em>test_nav</em></a></li>
 </ul>
 </li>
 </ul>
@@ -84,60 +89,63 @@
            <div itemprop="articleBody">
              
   <div class="section" id="code-docs-cluedo-kb">
-<h1>Code docs – <em>cluedo_kb</em><a class="headerlink" href="#code-docs-cluedo-kb" title="Permalink to this headline"></a></h1>
+<h1>Code docs – <em>cluedo_kb</em><a class="headerlink" href="#code-docs-cluedo-kb" title="Permalink to this heading"></a></h1>
 <div class="section" id="how-to-store-a-hint">
-<h2>How to store a hint<a class="headerlink" href="#how-to-store-a-hint" title="Permalink to this headline"></a></h2>
+<h2>How to store a hint<a class="headerlink" href="#how-to-store-a-hint" title="Permalink to this heading"></a></h2>
 <p>This node reads automatically the hint (mesage <code class="docutils literal notranslate"><span class="pre">erl2/ErlOracle</span></code>) by subscribing to the topic <code class="docutils literal notranslate"><span class="pre">/oracle_hint</span></code> provided by the Oracle node (namely <em>simulation.cpp</em>). Here’s the message prototype:</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">int32</span> <span class="n">ID</span>
-<span class="n">string</span> <span class="k">key</span>
-<span class="n">string</span> <span class="n">value</span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>int32 ID
+string key
+string value
 </pre></div>
 </div>
 </div>
 <div class="section" id="how-to-get-a-valid-hint">
-<h2>How to get a valid hint<a class="headerlink" href="#how-to-get-a-valid-hint" title="Permalink to this headline"></a></h2>
+<h2>How to get a valid hint<a class="headerlink" href="#how-to-get-a-valid-hint" title="Permalink to this heading"></a></h2>
 <p>For getting a valid hint, a request to the service server <code class="docutils literal notranslate"><span class="pre">/get_id</span></code> is done, so that it can receive as response, a message of type <code class="docutils literal notranslate"><span class="pre">erl_assignment_2_msgs/GetId</span></code>. Here’s the Service prototype</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>## <span class="nv">service</span> <span class="nv">file</span> <span class="s1">&#39;</span><span class="s">GetId.srv</span><span class="s1">&#39;</span>
-# <span class="nv">empty</span> <span class="nv">request</span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>## service file &#39;GetId.srv&#39;
+# empty request
 
-<span class="o">---</span>
+---
 
-# <span class="k">if</span> <span class="nv">there</span> <span class="nv">are</span> <span class="nv">yet</span> <span class="nv">consistent</span> <span class="nv">hypothese</span>
-<span class="nv">bool</span> <span class="nv">consistent_found</span>
+# if there are yet consistent hypothese
+bool consistent_found
 
-# <span class="nv">the</span> <span class="nv">ID</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">selected</span> <span class="nv">consisten</span> <span class="nv">hp</span> <span class="ss">(</span><span class="nv">chech</span> <span class="nv">consistent_found</span> <span class="nv">before</span><span class="ss">)</span>
-<span class="nv">int32</span> <span class="nv">consistent_id</span>
+# the ID of the selected consisten hp (chech consistent_found before)
+int32 consistent_id
 </pre></div>
 </div>
 </div>
 <div class="section" id="how-to-discard-a-hint-id-from-the-system">
-<h2>How to discard a hint ID from the system<a class="headerlink" href="#how-to-discard-a-hint-id-from-the-system" title="Permalink to this headline"></a></h2>
+<h2>How to discard a hint ID from the system<a class="headerlink" href="#how-to-discard-a-hint-id-from-the-system" title="Permalink to this heading"></a></h2>
 <p>In order to discard a specific ID from the <strong>ontology</strong>, the service <code class="docutils literal notranslate"><span class="pre">/mark_wrong_id</span></code> is provided.</p>
 <p>Here below you can find a prototype of it:</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="o">##</span> <span class="n">service</span> <span class="n">file</span> <span class="s1">&#39;MarkWrongId.srv&#39;</span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>## service file &#39;MarkWrongId.srv&#39;
 
-<span class="o">#</span> <span class="n">ID</span> <span class="k">to</span> <span class="n">be</span> <span class="n">discarded</span>
-<span class="n">int32</span> <span class="n">ID</span>
+# ID to be discarded
+int32 ID
 
-<span class="c1">---</span>
+---
 
-<span class="o">#</span> <span class="n">empty</span> <span class="n">response</span>
+# empty response
 </pre></div>
 </div>
 </div>
-<div class="section" id="code-reference">
-<h2>Code Reference<a class="headerlink" href="#code-reference" title="Permalink to this headline"></a></h2>
-<p>file cluedo_kb node</p>
-<p>rostopic pub –once /oracle_hint erl2/ErlOracle</p>
-<p>rostopic pub –once /oracle_hint erl2/ErlOracle “ID: 0
-key: ‘who’
-value: ‘ciao’”
-rostopic pub –once /oracle_hint erl2/ErlOracle “ID: 0
-key: ‘where’
-value: ‘ciao’”
-rostopic pub –once /oracle_hint erl2/ErlOracle “ID: 0
-key: ‘what’
-value: ‘ciao’”</p>
+<div class="section" id="module-main">
+<span id="code-reference"></span><h2>Code Reference<a class="headerlink" href="#module-main" title="Permalink to this heading"></a></h2>
+<p>ROS node working as ” ontology “, employed for providing a reaoning/processing system.
+This latter allows for storing hints, elaborate hypothesis based on the last information
+added, finding new possible solutions for the case, getting rid of some hypothesis.
+Moreover there is no need of an explicit request, whenever the KB adds a message to the
+ontology. since the KB keeps listening to the Oracle topic</p>
+<dl class="simple">
+<dt>Subscribes to:</dt><dd><p>/oracle_hint [erl2/ErlOracle]</p>
+</dd>
+<dt>Publishes to:</dt><dd><p>/rosout [rosgraph_msgs/Log]</p>
+</dd>
+<dt>Service :</dt><dd><p>/get_id
+/mark_wrong_id</p>
+</dd>
+</dl>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">cluedo_kb.</span></span><span class="sig-name descname"><span class="pre">add_hint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hint</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cluedo_kb.html#add_hint"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
@@ -182,7 +190,7 @@ still available IDs.</p>
 </dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>the service coulf return also (true, -1) in a situation in which
+<p>the service could return also (true, -1) in a situation in which
 there are some active ID, but none of them is complete.</p>
 </div>
 </dd></dl>

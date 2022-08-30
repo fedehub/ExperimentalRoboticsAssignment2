@@ -14,6 +14,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -44,6 +45,10 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Code docs – <em>action_interface</em></a></li>
 <li class="toctree-l2"><a class="reference internal" href="cluedo_kb.html">Code docs – <em>cluedo_kb</em></a></li>
 <li class="toctree-l2"><a class="reference internal" href="go_to_point.html">Code docs – <em>go_to_point.py</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html">Code docs – <em>main</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulation.html">Code docs – <em>manipulation</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="simulation.html">Code docs – <em>simulation</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="test_nav.html">Code docs – <em>test_nav</em></a></li>
 </ul>
 </li>
 </ul>
@@ -78,7 +83,37 @@
            <div itemprop="articleBody">
              
   <div class="section" id="code-docs-action-interface">
-<h1>Code docs – <em>action_interface</em><a class="headerlink" href="#code-docs-action-interface" title="Permalink to this headline"></a></h1>
+<h1>Code docs – <em>action_interface</em><a class="headerlink" href="#code-docs-action-interface" title="Permalink to this heading"></a></h1>
+<p>This node implements all the rosplan actions in a single node. </p>
+<p>&#64; package erl_assignment_2</p>
+<p><p>Subscribes to:</p>
+<p>/rosplan_plan_dispatcher/action_dispatch [rosplan_dispatch_msgs/ActionDispatch]</p>
+<dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Federico Civetta </p>
+</dd>
+<dt><strong>Version</strong></dt><dd><p>1.0.0</p>
+</dd>
+</dl>
+</p>
+<p><p>Publishes to:</p>
+<p>/rosplan_knowledge_base/pddl_action_parameters [rosplan_knowledge_msgs/DomainFormula] /rosplan_plan_dispatcher/action_feedback [rosplan_dispatch_msgs/ActionFeedback]</p>
+</p>
+<p><p>Services:</p>
+<p>None</p>
+</p>
+<p><p>Client Services:</p>
+<p>/go_to_point [std_srvs/SetBool] /manipulation [std_srvs/SetBool] /get_id [erl_assignment_2_msgs/GetId] /oracle_solution [erl2/Oracle] /mark_wrong_id [erl_assignment_2_msgs/MarkWrongId] ]</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>Action Services: &lt;BR&gt;
+    None
+
+Description: &lt;BR&gt;
+    This node implements the rosplan actions declared inside the 
+    pddl domain. For optimisation reasons, topics and services 
+    gets allocated only once the action gets called for the first
+    time through the rosplan action dispatcher
+</pre></div>
+</div>
+ </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
 <dl class="cpp macro">
@@ -172,6 +207,16 @@
 <dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class18leave_temple_setupEv">
 <span id="_CPPv3N11KCL_rosplan22action_interface_class18leave_temple_setupEv"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class18leave_temple_setupEv"></span><span id="KCL_rosplan::action_interface_class::leave_temple_setup"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1a37e916143bff2e842afc3dceb6da692e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">leave_temple_setup</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class18leave_temple_setupEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>setup action leave_temple </p>
+<p>This function allows the robot to leave the starting position to reach the following waypoint</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For “starting position” we refer to the starting position of the robot (where it is spawned), coinciding with the temple location.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>void </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
@@ -183,55 +228,133 @@
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class14go_to_wp_setupEv">
 <span id="_CPPv3N11KCL_rosplan22action_interface_class14go_to_wp_setupEv"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class14go_to_wp_setupEv"></span><span id="KCL_rosplan::action_interface_class::go_to_wp_setup"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1abb6ade799c69dee192521d97e5219c75"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">go_to_wp_setup</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class14go_to_wp_setupEv" title="Permalink to this definition"></a><br /></dt>
-<dd><p>setup action go_to_wp </p>
+<dd><p>action go_to_point setup </p>
+<p>this function is devoted to the initialisation of the service clients</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For “starting position” we refer to the starting position of the robot (where it is spawned), coinciding with the temple location.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>void </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class15go_to_wp_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE">
 <span id="_CPPv3N11KCL_rosplan22action_interface_class15go_to_wp_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class15go_to_wp_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="KCL_rosplan::action_interface_class::go_to_wp_action__rosplan_dispatch_msgs::ActionDispatch::ConstPtrCR"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1aeed667f1cd4164217e86c8012e4dedbe"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">go_to_wp_action</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">rosplan_dispatch_msgs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ActionDispatch</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ConstPtr</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class15go_to_wp_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>go_to_wp execution </p>
+<dd><p>go_to_wp action execution </p>
+<p>once the target waypoint has been assigned, it allows detectibot to move from the current waypoint (less meaningful) toward the next waypoint (more meaningful). Then it retrieves the coordinates associated to the waypoint. It sets the ROS parameters des_pos_x and des_pos_y. It then call the service </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>msg</strong> – <strong>[in]</strong> [rosplan_dispatch_msgs/ActionDispatch] it is the action dispath message, defined by a name, a specific identifier a plan identifier and other fields</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Bool True value </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class19shift_gripper_setupEv">
 <span id="_CPPv3N11KCL_rosplan22action_interface_class19shift_gripper_setupEv"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class19shift_gripper_setupEv"></span><span id="KCL_rosplan::action_interface_class::shift_gripper_setup"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1adf3ff4b2fbd3bec5dc52b2596e7361c0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">shift_gripper_setup</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class19shift_gripper_setupEv" title="Permalink to this definition"></a><br /></dt>
-<dd><p>setup action shift_gripper </p>
+<dd><p>action shift_gripper setup </p>
+<p>this function is devoted to the initialisation of the service clients</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>void </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class20shift_gripper_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE">
 <span id="_CPPv3N11KCL_rosplan22action_interface_class20shift_gripper_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class20shift_gripper_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="KCL_rosplan::action_interface_class::shift_gripper_action__rosplan_dispatch_msgs::ActionDispatch::ConstPtrCR"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1a078eef1e588742d598555ff3bc3e5944"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">shift_gripper_action</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">rosplan_dispatch_msgs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ActionDispatch</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ConstPtr</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class20shift_gripper_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>shift_gripper execution </p>
+<dd><p>shift_gripper action execution </p>
+<p>this function allows the detectibot’s gripper to move close to the marker so that cluedo_kb node can retrieve the hint via topic. Then, the boolean message field “data” indicating the fulfillment of the action (i.e. the activation of the gripper) is set to True and a service call takes place</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>msg</strong> – <strong>[in]</strong> [rosplan_dispatch_msgs/ActionDispatch] it is the action dispath message, defined by a name, a specific identifier a plan identifier and other fields</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Bool True value </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class17gather_hint_setupEv">
 <span id="_CPPv3N11KCL_rosplan22action_interface_class17gather_hint_setupEv"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class17gather_hint_setupEv"></span><span id="KCL_rosplan::action_interface_class::gather_hint_setup"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1a4f47b988cb397c7eab47a954aca80e57"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gather_hint_setup</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class17gather_hint_setupEv" title="Permalink to this definition"></a><br /></dt>
-<dd><p>setup action gather_hint </p>
+<dd><p>action gather_hint setup </p>
+<p>this function is devoted to the initialisation of the service clients</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>void </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class18gather_hint_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE">
 <span id="_CPPv3N11KCL_rosplan22action_interface_class18gather_hint_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class18gather_hint_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="KCL_rosplan::action_interface_class::gather_hint_action__rosplan_dispatch_msgs::ActionDispatch::ConstPtrCR"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1a312f6a27d3f5e652d6d7cf101f79a01e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gather_hint_action</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">rosplan_dispatch_msgs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ActionDispatch</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ConstPtr</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class18gather_hint_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>gather_hint execution </p>
+<dd><p>gather_hint action execution </p>
+<p>this function pull backs the robot’s gripper. In the meantime, cluedo_kb receoves the hint. Hence the SetBool message field data is set to “false” and a service call takes place</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>the service employed for this action is the same employed for the ” shift_gripper ” one. The only differemce is that the data message field is set to “false”</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>msg</strong> – <strong>[in]</strong> [rosplan_dispatch_msgs/ActionDispatch] it is the action dispath message, defined by a name, a specific identifier a plan identifier and other fields</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Bool True value </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class18reach_temple_setupEv">
 <span id="_CPPv3N11KCL_rosplan22action_interface_class18reach_temple_setupEv"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class18reach_temple_setupEv"></span><span id="KCL_rosplan::action_interface_class::reach_temple_setup"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1a50c53d86b82e10e2b920bad8c0f697a5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reach_temple_setup</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class18reach_temple_setupEv" title="Permalink to this definition"></a><br /></dt>
-<dd><p>setup action reach_temple </p>
+<dd><p>action reach_temple setup </p>
+<p>this function is devoted to the initialisation of the service clients</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>void </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class19reach_temple_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE">
 <span id="_CPPv3N11KCL_rosplan22action_interface_class19reach_temple_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class19reach_temple_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="KCL_rosplan::action_interface_class::reach_temple_action__rosplan_dispatch_msgs::ActionDispatch::ConstPtrCR"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1adba2c9c01fd73133d1e2a0e0fd9b992a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reach_temple_action</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">rosplan_dispatch_msgs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ActionDispatch</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ConstPtr</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class19reach_temple_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>reach_temple execution </p>
+<dd><p>reaach_temple action execution </p>
+<p>once the target waypoint has been assigned, it allows detectibot to move from the current waypoint (less meaningful) toward the temple. Then it retrieves the coordinates associated to the waypoint. It sets the ROS parameters des_pos_x and des_pos_y aaccordingly. Hence, a service call takes place</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>the temple coordomates correspond to the “center” of the sceme (where) our robot get spawned, initially</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>msg</strong> – <strong>[in]</strong> [rosplan_dispatch_msgs/ActionDispatch] it is the action dispath message, defined by a name, a specific identifier a plan identifier and other fields</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Bool True value </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class27check_consistent_hypo_setupEv">
 <span id="_CPPv3N11KCL_rosplan22action_interface_class27check_consistent_hypo_setupEv"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class27check_consistent_hypo_setupEv"></span><span id="KCL_rosplan::action_interface_class::check_consistent_hypo_setup"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1a45258636dac508ff314caaf79c8d1e13"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">check_consistent_hypo_setup</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class27check_consistent_hypo_setupEv" title="Permalink to this definition"></a><br /></dt>
-<dd><p>setup action check_consistent_hypo </p>
+<dd><p>action check_consistency setup </p>
+<p>this function is devoted to the initialisation of the service clients</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>void </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
@@ -243,13 +366,36 @@
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class16query_hypo_setupEv">
 <span id="_CPPv3N11KCL_rosplan22action_interface_class16query_hypo_setupEv"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class16query_hypo_setupEv"></span><span id="KCL_rosplan::action_interface_class::query_hypo_setup"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1a5087a1854c5e1c54d7be896ba6d7209c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">query_hypo_setup</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class16query_hypo_setupEv" title="Permalink to this definition"></a><br /></dt>
-<dd><p>setup action check_consistent_hypo </p>
+<dd><p>action query_hypo setup </p>
+<p>this function is devoted to the initialisation of the service clients</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>void </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class17query_hypo_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE">
 <span id="_CPPv3N11KCL_rosplan22action_interface_class17query_hypo_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class17query_hypo_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE"></span><span id="KCL_rosplan::action_interface_class::query_hypo_action__rosplan_dispatch_msgs::ActionDispatch::ConstPtrCR"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1aed41605d09fcd4d22c86495ed37c466c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">query_hypo_action</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">rosplan_dispatch_msgs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ActionDispatch</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ConstPtr</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class17query_hypo_actionERKN21rosplan_dispatch_msgs14ActionDispatch8ConstPtrE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>check_consistent_hypo execution </p>
+<dd><p>query_hypo action execution </p>
+<p>this function allows Detectibot to ask for some consistent hypothesis. If they do not exist yet, it returns “false” otherwise a client call to the get_id server takes place. Hence, a check to understand whether or not the ID is compatible with the one provided by the oracle, is performed.<ul class="simple">
+<li><p>If they are not compatible, a service call to report the wrongness of the ID is made and a replan occurs.</p></li>
+<li><p>If they results compatible instead, signal that True ID has been found and the game ends</p></li>
+</ul>
+</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>the service employed for this action is the same employed for the ” shift_gripper ” one. The only differemce is that the data message field is set to “false”</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>msg</strong> – <strong>[in]</strong> [rosplan_dispatch_msgs/ActionDispatch] it is the action dispath message, defined by a name, a specific identifier a plan identifier and other fields</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Bool True value </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="cpp function">
@@ -261,7 +407,20 @@
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N11KCL_rosplan22action_interface_class11navigate_toENSt6stringE">
 <span id="_CPPv3N11KCL_rosplan22action_interface_class11navigate_toENSt6stringE"></span><span id="_CPPv2N11KCL_rosplan22action_interface_class11navigate_toENSt6stringE"></span><span id="KCL_rosplan::action_interface_class::navigate_to__ss"></span><span class="target" id="class_k_c_l__rosplan_1_1action__interface__class_1a38fbf2132c258e2db53d8528c8b3d283"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">navigate_to</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">wp</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N11KCL_rosplan22action_interface_class11navigate_toENSt6stringE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>navigation command </p>
+<dd><p>pilot the robot toward a certain position </p>
+<p>it retrieves the waypoint coordinates and it sets the target ones within the rosparameter server.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>(0,0) are the coordinates for the temple’s location </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>wp</strong> – <strong>[in]</strong> String value that holds the target point</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>void </p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
