@@ -437,7 +437,7 @@ Services:
 Concerning the `action_interface.cpp` node:
 
 <p align="center">
-<img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v2/erl_assignment_2_action_interface_cpp_v2.jpg" width= 500 height=500>
+<img src="https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/component_diagrams/v3/erl_assignment_2_action_interface_cpp.jpg" width= 500 height=500>
 </p>
 
 action_interface.cpp implements all rosplan actions in a single ROS node, moreover:
@@ -673,7 +673,9 @@ In the figure below, circles represent nodes and squares represent topic message
 
 ### UML temporal diagram
 
-<img src= "https://github.com/fedehub/ExperimentalRoboticsAssignment2/tree/main/media/temporal_diagrams/Diagrams_erl_img.jpg" />
+> :warning: Due to the size of the original image, it is shown only a raw preview, opened with the standard pc's imahe viewer. If you want to download the original file, you can find it [here][111]
+
+<img src= "https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/miscellaneous/raw_preview.png" />
 
 
 
