@@ -71,6 +71,8 @@
         <li><a href="#the-manipulation.cpp-node ">the manipulation.cpp node</a></li>
         <li><a href="#the-my_simulation.cpp-node ">the my_simulation.cpp node </a></li>
         <li><a href="#rqt_graph">rqt_graph</a></li>
+        <li><a href="#uml-temporal-diagram">UML temporal diagram</a></li>
+        <li><a href="#about-detectibot-model">About detectiBot model</a></li>
       </ul>
     <li>
         <a href="#Working-hypothesis-and-environment">Working hypothesis and environment</a>
@@ -677,6 +679,18 @@ In the figure below, circles represent nodes and squares represent topic message
 
 <img src= "https://github.com/fedehub/ExperimentalRoboticsAssignment2/blob/main/media/miscellaneous/raw_preview.png" />
 
+### About detectiBot model 
+
+In order to realise the robot model, some in-depth studies were carried out within the following repositories 
+
+- [robot_modelling][8]
+- [explab_2nd][9] 
+- 
+In the [first repo][8], there are some notes aimed at gaining a brief and essential knowledge of robot modelling using xacro and urdf files. 
+Some test examples are also shown, culminating in a potential robot model that can be deployed as part of the assignment. 
+
+For reasons essentially related to computational cost, the model employed is much simpler and draws inspiration from the same prototype used during the course, which may be found and tested by downloading the [second repo][9]   
+
 
 
 
@@ -824,8 +838,8 @@ Project Link: [https://github.com/fedehub/ExperimentalRoboticsAssignment2](https
 [5]: https://github.com/KCL-Planning/ROSPlan
 [6]: https://moveit.ros.org/
 [7]: http://wiki.ros.org/move_base
-[8]: <oracle>
-[9]: <HypoID_Msg>
+[8]: https://github.com/fedehub/robot_modelling
+[9]: https://github.com/fedehub/explab_2nd
 [10]: <Hint_Msg>
 [11]: <BotMsg_Msg>
 [12]: <param.yaml file>
