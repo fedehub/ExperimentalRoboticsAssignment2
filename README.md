@@ -685,12 +685,23 @@ In order to realise the robot model, some in-depth studies were carried out with
 
 - [robot_modelling][8]
 - [explab_2nd][9] 
-- 
+
 In the [first repo][8], there are some notes aimed at gaining a brief and essential knowledge of robot modelling using xacro and urdf files. 
 Some test examples are also shown, culminating in a potential robot model that can be deployed as part of the assignment. 
 
-For reasons essentially related to computational cost, the model employed is much simpler and draws inspiration from the same prototype used during the course, which may be found and tested by downloading the [second repo][9]   
+For reasons essentially related to computational cost, the model employed is much simpler and draws inspiration from the same prototype used during the course, which may be found and tested by downloading the [second repo][9]  
 
+<a href="https://github.com/fedehub/explab_2nd">
+  <p align="center">
+    <img width="600" height="300" src="https://user-images.githubusercontent.com/61761835/189926720-e3ac2ce1-e352-497f-a7ad-3e5e9af35498.png">
+  </p>
+</a>
+
+<a href="https://github.com/fedehub/robot_modelling">
+  <p align="center">
+    <img width="600" height="300" src="https://user-images.githubusercontent.com/61761835/189926873-89918134-8458-42e7-a1e4-ad1b32a813b4.png">
+  </p>
+</a>
 
 
 
